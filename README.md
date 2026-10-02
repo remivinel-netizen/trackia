@@ -8,7 +8,8 @@ index.html              la page de vente
 assets/styles.css       toute la mise en forme
 assets/main.js          le lien de paiement + les détails d'interface
 assets/og.png           l'image de partage (réseaux sociaux, messageries)
-assets/favicon.svg      l'icône d'onglet
+assets/brand/           le kit logo (piste 3a radar) : SVG, PNG, icônes
+favicon.ico, apple-touch-icon.png, site.webmanifest   icônes d'onglet et d'écran d'accueil
 mentions-legales.html   modèles à compléter avant mise en ligne
 cgv.html
 confidentialite.html
@@ -46,3 +47,17 @@ Puis ouvrir http://localhost:4321
 5. Domaine : onglet **Custom domains** du projet Pages.
 
 Le fichier `_headers` est pris en compte automatiquement par Cloudflare Pages.
+
+## Logo
+
+Le logo est le radar 3a (cercle ouvert, faisceau, cible détectée). L'en-tête des quatre
+pages affiche `assets/brand/trackia-logo-animated-white.svg` : le faisceau tourne et la
+cible clignote, sauf si le visiteur a demandé moins d'animations dans ses réglages.
+
+Autres fichiers utiles dans `assets/brand/` :
+
+- `trackia-logo.svg` et `trackia-logo-white.svg` : logo fixe, fond clair ou sombre
+- `trackia-logo-1200.png` et `trackia-logo-white-1200.png` : pour les mails et les PDF
+- `trackia-avatar-400.png` : photo de profil (LinkedIn, Stripe, Google Business)
+
+Couleurs du logo : encre `#0d1a32`, bleu `#1874ed`, bleu sur fond sombre `#5b9eff`.
