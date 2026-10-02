@@ -130,8 +130,7 @@ code{
 .head.is-stuck{border-bottom-color:var(--rule-dark)}
 .head__in{display:flex;align-items:center;gap:28px;height:66px}
 .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--d1);flex:0 0 auto}
-.logo__mark{color:var(--signal-lift)}
-.logo__word{font-size:1.2rem;font-weight:700;letter-spacing:-.035em}
+.logo__img{display:block;height:30px;width:auto}
 .head__nav{display:flex;gap:26px;margin-left:auto;font-size:.9375rem}
 .head__nav a{color:var(--d2);text-decoration:none;transition:color .16s ease}
 .head__nav a:hover{color:var(--d1)}
