@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trackia.fr/sitemap.xml
+Sitemap: https://remivinel-netizen.github.io/trackia/sitemap.xml

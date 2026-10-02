@@ -26,8 +26,25 @@ _headers                en-têtes de sécurité et de cache (lus par Cloudflare 
 3. **Arbitrer la garantie 14 jours.** Elle apparaît sous le bouton d'achat dans
    `index.html` (bloc `price__guarantee`, signalé par un commentaire) et à l'article 5
    des CGV. Supprimez les deux si vous ne voulez pas vous y engager.
-4. **Remplacer le domaine.** `trackia.fr` apparaît dans les balises `og:`, la balise
-   `canonical`, `robots.txt` et `sitemap.xml`.
+4. **Remplacer le domaine.** Le site est actuellement publié sur GitHub Pages, et
+   les URL absolues pointent donc vers `https://remivinel-netizen.github.io/trackia`.
+   Le jour où vous branchez votre domaine, remplacez-les aux quatre endroits suivants
+   — et nulle part ailleurs, les adresses e-mail `@trackia.fr` ne changent pas :
+
+   | Fichier       | Ligne                                      |
+   | ------------- | ------------------------------------------ |
+   | `index.html`  | `<link rel="canonical" …>`                 |
+   | `index.html`  | `<meta property="og:url" …>`               |
+   | `index.html`  | `<meta property="og:image" …>`             |
+   | `robots.txt`  | la ligne `Sitemap:`                        |
+   | `sitemap.xml` | la balise `<loc>`                           |
+
+   En une commande, depuis la racine du dépôt :
+
+   ```
+   grep -rl "remivinel-netizen.github.io/trackia" --include=*.html --include=*.txt --include=*.xml . \
+     | xargs sed -i '' 's|https://remivinel-netizen.github.io/trackia|https://VOTRE-DOMAINE.fr|g'
+   ```
 5. **Adresse de contact.** `contact@trackia.fr` apparaît dans les pieds de page.
 
 ## Aperçu en local
