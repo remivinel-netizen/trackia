@@ -137,7 +137,10 @@ code{
 .head .btn--small{flex:0 0 auto}
 
 /* ── hero ─────────────────────────────────────────────── */
-.hero{padding-top:clamp(64px,8vw,112px)}
+.hero{
+  padding-top:clamp(64px,8vw,112px);
+  background:var(--ink) url("img/hero.jpg") no-repeat center / cover;
+}
 .hero__title{
   font-size:clamp(2.6rem,6.6vw,5.1rem);
   line-height:.99;
@@ -348,7 +351,28 @@ code{
 .faq__body p{color:var(--t2);font-size:1.0625rem;line-height:1.62}
 .faq__body p + p{margin-top:14px}
 
+/* ── bande photo ──────────────────────────────────────── */
+.photo{
+  position:relative;overflow:hidden;background:var(--ink);
+  padding-block:clamp(64px,8vw,116px);
+}
+.photo__img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 62%;
+}
+.photo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(7,11,22,.95) 0%,rgba(7,11,22,.74) 48%,rgba(7,11,22,.32) 100%);
+}
+.photo .wrap{position:relative;z-index:1}
+.photo__phrase{
+  font-size:clamp(1.3rem,2.7vw,2.15rem);
+  line-height:1.24;letter-spacing:-.028em;font-weight:600;
+  color:var(--d1);max-width:29ch;text-wrap:balance;
+}
+
 /* ── CTA final ────────────────────────────────────────── */
+.final{background:var(--ink) url("img/final.jpg") no-repeat center bottom / cover}
 .final__title{
   font-size:clamp(2rem,4.2vw,3.4rem);
   line-height:1.04;letter-spacing:-.036em;font-weight:600;
@@ -388,6 +412,8 @@ code{
 }
 @media (max-width:620px){
   body{font-size:16px}
+  .photo__img{object-position:center 58%}
+  .photo::after{background:linear-gradient(180deg,rgba(7,11,22,.9) 0%,rgba(7,11,22,.82) 55%,rgba(7,11,22,.45) 100%)}
   .trace{grid-template-columns:1fr;row-gap:0;padding-top:0;margin-top:52px}
   .trace::before{
     top:9px;left:5px;width:2px;height:calc(100% - 52px);
