@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trackia — Le tracking Google Ads qui tient, installé en 2 heures, sans coder</title>
+<meta name="description" content="Méthode en 2 heures pour installer GTM, GA4, la capture du gclid et la remontée des conversions à Google Ads. Pour les artisans et entreprises de services qui paient de la pub sans savoir ce qu'elle rapporte. 297 €.">
+<link rel="canonical" href="https://trackia.fr/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Trackia — Le tracking d'élite sans code">
+<meta property="og:description" content="Savoir quel clic Google Ads a payé votre dernier chantier. GTM, GA4, gclid et conversions avancées installés en 2 heures, sans écrire une ligne de code.">
+<meta property="og:image" content="https://trackia.fr/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="head" id="head">
+  <div class="wrap head__in">
+    <a class="logo" href="#top" aria-label="Trackia, accueil">
+      <svg class="logo__mark" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <path d="M3 19.5C7 19.5 8.5 6.5 13 6.5S19 19.5 23 19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="3" cy="19.5" r="2.6" fill="currentColor"/>
+        <circle cx="23" cy="19.5" r="2.6" fill="currentColor"/>
+      </svg>
+      <span class="logo__word">Trackia</span>
+    </a>
+    <nav class="head__nav" aria-label="Sections">
+      <a href="#diagnostic">Le problème</a>
+      <a href="#systeme">Le système</a>
+      <a href="#programme">Programme</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn--small js-buy" href="#prix">
+      <span class="btn__long">Accéder à la formation</span>
+      <span class="btn__short">Accéder — 297&nbsp;€</span>
+    </a>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ══ HERO ══════════════════════════════════════════════ -->
+<section class="band band--ink hero" id="top">
+  <div class="wrap">
+    <h1 class="hero__title">Savoir quel clic Google&nbsp;Ads a payé votre dernier chantier.</h1>
+    <p class="hero__lead">Trackia est une méthode en deux heures pour installer un tracking complet sur votre site&nbsp;: Google Tag Manager, GA4, la capture du <code>gclid</code>, et la remontée des vraies conversions dans Google&nbsp;Ads. Vous n'écrivez pas une ligne de code. Claude s'occupe de la partie technique, vous suivez les captures d'écran.</p>
+
+    <div class="hero__cta">
+      <a class="btn js-buy" href="#prix">Accéder à la formation — 297&nbsp;€</a>
+      <a class="btn btn--ghost" href="#programme">Voir les 7 modules</a>
+    </div>
+
+    <ul class="facts">
+      <li>2&nbsp;h&nbsp;00 de mise en place, une seule fois</li>
+      <li>Aucune ligne de code à écrire</li>
+      <li>WordPress, Wix, Shopify, Webflow, sur-mesure</li>
+    </ul>
+
+    <!-- la trace : l'objet signature de la page -->
+    <ol class="trace" aria-label="Le parcours d'un clic jusqu'à la conversion">
+      <li class="trace__node">
+        <span class="trace__dot" aria-hidden="true"></span>
+        <p class="trace__label">Un clic sur votre annonce</p>
+        <p class="trace__note">Google tamponne l'URL d'un identifiant unique.</p>
+      </li>
+      <li class="trace__node">
+        <span class="trace__dot" aria-hidden="true"></span>
+        <p class="trace__label">Le site retient l'identifiant</p>
+        <p class="trace__note"><code>gclid=Cj0KCQiAq8W…</code></p>
+      </li>
+      <li class="trace__node">
+        <span class="trace__dot" aria-hidden="true"></span>
+        <p class="trace__label">Le lead tombe dans votre fichier</p>
+        <p class="trace__note">Ligne dans Google Sheets, alerte dans Gmail.</p>
+      </li>
+      <li class="trace__node trace__node--end">
+        <span class="trace__dot" aria-hidden="true"></span>
+        <p class="trace__label">Le devis signé repart vers Google</p>
+        <p class="trace__note">Avec son montant. L'algorithme apprend.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ DIAGNOSTIC ════════════════════════════════════════ -->
+<section class="band band--paper" id="diagnostic">
+  <div class="wrap">
+    <h2 class="h2">Votre budget part, vos devis arrivent, et rien ne relie les deux.</h2>
+    <p class="lead">Trois situations. Si une seule vous parle, votre tracking ne fonctionne pas — et vous le payez tous les mois.</p>
+
+    <div class="symptoms">
+      <article class="symptom">
+        <h3>Vous ne savez pas d'où vient l'appel</h3>
+        <p>Le téléphone sonne, un devis part, le chantier se signe. Impossible de dire si ce client vient de Google&nbsp;Ads, d'une recherche naturelle ou du voisin d'en face. Donc impossible de dire si la pub est rentable.</p>
+      </article>
+      <article class="symptom">
+        <h3>Vos « conversions » ne sont pas des clients</h3>
+        <p>Google&nbsp;Ads compte des clics sur le bouton Contact, des visites de la page tarifs, parfois une page vue. Vous pilotez un budget avec un chiffre qui ne correspond à aucune demande réelle.</p>
+      </article>
+      <article class="symptom">
+        <h3>Google enchérit à l'aveugle</h3>
+        <p>Les enchères automatiques apprennent avec vos conversions. Sans signal fiable, l'algorithme achète les clics les moins chers au lieu des clients les plus rentables. Vous payez pour du volume.</p>
+      </article>
+    </div>
+
+    <p class="punch">Le résultat est toujours le même&nbsp;: on coupe la campagne qui rapportait, on garde celle qui coûtait, et on augmente le budget en espérant que ça passe.</p>
+  </div>
+</section>
+
+<!-- ══ SYSTÈME ═══════════════════════════════════════════ -->
+<section class="band band--mist" id="systeme">
+  <div class="wrap">
+    <h2 class="h2">Le fil que vous installez entre un clic et un chantier signé</h2>
+    <p class="lead">Cinq maillons. Chacun se pose dans un module, en suivant des captures d'écran. À la fin, la chaîne est complète et elle tourne toute seule.</p>
+
+    <ol class="chain">
+      <li class="chain__link">
+        <h3>Le visiteur clique sur votre annonce</h3>
+        <p>Google ajoute à l'URL un identifiant unique, le <code>gclid</code>. C'est le numéro de série de ce clic&nbsp;: il sait de quelle campagne, quel groupe d'annonces et quel mot-clé il vient.</p>
+      </li>
+      <li class="chain__link">
+        <h3>Le site le retient</h3>
+        <p>Google Tag Manager stocke le <code>gclid</code> et les paramètres <code>utm_</code> dans un cookie first-party, puis les recopie dans des champs cachés de votre formulaire. Le visiteur ne voit rien, vous ne perdez plus l'information.</p>
+      </li>
+      <li class="chain__link">
+        <h3>Le formulaire parle</h3>
+        <p>À l'envoi, GA4 reçoit un événement <code>generate_lead</code> propre, et Make reçoit la fiche entière&nbsp;: nom, téléphone, message, page d'arrivée, campagne, mot-clé, <code>gclid</code>.</p>
+      </li>
+      <li class="chain__link">
+        <h3>Vous récupérez le lead en clair</h3>
+        <p>Make écrit une ligne dans votre Google Sheets et vous envoie une alerte Gmail. Vous rappelez pendant que le prospect est encore devant son écran, avant qu'il ne remplisse le formulaire du concurrent.</p>
+      </li>
+      <li class="chain__link">
+        <h3>La conversion remonte à Google</h3>
+        <p>Quand le devis est signé, vous changez une case dans le Sheets. Make renvoie la conversion à Google&nbsp;Ads avec le <code>gclid</code> et le montant réel. L'algorithme sait enfin ce qu'est un bon clic, et il va en chercher d'autres.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ PROGRAMME ═════════════════════════════════════════ -->
+<section class="band band--ink" id="programme">
+  <div class="wrap">
+    <h2 class="h2">Le programme&nbsp;: 7 modules, deux heures, dans l'ordre.</h2>
+    <p class="lead">Chaque module est un PDF pas-à-pas, avec la capture d'écran de chaque interface et le texte exact à copier. Vous ouvrez le PDF d'un côté, votre navigateur de l'autre, et vous avancez.</p>
+
+    <ol class="modules">
+      <li class="module">
+        <span class="module__n" aria-hidden="true">00</span>
+        <div class="module__body">
+          <h3 class="module__title">Préparation <span class="module__time">10 min</span></h3>
+          <p>Les quatre comptes à ouvrir — Tag Manager, GA4, Make, Google&nbsp;Ads — et la checklist des accès à réunir. Puis le test de cinq minutes qui vous dit si votre installation actuelle est cassée, et à quel endroit.</p>
+        </div>
+      </li>
+      <li class="module">
+        <span class="module__n" aria-hidden="true">01</span>
+        <div class="module__body">
+          <h3 class="module__title">Google Tag Manager, posé proprement <span class="module__time">20 min</span></h3>
+          <p>Créer le conteneur, l'installer sur WordPress, Wix, Shopify, Webflow ou un site sur-mesure, et valider avec le mode Aperçu. On traite aussi le cas pénible&nbsp;: « une agence a déjà mis quelque chose et je ne sais pas quoi ».</p>
+        </div>
+      </li>
+      <li class="module">
+        <span class="module__n" aria-hidden="true">02</span>
+        <div class="module__body">
+          <h3 class="module__title">GA4 branché sur GTM <span class="module__time">15 min</span></h3>
+          <p>Flux de données, balise de configuration, événements utiles. Et surtout&nbsp;: couper la collecte automatique qui gonfle vos chiffres et vous fait croire que tout va bien.</p>
+        </div>
+      </li>
+      <li class="module">
+        <span class="module__n" aria-hidden="true">03</span>
+        <div class="module__body">
+          <h3 class="module__title">Capturer le gclid et les UTM <span class="module__time">20 min</span></h3>
+          <p>Le cookie first-party, les champs cachés, la persistance entre deux pages. Le script est écrit par Claude à partir du prompt fourni&nbsp;: vous copiez, vous collez dans GTM, vous vérifiez que la valeur apparaît.</p>
+        </div>
+      </li>
+      <li class="module">
+        <span class="module__n" aria-hidden="true">04</span>
+        <div class="module__body">
+          <h3 class="module__title">Le formulaire qui remonte tout <span class="module__time">15 min</span></h3>
+          <p>Un événement de conversion propre côté GA4, et l'envoi de la fiche complète vers Make. Les cas couverts&nbsp;: Contact&nbsp;Form&nbsp;7, WPForms, Gravity&nbsp;Forms, Elementor, formulaire natif Wix ou Webflow, et le bouton d'appel sur mobile.</p>
+        </div>
+      </li>
+      <li class="module">
+        <span class="module__n" aria-hidden="true">05</span>
+        <div class="module__body">
+          <h3 class="module__title">L'automatisation Make <span class="module__time">20 min</span></h3>
+          <p>Webhook, mise en forme des données, écriture dans Google Sheets, alerte Gmail avec le numéro cliquable. Le scénario est fourni prêt à importer&nbsp;: vous le branchez à vos comptes et vous le testez en direct.</p>
+        </div>
+      </li>
+      <li class="module">
+        <span class="module__n" aria-hidden="true">06</span>
+        <div class="module__body">
+          <h3 class="module__title">Les conversions avancées dans Google Ads <span class="module__time">20 min</span></h3>
+          <p>Créer l'action de conversion hors ligne, importer par <code>gclid</code>, déclarer le montant du devis signé, et basculer vos campagnes sur une stratégie d'enchères qui s'appuie dessus. C'est le module qui fait baisser le coût par client.</p>
+        </div>
+      </li>
+      <li class="module module--bonus">
+        <span class="module__n" aria-hidden="true">+</span>
+        <div class="module__body">
+          <h3 class="module__title">Les fichiers livrés avec</h3>
+          <p>Le modèle Google Sheets de suivi des leads, le scénario Make prêt à importer, le tableau de bord Looker Studio d'une page, et les 12 prompts Claude utilisés dans la formation — à réutiliser tels quels.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ RÉSULTAT ══════════════════════════════════════════ -->
+<section class="band band--paper" id="resultat">
+  <div class="wrap">
+    <h2 class="h2">Ce que vous avez le soir même</h2>
+    <ul class="outcomes">
+      <li>Un Google Sheets où chaque demande arrive horodatée, avec sa campagne, son mot-clé et son <code>gclid</code>.</li>
+      <li>Une alerte Gmail à chaque formulaire, en moins d'une minute, avec le téléphone du prospect.</li>
+      <li>Un GA4 qui compte des demandes de devis, pas des clics sur un bouton.</li>
+      <li>Des conversions hors ligne qui remontent dans Google&nbsp;Ads avec un montant réel, pas une valeur inventée.</li>
+      <li>La réponse à la seule question qui compte&nbsp;: quelles campagnes financent vos chantiers, et lesquelles financent votre curiosité.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ POUR QUI ══════════════════════════════════════════ -->
+<section class="band band--mist" id="pour-qui">
+  <div class="wrap fit">
+    <div class="fit__col">
+      <h2 class="h3">C'est fait pour vous si</h2>
+      <ul class="ticks">
+        <li>Vous dépensez déjà en Google&nbsp;Ads, même modestement.</li>
+        <li>Vous vendez par devis, par formulaire ou par téléphone.</li>
+        <li>Vous avez un site avec au moins un formulaire de contact.</li>
+        <li>Vous acceptez de bloquer deux heures, une fois, pour arrêter de payer à l'aveugle.</li>
+      </ul>
+    </div>
+    <div class="fit__col fit__col--no">
+      <h2 class="h3">Passez votre chemin si</h2>
+      <ul class="ticks ticks--no">
+        <li>Vous cherchez une prestation clé en main. Ici, c'est vous qui faites les manipulations.</li>
+        <li>Vous ne faites pas de publicité payante. La méthode n'a rien à mesurer.</li>
+        <li>Vous voulez du tracking e-commerce avancé. Trackia traite le lead, pas le panier.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRIX ══════════════════════════════════════════════ -->
+<section class="band band--ink" id="prix">
+  <div class="wrap">
+    <div class="price">
+      <div class="price__left">
+        <h2 class="h2">297&nbsp;€, une fois. Pas d'abonnement.</h2>
+        <p class="lead">C'est souvent moins qu'une semaine de budget dépensée sur des mots-clés que vous ne pouvez pas mesurer. La différence&nbsp;: dans deux heures, vous saurez lesquels couper.</p>
+        <p class="price__note">Un prestataire vous facturera cette installation plusieurs fois ce prix, et il faudra le rappeler à chaque changement de formulaire. En la posant vous-même, vous savez aussi la réparer.</p>
+      </div>
+      <div class="price__card">
+        <p class="price__tag"><span class="price__amount">297</span><span class="price__cur">€</span></p>
+        <p class="price__sub">Accès immédiat, à vie, mises à jour comprises.</p>
+        <ul class="price__list">
+          <li>Les 7 modules en PDF pas-à-pas</li>
+          <li>Une capture d'écran à chaque étape</li>
+          <li>Le scénario Make prêt à importer</li>
+          <li>Le modèle Google Sheets de suivi</li>
+          <li>Le tableau de bord Looker Studio</li>
+          <li>Les 12 prompts Claude</li>
+        </ul>
+        <a class="btn btn--block js-buy" href="#prix">Accéder à la formation — 297&nbsp;€</a>
+        <!-- GARANTIE — supprimez ce paragraphe si vous ne souhaitez pas vous y engager -->
+        <p class="price__guarantee">Garantie 14 jours&nbsp;: vous suivez les modules, votre tracking ne remonte pas, vous êtes remboursé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ═══════════════════════════════════════════════ -->
+<section class="band band--paper" id="faq">
+  <div class="wrap">
+    <h2 class="h2">Les questions qu'on nous pose avant d'acheter</h2>
+
+    <div class="faq">
+      <details>
+        <summary>Je ne sais pas coder. C'est vraiment faisable&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Oui, et c'est tout l'objet de la méthode. Vous ne tapez aucun code&nbsp;: quand un script est nécessaire — pour la capture du <code>gclid</code>, essentiellement — le prompt exact est fourni, Claude écrit le script, vous le copiez dans l'interface de Tag Manager. Vous êtes en train de copier-coller, pas de programmer.</p>
+          <p>Le reste de la formation se passe dans des interfaces à boutons&nbsp;: Tag Manager, GA4, Make, Google&nbsp;Ads. Chaque clic est photographié.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Mon site est sur WordPress.</summary>
+        <div class="faq__body">
+          <p>C'est le cas le plus fréquent et il est traité en détail&nbsp;: pose du conteneur via une extension ou directement dans l'en-tête du thème, puis branchement sur Contact&nbsp;Form&nbsp;7, WPForms, Gravity&nbsp;Forms ou Elementor. Wix, Squarespace, Shopify, Webflow et les sites sur-mesure ont chacun leur variante dans le module&nbsp;01.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Une agence a déjà installé « quelque chose » sur mon site. Je fais quoi&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Le module&nbsp;00 commence par là. Vous faites l'inventaire de ce qui tourne réellement sur votre site, vous identifiez les balises en double — la cause numéro un des conversions comptées deux fois — et vous décidez ce qui reste ou ce qui saute. Vous n'avez besoin d'aucun accès à l'agence pour faire ce diagnostic.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Combien ça me coûte en outils, en plus des 297&nbsp;€&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Google Tag Manager, GA4, Google Sheets et Gmail sont gratuits. Make propose un palier gratuit qui suffit à la plupart des activités de services&nbsp;; au-delà d'un certain volume de leads mensuels, il faudra passer sur un palier payant — le module&nbsp;05 vous montre comment estimer votre consommation avant de choisir.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Et le RGPD, le consentement, les cookies&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Le module&nbsp;02 montre comment brancher le Consent&nbsp;Mode&nbsp;v2 de Google sur votre bandeau de cookies, et ce que vous collectez exactement à chaque étape. Le <code>gclid</code> est un identifiant publicitaire émis par Google, pas une donnée que vous inventez&nbsp;; les coordonnées du prospect viennent de son propre formulaire.</p>
+          <p>Cela dit, soyons clairs&nbsp;: c'est une formation technique, pas un conseil juridique. Pour la rédaction de votre politique de confidentialité, voyez avec votre conseil.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Au bout de combien de temps je vois quelque chose&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Le tracking lui-même est visible immédiatement&nbsp;: dès la fin du module&nbsp;05, chaque formulaire envoyé apparaît dans votre Sheets et dans votre boîte mail, avec sa source. Les données d'attribution s'accumulent ensuite jour après jour.</p>
+          <p>La partie enchères demande du volume&nbsp;: les stratégies automatiques de Google ont besoin de plusieurs dizaines de conversions par mois pour apprendre correctement. Le module&nbsp;06 explique quelle stratégie choisir selon le volume que vous faites réellement, plutôt que celle que Google vous suggère par défaut.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>J'ai déjà un GA4 installé. Ça sert à quoi de recommencer&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Avoir GA4 et avoir un tracking qui sert à décider sont deux choses différentes. La grande majorité des installations que l'on croise comptent des clics sur un bouton, ignorent complètement le <code>gclid</code>, et ne renvoient jamais rien à Google&nbsp;Ads. Vous gardez votre compte GA4&nbsp;: la formation le nettoie et le complète.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>J'ai plusieurs sites, ou je gère ceux de mes clients.</summary>
+        <div class="faq__body">
+          <p>La méthode est identique d'un site à l'autre&nbsp;: le deuxième prend environ trois fois moins de temps que le premier. L'achat couvre un usage pour votre entreprise. Si vous êtes agence ou freelance et que vous comptez l'appliquer sur des comptes clients, écrivez-nous, il y a une licence pour ça.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Il faut un abonnement payant à Claude&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Non. Les prompts fournis fonctionnent dans la version gratuite de Claude&nbsp;: vous collez le prompt, vous récupérez le script. L'extension Claude pour Chrome, qui permet de se faire guider directement dans l'interface de Tag Manager ou de Make, est un confort appréciable mais n'est à aucun moment obligatoire pour terminer la formation.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Et si je bloque en cours de route&nbsp;?</summary>
+        <div class="faq__body">
+          <p>Chaque module se termine par un point de contrôle&nbsp;: ce que vous devez voir à l'écran pour être sûr que l'étape est bonne, et quoi faire si vous voyez autre chose. Les trois pannes les plus fréquentes — conteneur non publié, formulaire qui recharge la page, webhook en attente — ont leur procédure de réparation dédiée.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ═════════════════════════════════════════ -->
+<section class="band band--ink final">
+  <div class="wrap">
+    <h2 class="final__title">Deux heures aujourd'hui, ou six mois de plus à payer pour des clics anonymes.</h2>
+    <p class="lead">Votre budget publicitaire continue de partir pendant que vous lisez cette page. La seule chose qui change avec Trackia, c'est que vous saurez où.</p>
+    <a class="btn js-buy" href="#prix">Accéder à la formation — 297&nbsp;€</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p class="foot__brand">Trackia — le tracking d'élite sans code</p>
+    <nav class="foot__links" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
