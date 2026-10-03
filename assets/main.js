@@ -2,7 +2,7 @@
    Trackia — une seule chose à modifier ici.
 
    Collez ci-dessous le lien de votre page de paiement
-   (lien de paiement Mollie).
+   (lien de paiement Stripe, « Payment Link »).
    Tant qu'il est vide, les boutons d'achat descendent
    simplement jusqu'à la section Prix.
    ─────────────────────────────────────────────────────────── */

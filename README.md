@@ -19,10 +19,10 @@ _headers                en-têtes de sécurité et de cache (lus par Cloudflare 
 ## À faire avant la mise en ligne
 
 1. **Brancher le paiement.** Ouvrez `assets/main.js`, collez votre lien de paiement
-   (lien de paiement Mollie) dans `LIEN_PAIEMENT`. Tant qu'il
+   (lien de paiement Stripe) dans `LIEN_PAIEMENT`. Tant qu'il
    est vide, les boutons descendent simplement jusqu'à la section Prix.
 2. **Pages légales.** Mentions légales, CGV et confidentialité sont remplies (EI Rémi Vinel,
-   SIREN 902 709 807, franchise de TVA, paiement Mollie, vente réservée aux professionnels).
+   SIREN 902 709 807, franchise de TVA, paiement Stripe, vente réservée aux professionnels).
 3. **Arbitrer la garantie 14 jours.** Elle apparaît sous le bouton d'achat dans
    `index.html` (bloc `price__guarantee`, signalé par un commentaire) et à l'article 5
    des CGV. Supprimez les deux si vous ne voulez pas vous y engager.
@@ -83,6 +83,6 @@ Autres fichiers utiles dans `assets/brand/` :
 
 - `trackia-logo.svg` et `trackia-logo-white.svg` : logo fixe, fond clair ou sombre
 - `trackia-logo-1200.png` et `trackia-logo-white-1200.png` : pour les mails et les PDF
-- `trackia-avatar-400.png` : photo de profil (LinkedIn, Mollie, Google Business)
+- `trackia-avatar-400.png` : photo de profil (LinkedIn, Stripe, Google Business)
 
 Couleurs du logo : encre `#0d1a32`, bleu `#1874ed`, bleu sur fond sombre `#5b9eff`.
