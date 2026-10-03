@@ -70,7 +70,7 @@ Le fichier `_headers` est pris en compte automatiquement par Cloudflare Pages.
 Les photos de personnes (`assets/img/pq-*`, `ecran*`, `resultat*`) viennent
 d'Unsplash, licence gratuite avec usage commercial autorisé et sans attribution
 obligatoire. Identifiants Unsplash : artisan `lQIUbkn6jj4`, commerce `0e2eYxBiP6A`,
-cabinet `5RQnUp_-5OU`, PME `UikYLDQj9_I`, écran `NOZETh4j2FE`,
+cabinet `5RQnUp_-5OU`, PME `UikYLDQj9_I`, écran `vaWgZAE9HFw`,
 résultat `s3hlZ-gdfdQ` (page : `https://unsplash.com/photos/<identifiant>`).
 
 ## Logo
