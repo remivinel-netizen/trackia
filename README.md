@@ -21,9 +21,8 @@ _headers                en-têtes de sécurité et de cache (lus par Cloudflare 
 1. **Brancher le paiement.** Ouvrez `assets/main.js`, collez votre lien de paiement
    (Stripe Payment Link, Lemon Squeezy, Systeme.io…) dans `CHECKOUT_URL`. Tant qu'il
    est vide, les boutons descendent simplement jusqu'à la section Prix.
-2. **Finir les CGV.** Mentions légales et confidentialité sont remplies (EI Rémi Vinel,
-   SIREN 902 709 807). Dans `cgv.html`, il reste les passages surlignés en bleu : TVA
-   (franchise ou non), prestataire de paiement, droit de rétractation, médiateur.
+2. **Pages légales.** Mentions légales, CGV et confidentialité sont remplies (EI Rémi Vinel,
+   SIREN 902 709 807, franchise de TVA, paiement Stripe, vente réservée aux professionnels).
 3. **Arbitrer la garantie 14 jours.** Elle apparaît sous le bouton d'achat dans
    `index.html` (bloc `price__guarantee`, signalé par un commentaire) et à l'article 5
    des CGV. Supprimez les deux si vous ne voulez pas vous y engager.

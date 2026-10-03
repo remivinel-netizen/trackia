@@ -327,6 +327,7 @@ b,strong{font-weight:500}
 .offre__prix span{font-size:3.6rem;letter-spacing:-.03em;line-height:1}
 .offre__prix{font-size:1.5rem}
 .offre__note{margin-top:8px;text-align:center;color:var(--gris);font-size:.9375rem}
+.offre__tva{margin-top:6px;text-align:center;color:var(--gris-pale);font-size:.8125rem;line-height:1.5}
 .offre__liste{margin-top:24px;padding-top:22px;border-top:1px solid var(--trait)}
 .offre__liste li{position:relative;padding:8px 0 8px 28px;font-size:1rem;line-height:1.5}
 .offre__liste li::before{
