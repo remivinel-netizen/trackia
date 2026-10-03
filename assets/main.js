@@ -6,7 +6,7 @@
    Tant qu'il est vide, les boutons d'achat descendent
    simplement jusqu'à la section Prix.
    ─────────────────────────────────────────────────────────── */
-const LIEN_PAIEMENT = "";
+const LIEN_PAIEMENT = "https://buy.stripe.com/fZu5kv54j3sH29V9g04ZG00";
 
 (() => {
   "use strict";
