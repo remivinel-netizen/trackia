@@ -432,14 +432,12 @@ b,strong{font-weight:500}
   to{transform:translate(90px,60px) scale(1.15)}
 }
 
-/* titre : mot par mot */
-.js .hero__titre.mots{opacity:1;transform:none}
-.mots .mot{display:inline-block;opacity:0;transform:translateY(.45em);filter:blur(6px)}
-.mots.vu .mot{
-  animation:monter .8s cubic-bezier(.22,.61,.36,1) forwards;
-  animation-delay:calc(var(--i) * 75ms + 80ms);
-}
-@keyframes monter{to{opacity:1;transform:none;filter:none}}
+/* accroche : animée dès le chargement, sans attendre le script,
+   pour que le texte principal s'affiche le plus tôt possible */
+.mots .mot{display:inline-block;animation:monter .8s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc(var(--i) * 70ms)}
+@keyframes monter{from{opacity:0;transform:translateY(.45em);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.entree{animation:entrer .6s cubic-bezier(.22,.61,.36,1) both;animation-delay:var(--d,0ms)}
+@keyframes entrer{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* point lumineux sur le fil */
 .fil__pulse{fill:#0067e5;opacity:0;filter:drop-shadow(0 0 6px rgba(0,103,229,.7))}
@@ -490,7 +488,7 @@ b,strong{font-weight:500}
 
 @media (prefers-reduced-motion:reduce){
   .hero::before,.hero::after,.fil__pulse,.progression{display:none}
-  .mots .mot{opacity:1;transform:none;filter:none}
+  .mots .mot,.entree{animation:none}
   .js .anim--zoom img{transform:none}
 }
 

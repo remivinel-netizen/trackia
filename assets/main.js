@@ -52,17 +52,6 @@ const LIEN_PAIEMENT = "";
       .forEach((el, i) => { if (!el.style.getPropertyValue("--d")) el.style.setProperty("--d", i * 90 + "ms"); });
   }
 
-  // titre principal : les mots montent un par un
-  const titre = document.querySelector(".hero__titre");
-  if (titre) {
-    const morceaux = titre.innerHTML.split(/(\s+|&nbsp;)/);
-    let n = 0;
-    titre.innerHTML = morceaux.map((m) =>
-      /^(\s+|&nbsp;)$/.test(m) || !m ? m : `<span class="mot" style="--i:${n++}">${m}</span>`
-    ).join("");
-    titre.classList.add("mots");
-  }
-
   // compteurs : le chiffre défile de 0 à sa valeur
   const compter = (el) => {
     const fin = Number(el.dataset.compte), debut = performance.now(), duree = fin > 10 ? 1300 : 700;
