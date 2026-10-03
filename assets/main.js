@@ -26,29 +26,55 @@ const LIEN_PAIEMENT = "https://buy.stripe.com/fZu5kv54j3sH29V9g04ZG00";
     addEventListener("scroll", marquer, { passive: true });
   }
 
-  // formulaire de contact : la page ne se recharge pas. L'envoi vers Make
-  // est fait par le script Trackia (GTM), qui écoute l'envoi avant ce code.
+  // formulaire de contact : chaque question part directement par e-mail
+  // à contact@trackia.fr, via le service FormSubmit (sans compte).
+  // Le script Trackia (GTM), s'il est installé, l'envoie en plus à Make.
+  const ADRESSE_CONTACT = "contact@trackia.fr";
   const formulaire = document.getElementById("formulaire-contact");
   if (formulaire) {
-    formulaire.addEventListener("submit", (e) => {
+    formulaire.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const merci = document.createElement("p");
-      merci.className = "contact__merci";
-      merci.setAttribute("role", "status");
+      const bouton = formulaire.querySelector('button[type="submit"]');
+      bouton.disabled = true;
+      bouton.textContent = "Envoi…";
 
-      // Secours : tant que le script Trackia (GTM) n'est pas installé, personne
-      // ne transmet la demande. On ouvre alors la messagerie du visiteur avec
-      // un e-mail prérempli, pour qu'aucune question ne soit perdue.
-      if (typeof window.trackiaApresConsentement !== "function") {
-        const d = new FormData(formulaire);
-        const corps = `Nom : ${d.get("nom")}\nE-mail : ${d.get("email")}\nTéléphone : ${d.get("telephone") || "—"}\n\n${d.get("message")}`;
-        window.location.href = "mailto:contact@trackia.fr?subject=" +
-          encodeURIComponent("Question sur la formation Trackia") + "&body=" + encodeURIComponent(corps);
-        merci.textContent = "Votre messagerie s'ouvre avec votre question déjà rédigée : il ne reste qu'à l'envoyer. Rien ne s'ouvre ? Écrivez-nous à contact@trackia.fr.";
-      } else {
-        merci.textContent = "Merci, votre question est bien partie. Réponse sous 24 h ouvrées, à l'adresse indiquée.";
+      const d = new FormData(formulaire);
+      let source = {};
+      try { source = JSON.parse(localStorage.getItem("trackia_source") || "{}"); } catch (err) {}
+      const donnees = {
+        Nom: d.get("nom"), "E-mail": d.get("email"), "Téléphone": d.get("telephone") || "—",
+        Question: d.get("message"),
+        Source: [source.utm_source, source.utm_campaign, source.gclid ? "gclid " + source.gclid : ""].filter(Boolean).join(" · ") || "—",
+        _subject: "Question sur la formation Trackia — " + d.get("nom"),
+        _replyto: d.get("email"), _template: "table", _honey: d.get("_honey") || "",
+      };
+
+      const message = (texte) => {
+        const p = document.createElement("p");
+        p.className = "contact__merci";
+        p.setAttribute("role", "status");
+        p.innerHTML = texte;
+        formulaire.replaceChildren(p);
+      };
+
+      try {
+        const reponse = await fetch("https://formsubmit.co/ajax/" + ADRESSE_CONTACT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(donnees),
+        });
+        const resultat = await reponse.json().catch(() => ({}));
+        if (!reponse.ok || String(resultat.success) !== "true") throw new Error(resultat.message || "envoi refusé");
+        message("Merci, votre question est bien partie. Réponse sous 24&nbsp;h ouvrées, à l'adresse indiquée.");
+      } catch (err) {
+        const corps = `Nom : ${d.get("nom")}
+E-mail : ${d.get("email")}
+Téléphone : ${d.get("telephone") || "—"}
+
+${d.get("message")}`;
+        const lien = "mailto:" + ADRESSE_CONTACT + "?subject=" + encodeURIComponent("Question sur la formation Trackia") + "&body=" + encodeURIComponent(corps);
+        message(`L'envoi n'a pas abouti. <a href="${lien}">Cliquez ici pour envoyer votre question par e-mail</a>, elle est déjà rédigée.`);
       }
-      formulaire.replaceChildren(merci);
     });
   }
 
