@@ -208,6 +208,8 @@ b,strong{font-weight:500}
   padding:clamp(24px,2.4vw,32px);
 }
 .bloc--gris .carte{background:var(--papier)}
+.icone{width:48px;height:48px;margin-bottom:20px}
+.panneau__onglet .icone{width:44px;height:44px;margin-bottom:14px}
 .carte h3{color:var(--bleu-titre);font-size:1.125rem;font-weight:500;line-height:1.3;letter-spacing:-.012em}
 .carte p{margin-top:10px;color:var(--gris);font-size:1rem;line-height:1.6}
 
@@ -226,19 +228,13 @@ b,strong{font-weight:500}
 }
 
 /* ── les cinq étapes ──────────────────────────────────────*/
-.etapes{counter-reset:pas;margin-top:clamp(40px,5vw,60px);max-width:820px;margin-inline:auto}
+.etapes{margin-top:clamp(40px,5vw,60px);max-width:820px;margin-inline:auto}
 .etape{
-  counter-increment:pas;position:relative;
-  padding:26px 0 26px 72px;border-bottom:1px solid var(--trait);
+  position:relative;
+  padding:28px 0 28px 76px;border-bottom:1px solid var(--trait);
 }
 .etape:first-child{border-top:1px solid var(--trait)}
-.etape::before{
-  content:counter(pas);position:absolute;left:0;top:26px;
-  width:34px;height:34px;border-radius:50%;
-  background:var(--bleu-pale);color:var(--bleu);
-  font-size:.9375rem;font-weight:500;
-  display:flex;align-items:center;justify-content:center;
-}
+.etape__icone{position:absolute;left:0;top:24px;width:48px;height:48px}
 .etape h3{font-size:1.1875rem;font-weight:500;letter-spacing:-.014em}
 .etape p{margin-top:8px;color:var(--gris);font-size:1rem;line-height:1.6;max-width:62ch}
 
@@ -271,6 +267,9 @@ b,strong{font-weight:500}
   width:13px;height:7px;border-left:2px solid var(--bleu);border-bottom:2px solid var(--bleu);
   transform:rotate(-45deg);
 }
+.acquis--icones li{padding:18px 0 18px 60px}
+.acquis--icones li::before{content:none}
+.acquis__icone{position:absolute;left:0;top:16px;width:40px;height:40px}
 
 /* ── image en vis-à-vis ───────────────────────────────────*/
 .duo{
