@@ -29,7 +29,7 @@ _headers                en-têtes de sécurité et de cache (lus par Cloudflare 
 4. **Remplacer le domaine.** Fait : le site est publié sur `https://trackia.fr` (GitHub Pages + fichier `CNAME`,
    DNS chez OVH : 4 entrées A vers 185.199.108–111.153, `www` en CNAME vers
    `remivinel-netizen.github.io.`). Pour changer encore de domaine plus tard,
-   Le jour où vous branchez votre domaine, remplacez-les aux quatre endroits suivants
+   remplacez-les aux endroits suivants
    — et nulle part ailleurs, les adresses e-mail `@trackia.fr` ne changent pas :
 
    | Fichier       | Ligne                                      |
