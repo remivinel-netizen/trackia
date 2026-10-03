@@ -35,7 +35,19 @@ const LIEN_PAIEMENT = "https://buy.stripe.com/fZu5kv54j3sH29V9g04ZG00";
       const merci = document.createElement("p");
       merci.className = "contact__merci";
       merci.setAttribute("role", "status");
-      merci.textContent = "Merci, votre question est bien partie. Réponse sous 24 h ouvrées, à l'adresse indiquée.";
+
+      // Secours : tant que le script Trackia (GTM) n'est pas installé, personne
+      // ne transmet la demande. On ouvre alors la messagerie du visiteur avec
+      // un e-mail prérempli, pour qu'aucune question ne soit perdue.
+      if (typeof window.trackiaApresConsentement !== "function") {
+        const d = new FormData(formulaire);
+        const corps = `Nom : ${d.get("nom")}\nE-mail : ${d.get("email")}\nTéléphone : ${d.get("telephone") || "—"}\n\n${d.get("message")}`;
+        window.location.href = "mailto:contact@trackia.fr?subject=" +
+          encodeURIComponent("Question sur la formation Trackia") + "&body=" + encodeURIComponent(corps);
+        merci.textContent = "Votre messagerie s'ouvre avec votre question déjà rédigée : il ne reste qu'à l'envoyer. Rien ne s'ouvre ? Écrivez-nous à contact@trackia.fr.";
+      } else {
+        merci.textContent = "Merci, votre question est bien partie. Réponse sous 24 h ouvrées, à l'adresse indiquée.";
+      }
       formulaire.replaceChildren(merci);
     });
   }
