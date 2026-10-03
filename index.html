@@ -282,24 +282,13 @@
           <p>L'extension Claude pour Chrome voit la page sur laquelle vous êtes. Perdu dans GTM ou dans Google Ads&nbsp;? Demandez-lui où cliquer. Un confort en plus des captures d'écran, jamais une obligation.</p>
         </div>
       </div>
-      <!-- maquette d'écran en HTML : aucune image à télécharger -->
-      <figure class="ecran anim" role="img" aria-label="Exemple : vous demandez à Claude un script qui capture le gclid et les UTM, Claude l'écrit, vous le copiez dans Google Tag Manager.">
-        <div class="ecran__barre" aria-hidden="true"><i></i><i></i><i></i><span>Claude</span></div>
-        <div class="ecran__corps" aria-hidden="true">
-          <p class="bulle bulle--vous">Écris un script pour Google Tag Manager qui récupère le gclid et les UTM dans l'adresse, les garde 90 jours, et les ajoute aux champs cachés de mon formulaire.</p>
-          <div class="bulle bulle--claude">
-            <p>Voici le script. Collez-le dans une balise <b>HTML personnalisée</b>, déclenchée sur toutes les pages :</p>
-<pre class="code"><code><span class="c-t">&lt;script&gt;</span>
-<span class="c-k">var</span> p = <span class="c-k">new</span> URLSearchParams(location.search);
-[<span class="c-s">'gclid'</span>, <span class="c-s">'utm_source'</span>, <span class="c-s">'utm_campaign'</span>]
-  .forEach(<span class="c-k">function</span> (k) {
-    <span class="c-k">if</span> (p.get(k)) document.cookie =
-      k + <span class="c-s">'='</span> + p.get(k) + <span class="c-s">';max-age=7776000;path=/'</span>;
-  });
-<span class="c-t">&lt;/script&gt;</span></code><span class="code__copier">Copier</span></pre>
-          </div>
-          <p class="ecran__ok">Script prêt à coller dans GTM</p>
-        </div>
+      <figure class="panneau__image anim">
+        <picture>
+          <source type="image/webp" sizes="(max-width:860px) 90vw, 46vw"
+                  srcset="assets/img/ecran-520.webp 520w, assets/img/ecran-760.webp 760w, assets/img/ecran-1040.webp 1040w">
+          <img src="assets/img/ecran.jpg" width="1040" height="780" loading="lazy" decoding="async"
+               alt="Un professionnel en chemise, concentré devant son ordinateur portable qui affiche un tableau de suivi.">
+        </picture>
       </figure>
     </div>
   </div>
