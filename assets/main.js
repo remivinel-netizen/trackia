@@ -11,6 +11,22 @@ const LIEN_PAIEMENT = "https://buy.stripe.com/fZu5kv54j3sH29V9g04ZG00";
 (() => {
   "use strict";
 
+  // Signaux envoyés à Google Tag Manager, qui les transmet à GA4
+  // (rien n'est mesuré avant que le visiteur accepte les cookies).
+  window.dataLayer = window.dataLayer || [];
+  const signaler = (donnees) => window.dataLayer.push(donnees);
+  const PRODUIT = { currency: "EUR", value: 397,
+    items: [{ item_id: "trackia", item_name: "Formation Trackia", price: 397, quantity: 1 }] };
+
+  // clic sur un bouton d'achat → begin_checkout, avec l'endroit du bouton
+  for (const el of document.querySelectorAll(".js-acheter")) {
+    el.addEventListener("click", () => {
+      const zone = el.closest("header, section");
+      signaler({ ecommerce: null });
+      signaler({ event: "clic_paiement", emplacement: zone ? (zone.id || zone.className.split(" ")[0]) : "page", ecommerce: PRODUIT });
+    });
+  }
+
   if (LIEN_PAIEMENT) {
     for (const el of document.querySelectorAll(".js-acheter")) {
       el.href = LIEN_PAIEMENT;
@@ -66,6 +82,7 @@ const LIEN_PAIEMENT = "https://buy.stripe.com/fZu5kv54j3sH29V9g04ZG00";
         const resultat = await reponse.json().catch(() => ({}));
         if (!reponse.ok || String(resultat.success) !== "true") throw new Error(resultat.message || "envoi refusé");
         message("Merci, votre question est bien partie. Réponse sous 24&nbsp;h ouvrées, à l'adresse indiquée.");
+        signaler({ event: "formulaire_envoye", formulaire: "contact" });
       } catch (err) {
         const corps = `Nom : ${d.get("nom")}
 E-mail : ${d.get("email")}
@@ -83,6 +100,7 @@ ${d.get("message")}`;
   for (const d of questions) {
     d.addEventListener("toggle", () => {
       if (!d.open) return;
+      signaler({ event: "faq_ouverte", question: d.querySelector("summary").textContent.trim() });
       for (const autre of questions) if (autre !== d) autre.open = false;
     });
   }
