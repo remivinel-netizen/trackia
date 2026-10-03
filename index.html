@@ -174,6 +174,11 @@
         <circle class="fil__point" style="--i:1" cx="420" cy="46"  r="7"/>
         <circle class="fil__point" style="--i:2" cx="700" cy="108" r="7"/>
         <circle class="fil__point fil__point--fin" style="--i:3" cx="980" cy="40" r="9"/>
+        <!-- point lumineux qui parcourt le fil en boucle -->
+        <circle class="fil__pulse" r="5" cx="0" cy="0">
+          <animateMotion dur="3.4s" begin="2.4s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .25 1"
+                         path="M140 108 C 250 108, 310 46, 420 46 S 590 108, 700 108 S 870 40, 980 40"/>
+        </circle>
       </svg>
       <figcaption class="fil__legende" id="fil-legende">
         <span><b>Le clic</b>Google Ads ajoute un gclid</span>
@@ -189,9 +194,9 @@
 <section class="chiffres" aria-label="Trackia en chiffres">
   <div class="zone">
     <ul class="chiffres__liste">
-      <li class="anim"><span class="chiffres__n">2&nbsp;h</span><p>pour tout installer, une seule fois</p></li>
+      <li class="anim"><span class="chiffres__n"><span data-compte="2">2</span>&nbsp;h</span><p>pour tout installer, une seule fois</p></li>
       <li class="anim"><span class="chiffres__n">0</span><p>ligne de code à écrire vous-même</p></li>
-      <li class="anim"><span class="chiffres__n">&lt;&nbsp;1&nbsp;min</span><p>pour recevoir chaque demande avec sa source</p></li>
+      <li class="anim"><span class="chiffres__n">&lt;&nbsp;<span data-compte="1">1</span>&nbsp;min</span><p>pour recevoir chaque demande avec sa source</p></li>
     </ul>
   </div>
 </section>
@@ -282,7 +287,7 @@
           <p>L'extension Claude pour Chrome agit directement dans votre navigateur : elle ouvre GTM, crée la balise, remplit les champs, clique sur Enregistrer. Vous lui donnez la consigne fournie dans le module, vous la regardez faire, vous validez. Vous préférez tout faire vous-même&nbsp;? Les captures d'écran sont là.</p>
         </div>
       </div>
-      <figure class="panneau__image anim">
+      <figure class="panneau__image anim anim--zoom">
         <picture>
           <source type="image/webp" sizes="(max-width:860px) 90vw, 46vw"
                   srcset="assets/img/claude-pro-520.webp 520w, assets/img/claude-pro-760.webp 760w, assets/img/claude-pro-1040.webp 1040w">
@@ -354,7 +359,7 @@
   <div class="zone">
     <h2 class="titre anim">Ce que vous gagnez</h2>
     <div class="duo">
-      <figure class="duo__image anim">
+      <figure class="duo__image anim anim--zoom">
         <picture>
           <source type="image/webp" sizes="(max-width:860px) 90vw, 46vw"
                   srcset="assets/img/resultat-520.webp 520w, assets/img/resultat-760.webp 760w, assets/img/resultat-1024.webp 1024w">
@@ -407,7 +412,7 @@
     <p class="chapo chapo--centre anim">C'est souvent moins que ce que vous dépensez en quelques semaines sur des mots-clés que vous ne pouvez pas mesurer. Et bien moins qu'une installation faite par une agence.</p>
 
     <div class="offre anim">
-      <p class="offre__prix"><span>397</span>€</p>
+      <p class="offre__prix"><span data-compte="397">397</span>€</p>
       <p class="offre__note">Accès immédiat, à vie, mises à jour comprises.</p>
       <ul class="offre__liste">
         <li>Les 7 modules en PDF, pas à pas</li>
