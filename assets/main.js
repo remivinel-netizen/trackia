@@ -83,15 +83,19 @@ const LIEN_PAIEMENT = "";
   const guetteur = new IntersectionObserver(
     (entrees) => {
       repond = true;
+      const lot = [];
+      let delaiMax = 0;
       for (const e of entrees) {
         if (!e.isIntersecting) continue;
         e.target.classList.add("vu");
         for (const c of e.target.querySelectorAll("[data-compte]")) compter(c);
-        // apparition finie : on passe aux effets de survol
-        const delai = parseInt(e.target.style.getPropertyValue("--d")) || 0;
-        setTimeout(() => e.target.classList.add("pose"), delai + 950);
+        delaiMax = Math.max(delaiMax, parseInt(e.target.style.getPropertyValue("--d")) || 0);
+        lot.push(e.target);
         guetteur.unobserve(e.target);
       }
+      // apparition finie : on passe aux effets de survol, en une seule
+      // fois pour tout le lot (un recalcul de styles au lieu d'un par élément)
+      if (lot.length) setTimeout(() => { for (const el of lot) el.classList.add("pose"); }, delaiMax + 950);
     },
     // marge en pixels et non en pourcentage : sur un très grand
     // écran, -8 % aurait exclu toute la fin de la page.
