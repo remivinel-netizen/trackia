@@ -2,6 +2,8 @@
    Trackia — feuille de style unique
    Fond clair, hero centré, une seule famille en deux graisses.
    Couleurs reprises du logo : #0d1a32 et #1874ed.
+   Titres alignés sur ripple.com : quasi-noir #141a1f, intertitres
+   et chiffres clés en bleu #005bcc, bande d'appel finale bleue.
    ═══════════════════════════════════════════════════════════ */
 
 @font-face{
@@ -48,6 +50,11 @@
   --bleu-fonce:#114fa6;
   --bleu-pale:#eaf2fe;
   --alerte:#d4452a;
+  --titre:#141a1f;
+  --bleu-titre:#005bcc;
+  --bleu-bande:#0146c7;
+  --bleu-ciel:#e7f3ff;
+  --degrade-chiffre:linear-gradient(313deg,#99d8ff 7.93%,#0067e5 87.3%);
 
   --zone:1120px;
   --marge:clamp(20px,5vw,40px);
@@ -63,6 +70,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,p,ul,ol,figure,figcaption,blockquote{margin:0}
+h1,h2,h3{color:var(--titre)}
 ul,ol{padding:0;list-style:none}
 a{color:inherit}
 img,svg{display:block;max-width:100%}
@@ -196,7 +204,7 @@ b,strong{font-weight:500}
   padding:clamp(24px,2.4vw,32px);
 }
 .bloc--gris .carte{background:var(--papier)}
-.carte h3{font-size:1.125rem;font-weight:500;line-height:1.3;letter-spacing:-.012em}
+.carte h3{color:var(--bleu-titre);font-size:1.125rem;font-weight:500;line-height:1.3;letter-spacing:-.012em}
 .carte p{margin-top:10px;color:var(--gris);font-size:1rem;line-height:1.6}
 
 /* ── bande photo ──────────────────────────────────────────*/
@@ -267,12 +275,37 @@ b,strong{font-weight:500}
 .duo__image img{width:100%;height:auto;border-radius:18px;display:block}
 .duo .acquis{margin-top:0;max-width:none}
 
-/* ── bandeau image ────────────────────────────────────────*/
-.bandeau{margin-top:clamp(32px,4vw,48px)}
-.bandeau img{
-  width:100%;height:clamp(200px,26vw,340px);
-  object-fit:cover;object-position:center 58%;border-radius:18px;
+/* ── chiffres clés (bande grise sous le hero) ─────────────*/
+.chiffres{background:var(--gris-fond);padding-block:clamp(48px,6vw,80px)}
+.chiffres__liste{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center}
+.chiffres__n{
+  display:block;margin-bottom:6px;
+  font-size:clamp(2.4rem,4.2vw,3.05rem);line-height:1.2;letter-spacing:-.02em;font-weight:500;
+  color:var(--bleu-titre);background:var(--degrade-chiffre);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
+.chiffres__liste p{color:var(--gris);font-size:.9375rem}
+
+/* ── profils : vignette photo + titre + texte ─────────────*/
+.profils{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(28px,3vw,40px);margin-top:clamp(40px,5vw,60px);
+}
+.profil img{width:112px;height:112px;border-radius:22px;object-fit:cover}
+.profil h3{margin-top:22px;font-size:1.125rem;font-weight:500;line-height:1.3;letter-spacing:-.012em}
+.profil p{margin-top:10px;color:var(--gris);font-size:1rem;line-height:1.6}
+
+/* ── panneau bleu clair + grande photo ────────────────────*/
+.panneau{
+  display:grid;grid-template-columns:1fr 1fr;align-items:center;
+  gap:clamp(28px,4vw,60px);margin-top:clamp(40px,5vw,60px);
+}
+.panneau__onglets{border-top:1px solid var(--trait)}
+.panneau__onglet{padding:26px 24px;border-bottom:2px solid var(--bleu-ciel)}
+.panneau__onglet:first-child{background:var(--bleu-ciel);border-bottom-color:var(--bleu-titre)}
+.panneau__onglet h3{color:var(--bleu-titre);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;letter-spacing:-.015em}
+.panneau__onglet p{margin-top:12px;color:var(--gris);font-size:1rem;line-height:1.6}
+.panneau__image img{width:100%;height:auto;border-radius:18px;display:block}
 
 /* ── pour qui ─────────────────────────────────────────────*/
 .colonnes{
@@ -280,8 +313,8 @@ b,strong{font-weight:500}
   margin-top:clamp(40px,5vw,56px);max-width:900px;margin-inline:auto;
 }
 .colonne__titre{
-  font-size:1.0625rem;font-weight:500;color:var(--bleu);
-  padding-bottom:14px;border-bottom:2px solid var(--bleu);
+  font-size:1.0625rem;font-weight:500;color:var(--bleu-titre);
+  padding-bottom:14px;border-bottom:2px solid var(--bleu-titre);
 }
 .colonne--non .colonne__titre{color:var(--gris-pale);border-bottom-color:var(--trait)}
 .coches{margin-top:18px}
@@ -345,16 +378,15 @@ b,strong{font-weight:500}
 
 /* ── CTA final ────────────────────────────────────────────*/
 .final{
-  background:var(--encre) url("img/final.jpg") no-repeat center bottom / cover;
-  background-image:image-set(url("img/final.webp") type("image/webp"),
-                             url("img/final.jpg")  type("image/jpeg"));
+  background:var(--bleu-bande);
   color:#fff;padding-block:var(--respire);text-align:center;
 }
 .final__titre{
+  color:#fff;
   font-size:clamp(1.8rem,3.6vw,2.9rem);line-height:1.12;letter-spacing:-.02em;
   font-weight:500;margin-inline:auto;max-width:22ch;text-wrap:balance;
 }
-.final__texte{margin:20px auto 0;max-width:52ch;color:#b7c2d6;line-height:1.55}
+.final__texte{margin:20px auto 0;max-width:52ch;color:#cfe0ff;line-height:1.55}
 .final .bouton{margin-top:30px}
 
 /* ── pied de page ─────────────────────────────────────────*/
@@ -385,6 +417,7 @@ b,strong{font-weight:500}
 /* ── adaptation ───────────────────────────────────────────*/
 @media (max-width:1000px){
   .cartes{grid-template-columns:1fr;max-width:620px;margin-inline:auto}
+  .profils{grid-template-columns:repeat(2,1fr)}
   .fil__legende{grid-template-columns:repeat(2,1fr);gap:22px 24px}
   .fil__legende span{text-align:left;position:relative;padding-left:20px}
   .fil__legende span::before{
@@ -401,11 +434,15 @@ b,strong{font-weight:500}
   .logo{margin-right:auto}
   .colonnes{grid-template-columns:1fr;gap:34px}
   .duo{grid-template-columns:1fr;gap:28px}
+  .panneau{grid-template-columns:1fr;gap:28px}
 }
 @media (max-width:620px){
   body{font-size:16px}
   .hero__actions .bouton{width:100%}
   .fil__legende{grid-template-columns:1fr}
+  .chiffres__liste{grid-template-columns:1fr;gap:24px}
+  .profils{grid-template-columns:1fr}
+  .profil img{width:88px;height:88px;border-radius:18px}
   .module{grid-template-columns:1fr;gap:0}
   .module__n{padding:0 0 6px}
   .photo__img{object-position:center 58%}

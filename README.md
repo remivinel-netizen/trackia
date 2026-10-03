@@ -65,6 +65,14 @@ Puis ouvrir http://localhost:4321
 
 Le fichier `_headers` est pris en compte automatiquement par Cloudflare Pages.
 
+## Photos
+
+Les photos de personnes (`assets/img/pq-*`, `dirigeante*`, `resultat*`) viennent
+d'Unsplash, licence gratuite avec usage commercial autorisé et sans attribution
+obligatoire. Identifiants Unsplash : artisan `lQIUbkn6jj4`, commerce `0e2eYxBiP6A`,
+cabinet `5RQnUp_-5OU`, PME `UikYLDQj9_I`, dirigeante `J-IBERCeDTY`,
+résultat `s3hlZ-gdfdQ` (page : `https://unsplash.com/photos/<identifiant>`).
+
 ## Logo
 
 Le logo est le radar 3a (cercle ouvert, faisceau, cible détectée). L'en-tête des quatre
