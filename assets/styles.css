@@ -40,12 +40,12 @@
 :root{
   --encre:#0d1a32;
   --gris:#5a6477;
-  --gris-pale:#8a93a5;
+  --gris-pale:#6e7789;
   --papier:#ffffff;
   --gris-fond:#f5f7fa;
   --trait:#e3e7ee;
-  --bleu:#1874ed;
-  --bleu-fonce:#125ec4;
+  --bleu:#1565d2;
+  --bleu-fonce:#114fa6;
   --bleu-pale:#eaf2fe;
   --alerte:#d4452a;
 
@@ -367,7 +367,7 @@ b,strong{font-weight:500}
 .pied__liens a:hover{color:#fff}
 .pied__bas{
   margin-top:clamp(36px,4vw,52px);padding-block:22px;
-  border-top:1px solid rgba(255,255,255,.1);font-size:.875rem;color:#6d7a90;
+  border-top:1px solid rgba(255,255,255,.1);font-size:.875rem;color:#7b8699;
 }
 
 /* ── pages annexes ────────────────────────────────────────*/
