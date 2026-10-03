@@ -1,13 +1,13 @@
 # Trackia — landing page
 
-Page de vente de la formation Trackia (297 €). Site statique : aucun build, aucune
+Page de vente de la formation Trackia (397 €). Site statique : aucun build, aucune
 dépendance, aucun framework. Trois fichiers portent tout le site.
 
 ```
 index.html              la page de vente
 assets/styles.css       toute la mise en forme
 assets/main.js          le lien de paiement + les détails d'interface
-assets/og.png           l'image de partage (réseaux sociaux, messageries)
+assets/og-397.png           l'image de partage (réseaux sociaux, messageries)
 assets/brand/           le kit logo (piste 3a radar) : SVG, PNG, icônes
 favicon.ico, apple-touch-icon.png, site.webmanifest   icônes d'onglet et d'écran d'accueil
 mentions-legales.html   modèles à compléter avant mise en ligne
