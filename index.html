@@ -27,7 +27,8 @@
 
 <link rel="preload" href="assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/onest-500-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202610031352">
+<link rel="stylesheet" href="assets/styles.css?v=202610031419">
+<script src="assets/consentement.js?v=202610031419"></script>
 <script>document.documentElement.className+=" js"</script>
 
 <script type="application/ld+json">
@@ -483,6 +484,26 @@
   </div>
 </section>
 
+<!-- ═══ CONTACT ════════════════════════════════════════════
+     Le formulaire n'envoie rien lui-même : c'est le script Trackia,
+     posé via Google Tag Manager, qui transmet la demande à Make. -->
+<section class="bloc bloc--gris" id="contact">
+  <div class="zone zone--etroite">
+    <h2 class="titre titre--centre anim">Une question avant de vous lancer&nbsp;?</h2>
+    <p class="chapo chapo--centre anim">Votre site, votre formulaire, votre cas particulier : posez votre question, réponse sous 24&nbsp;h ouvrées.</p>
+    <form class="contact anim" id="formulaire-contact">
+      <div class="contact__champ"><label for="c-nom">Nom</label><input id="c-nom" name="nom" autocomplete="name" required></div>
+      <div class="contact__champ"><label for="c-email">E-mail</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="contact__champ contact__champ--large"><label for="c-tel">Téléphone <span>(facultatif)</span></label><input id="c-tel" name="telephone" type="tel" autocomplete="tel"></div>
+      <div class="contact__champ contact__champ--large"><label for="c-message">Votre question</label><textarea id="c-message" name="message" required></textarea></div>
+      <div class="contact__bas">
+        <button class="bouton" type="submit">Envoyer ma question</button>
+        <p class="contact__note">Vos coordonnées servent uniquement à vous répondre. <a href="confidentialite.html">Confidentialité</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <!-- ═══ CTA FINAL ══════════════════════════════════════════ -->
@@ -505,11 +526,12 @@
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="cgv.html">CGV</a>
       <a href="confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
     </nav>
   </div>
   <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
 </footer>
 
-<script src="assets/main.js?v=202610031352" defer></script>
+<script src="assets/main.js?v=202610031419" defer></script>
 </body>
 </html>

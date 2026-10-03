@@ -26,6 +26,20 @@ const LIEN_PAIEMENT = "https://buy.stripe.com/fZu5kv54j3sH29V9g04ZG00";
     addEventListener("scroll", marquer, { passive: true });
   }
 
+  // formulaire de contact : la page ne se recharge pas. L'envoi vers Make
+  // est fait par le script Trackia (GTM), qui écoute l'envoi avant ce code.
+  const formulaire = document.getElementById("formulaire-contact");
+  if (formulaire) {
+    formulaire.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const merci = document.createElement("p");
+      merci.className = "contact__merci";
+      merci.setAttribute("role", "status");
+      merci.textContent = "Merci, votre question est bien partie. Réponse sous 24 h ouvrées, à l'adresse indiquée.";
+      formulaire.replaceChildren(merci);
+    });
+  }
+
   // une seule question ouverte à la fois
   const questions = document.querySelectorAll(".faq details");
   for (const d of questions) {
