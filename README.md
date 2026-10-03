@@ -23,9 +23,7 @@ _headers                en-têtes de sécurité et de cache (lus par Cloudflare 
    est vide, les boutons descendent simplement jusqu'à la section Prix.
 2. **Pages légales.** Mentions légales, CGV et confidentialité sont remplies (EI Rémi Vinel,
    SIREN 902 709 807, franchise de TVA, paiement Stripe, vente réservée aux professionnels).
-3. **Arbitrer la garantie 14 jours.** Elle apparaît sous le bouton d'achat dans
-   `index.html` (bloc `price__guarantee`, signalé par un commentaire) et à l'article 5
-   des CGV. Supprimez les deux si vous ne voulez pas vous y engager.
+3. **Garantie.** Aucune garantie de remboursement n'est proposée (retirée de la page et des CGV).
 4. **Remplacer le domaine.** Fait : le site est publié sur `https://trackia.fr` (GitHub Pages + fichier `CNAME`,
    DNS chez OVH : 4 entrées A vers 185.199.108–111.153, `www` en CNAME vers
    `remivinel-netizen.github.io.`). Pour changer encore de domaine plus tard,
