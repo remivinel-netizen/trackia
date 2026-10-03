@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /merci.html
 
-Sitemap: https://remivinel-netizen.github.io/trackia/sitemap.xml
+Sitemap: https://trackia.fr/sitemap.xml
