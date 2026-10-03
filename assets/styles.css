@@ -528,8 +528,7 @@ b,strong{font-weight:500}
 }
 @media (max-width:430px){
   :root{--marge:16px}
-  .bouton__long{display:none}
-  .bouton__court{display:inline}
+  .entete .js-acheter{display:none}  /* sur mobile : logo seul dans l'en-tête */
   .entete__in{height:64px}
 }
 
