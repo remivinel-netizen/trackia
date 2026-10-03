@@ -532,3 +532,16 @@ b,strong{font-weight:500}
   .bouton__court{display:inline}
   .entete__in{height:64px}
 }
+
+/* ── page de remerciement ─────────────────────────────────*/
+.merci__icone{width:64px;height:64px;margin-bottom:22px}
+.merci__chapo{font-size:1.125rem;color:var(--gris);max-width:56ch}
+.merci__etapes{counter-reset:etape;margin-top:32px}
+.doc .merci__etapes li{counter-increment:etape;padding:0 0 0 46px;margin-top:18px;position:relative}
+.doc .merci__etapes li::before{
+  content:counter(etape);top:0;left:0;width:30px;height:30px;border-radius:50%;
+  background:var(--bleu-ciel);color:var(--bleu-titre);font-weight:500;font-size:.9375rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.doc .merci__etapes b{color:var(--titre)}
+.merci .pied__bas{margin-top:0}
