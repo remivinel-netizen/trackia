@@ -95,6 +95,31 @@ ${d.get("message")}`;
     });
   }
 
+  // vidéo de démonstration : chargée seulement quand elle arrive à l'écran,
+  // lue sans le son et en boucle, mise en pause quand elle sort de l'écran.
+  // Si le visiteur demande moins d'animations : pas de lecture automatique.
+  const video = document.querySelector(".demo__video");
+  if (video) {
+    const calme = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const charger = () => {
+      if (video.dataset.charge) return;
+      for (const s of video.querySelectorAll("source[data-src]")) s.src = s.dataset.src;
+      video.load();
+      video.dataset.charge = "1";
+    };
+    if (calme || !("IntersectionObserver" in window)) {
+      video.controls = true;
+      charger();
+    } else {
+      new IntersectionObserver((entrees) => {
+        for (const e of entrees) {
+          if (e.isIntersecting) { charger(); video.play().catch(() => { video.controls = true; }); }
+          else if (!video.paused) video.pause();
+        }
+      }, { threshold: 0.4 }).observe(video);
+    }
+  }
+
   // une seule question ouverte à la fois
   const questions = document.querySelectorAll(".faq details");
   for (const d of questions) {

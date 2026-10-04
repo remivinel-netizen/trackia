@@ -27,7 +27,7 @@
 
 <link rel="preload" href="assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/onest-500-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/styles.css?v=202610032045">
+<link rel="stylesheet" href="assets/styles.css?v=202610040912">
 <script src="assets/consentement.js?v=202610031419"></script>
 <!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -161,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
     <div class="hero__actions entree" style="--d:300ms">
       <a class="bouton js-acheter" href="#prix">Je reprends le contrôle — 397&nbsp;€</a>
-      <a class="bouton bouton--clair" href="#programme">Voir les modules</a>
+      <a class="bouton bouton--clair" href="#demo">▶&nbsp; Voir la démo (20&nbsp;s)</a>
     </div>
     <ul class="hero__points entree" style="--d:400ms">
       <li>2 heures, une seule fois</li>
@@ -277,6 +277,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </picture>
       </figure>
     </div>
+
+    <!-- Démo réelle enregistrée par Claude dans Chrome. La vidéo ne se charge
+         que lorsqu'elle arrive à l'écran (voir main.js). -->
+    <figure class="demo anim" id="demo">
+      <h3 class="demo__titre">Regardez Claude vérifier le suivi de trackia.fr, tout seul</h3>
+      <video class="demo__video" muted loop playsinline preload="none" width="1280" height="660"
+             poster="assets/video/demo-claude-v1.jpg"
+             aria-label="Démonstration : Claude dans Chrome connecte Tag Assistant à trackia.fr, ouvre une question de la FAQ, clique sur le bouton d'achat, puis vérifie que chaque événement est bien envoyé à Google Analytics.">
+        <source data-src="assets/video/demo-claude-v1.webm" type="video/webm">
+        <source data-src="assets/video/demo-claude-v1.mp4" type="video/mp4">
+      </video>
+      <figcaption>Enregistrement réel, sans montage. Claude ouvre le site, clique comme un visiteur, puis contrôle dans Tag Assistant que chaque action remonte bien à Google Analytics (statut « Réussite »).</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -511,6 +524,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
 </footer>
 
-<script src="assets/main.js?v=202610031506" defer></script>
+<script src="assets/main.js?v=202610040912" defer></script>
 </body>
 </html>
