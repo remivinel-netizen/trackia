@@ -267,7 +267,7 @@ b,strong{font-weight:500}
 }
 .panneau__onglets{border-top:1px solid var(--trait)}
 .panneau__onglet{padding:26px 24px;border-bottom:2px solid var(--bleu-ciel)}
-.panneau__onglet:first-child{background:var(--bleu-ciel);border-bottom-color:var(--bleu-titre)}
+.panneau__onglet:first-of-type{background:var(--bleu-ciel);border-bottom-color:var(--bleu-titre)}
 .panneau__onglet h3{color:var(--bleu-titre);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500;letter-spacing:-.015em}
 .panneau__onglet p{margin-top:12px;color:var(--gris);font-size:1rem;line-height:1.6}
 .panneau__image img{width:100%;height:auto;border-radius:18px;display:block}
@@ -549,3 +549,9 @@ b,strong{font-weight:500}
   box-shadow:0 1px 2px rgba(13,26,50,.04),0 24px 48px -20px rgba(13,26,50,.22);
 }
 .demo figcaption{margin:16px auto 0;max-width:66ch;text-align:center;font-size:.9375rem;line-height:1.55;color:var(--gris)}
+
+/* ── mention Claude (bloc « Vous avez Claude ») ─────────*/
+.avec-claude{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:.9375rem;color:var(--gris)}
+.avec-claude img{width:28px;height:28px;flex:none}
+.avec-claude b{color:var(--titre);font-weight:500}
+.marque-note{margin-top:14px;font-size:.75rem;line-height:1.5;color:var(--gris-pale)}
