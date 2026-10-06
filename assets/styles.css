@@ -559,7 +559,7 @@ b,strong{font-weight:500}
 
 /* ── logos clients (avant le prix) ───────────────────────*/
 .clients{padding-block:clamp(56px,7vw,96px);border-top:1px solid var(--trait)}
-.clients__titre{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;letter-spacing:-.02em;font-weight:400;color:var(--bleu-titre)}
+.clients__titre{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;letter-spacing:-.02em;font-weight:400;color:var(--titre)}
 .clients__logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:36px clamp(48px,8vw,120px);margin-top:clamp(36px,4vw,52px)}
 .clients__logos img{width:auto;transition:transform .25s ease}
 .clients__logos li:hover img{transform:scale(1.04)}
