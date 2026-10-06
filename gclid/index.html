@@ -19,7 +19,7 @@
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=202610062240">
+<link rel="stylesheet" href="/assets/styles.css?v=202610070015">
 <script src="/assets/consentement.js?v=202610031419"></script>
 <!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -136,6 +136,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <p>Conclusion pratique : par défaut, le gclid se perd presque toujours. Le conserver demande un petit dispositif, posé une fois.</p>
 
+<figure class="art-img"><picture><source type="image/webp" srcset="/assets/guides/taggage-automatique-google-ads.webp"><img src="/assets/guides/taggage-automatique-google-ads.png" alt="L'écran Paramètres du compte de Google Ads, avec la case du taggage automatique cochée" width="1000" height="418" loading="lazy" decoding="async"></picture><figcaption>Le réglage qui crée le gclid : dans Google Ads, Admin puis Paramètres du compte, la case « taggage automatique » doit être cochée.</figcaption></figure>
+
 <h2>Le récupérer dans un formulaire</h2>
 
 <p>Le principe tient en trois mouvements, et il est le même sur tous les sites :</p>
@@ -145,6 +147,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>Quand le visiteur ouvre le formulaire, le script glisse le gclid dans un champ caché, invisible pour lui.</li>
   <li>À l'envoi, la demande part avec le nom, le téléphone, le message, et le gclid. Chaque demande arrive chez vous avec le numéro du clic qui l'a produite.</li>
 </ol>
+
+<figure class="art-img"><picture><source type="image/webp" srcset="/assets/guides/gclid-conserve-navigateur.webp"><img src="/assets/guides/gclid-conserve-navigateur.png" alt="Les outils du navigateur montrent le gclid de test conservé dans le stockage local du site" width="1200" height="370" loading="lazy" decoding="async"></picture><figcaption>La preuve que ça marche : dans les outils du navigateur (touche F12), le gclid de test est conservé avec sa source et sa campagne, même après un changement de page.</figcaption></figure>
 
 <p>Ce script se pose dans Google Tag Manager, sans toucher au site. Vous n'avez pas besoin de savoir l'écrire : il peut être fourni, ou rédigé par un assistant IA à partir d'une consigne précise.</p>
 

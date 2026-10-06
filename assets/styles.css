@@ -622,3 +622,15 @@ b,strong{font-weight:500}
 .guides{padding-block:clamp(32px,4vw,48px);background:var(--papier);border-top:1px solid var(--trait)}
 .guides__texte{text-align:center;color:var(--gris);font-size:1rem;line-height:1.6;max-width:62ch;margin-inline:auto}
 .guides__texte a{color:var(--bleu-titre);font-weight:500}
+
+/* ── images des articles (guides) ─────────────────────────*/
+.art-img{margin:24px 0 8px;max-width:100%}
+.art-img img{width:100%;height:auto;border:1px solid var(--trait);border-radius:12px;box-shadow:0 6px 18px -12px rgba(13,26,50,.2)}
+.art-img figcaption{margin-top:8px;font-size:.875rem;line-height:1.5;color:var(--gris-pale)}
+
+/* Articles : confort mobile (boutons, tableaux, chaines longues) */
+.doc b,.doc code{overflow-wrap:anywhere}
+@media (max-width:640px){
+  .doc .bouton{white-space:normal;text-align:center}
+  .tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
