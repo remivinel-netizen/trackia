@@ -559,7 +559,7 @@ b,strong{font-weight:500}
 
 /* ── logos clients (avant le prix) : cartes ─────────────*/
 .clients{padding-block:clamp(64px,8vw,104px);background:var(--gris-fond);border-bottom:1px solid var(--trait)}
-.clients__titre{text-align:center;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.2;letter-spacing:-.02em;font-weight:400;color:var(--titre)}
+.clients__titre{text-align:center;font-size:clamp(1.85rem,3.4vw,2.85rem);line-height:1.16;letter-spacing:-.02em;font-weight:400;color:var(--titre)}
 .clients__sous{margin:12px auto 0;max-width:52ch;text-align:center;color:var(--gris);font-size:1.0625rem}
 .clients__logos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);max-width:960px;margin:clamp(36px,4vw,52px) auto 0}
 .clients__logos li{
