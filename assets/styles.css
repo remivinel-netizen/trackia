@@ -634,3 +634,13 @@ b,strong{font-weight:500}
   .doc .bouton{white-space:normal;text-align:center}
   .tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
 }
+
+/* Fondateur (accueil) */
+.fondateur{padding:8px 0 64px}
+.fondateur__carte{display:flex;gap:28px;align-items:center;background:var(--gris-fond);border:1px solid var(--trait);border-radius:16px;padding:28px 32px}
+.fondateur__carte img{width:116px;height:116px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #fff;box-shadow:0 8px 20px -12px rgba(13,26,50,.4)}
+.fondateur__nom{font-weight:600;color:var(--titre);font-size:1.125rem;margin:0 0 6px}
+.fondateur__texte{color:var(--gris);margin:0;line-height:1.65}
+@media (max-width:640px){.fondateur__carte{flex-direction:column;text-align:center;padding:24px 20px;gap:16px}}
+
+.fondateur__carte picture{flex-shrink:0;line-height:0}
