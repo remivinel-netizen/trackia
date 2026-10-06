@@ -635,21 +635,36 @@ b,strong{font-weight:500}
   .tbl{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
 }
 
-/* Fondateur (accueil) : panneau bleu nuit, esprit ripple */
-.fondateur{padding:8px 0 72px}
-.fondateur__carte{display:flex;align-items:center;gap:52px;background:var(--encre);border-radius:24px;padding:56px 64px;position:relative;overflow:hidden}
-.fondateur__carte::before{content:"";position:absolute;right:-140px;bottom:-180px;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,103,229,.5),transparent 72%);pointer-events:none}
-.fondateur__carte::after{content:"";position:absolute;left:-120px;top:-160px;width:320px;height:320px;border-radius:50%;background:radial-gradient(closest-side,rgba(153,216,255,.16),transparent 72%);pointer-events:none}
-.fondateur__carte img{width:208px;height:208px;border-radius:20px;object-fit:cover;position:relative;box-shadow:0 18px 40px -18px rgba(0,0,0,.55)}
+/* Fondateur (accueil) : panneau doux, halos animés, apparition orchestrée */
+.fondateur{padding:clamp(56px,7vw,88px) 0}
+.fondateur__carte{display:flex;align-items:center;gap:52px;position:relative;overflow:hidden;border-radius:28px;padding:clamp(40px,5vw,64px);background:linear-gradient(135deg,#f9fbff 0%,#eef5ff 55%,#e8f1ff 100%);border:1px solid rgba(21,101,210,.13)}
+.fondateur__carte::before{content:"";position:absolute;width:440px;height:440px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,103,229,.13),transparent 70%);animation:fond-derive 16s ease-in-out infinite alternate;pointer-events:none}
+.fondateur__carte::after{content:"";position:absolute;width:380px;height:380px;left:-140px;bottom:-190px;border-radius:50%;background:radial-gradient(closest-side,rgba(153,216,255,.4),transparent 70%);animation:fond-derive 21s ease-in-out infinite alternate-reverse;pointer-events:none}
+@keyframes fond-derive{from{transform:translate(0,0) scale(1)}to{transform:translate(36px,28px) scale(1.14)}}
+.fondateur__lueur{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(closest-side,rgba(21,101,210,.12),transparent 70%);top:0;left:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.fondateur__carte:hover .fondateur__lueur{opacity:1}
+.fondateur__carte img{width:200px;height:200px;border-radius:24px;object-fit:cover;position:relative;box-shadow:0 0 0 6px #fff,0 28px 48px -28px rgba(21,101,210,.5);animation:fond-flotte 7s ease-in-out infinite}
+@keyframes fond-flotte{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .fondateur__texte{position:relative}
-.fondateur__sur{color:#8fc1ff;font-size:.8125rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
-.fondateur__nom{color:#fff;font-size:1.75rem;font-weight:600;letter-spacing:-.01em;line-height:1.2;margin:0 0 14px}
-.fondateur__bio{color:#b9c6dd;font-size:1.0625rem;line-height:1.7;margin:0;max-width:56ch}
+.fondateur__sur{color:var(--bleu);font-size:.8125rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}
+.fondateur__nom{color:var(--titre);font-size:1.75rem;font-weight:600;letter-spacing:-.01em;line-height:1.2;margin:0 0 14px}
+.fondateur__bio{color:var(--gris);font-size:1.0625rem;line-height:1.75;margin:0;max-width:56ch}
+/* apparition en cascade, pilotée par l'observateur existant (.anim → .vu) */
+.js .fondateur__carte picture{opacity:0;transform:scale(.94);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.js .fondateur__carte .fondateur__sur,.js .fondateur__carte .fondateur__nom,.js .fondateur__carte .fondateur__bio{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+.js .fondateur__carte.vu picture{opacity:1;transform:none}
+.js .fondateur__carte.vu .fondateur__sur{opacity:1;transform:none;transition-delay:.15s}
+.js .fondateur__carte.vu .fondateur__nom{opacity:1;transform:none;transition-delay:.3s}
+.js .fondateur__carte.vu .fondateur__bio{opacity:1;transform:none;transition-delay:.45s}
 @media (max-width:760px){
-  .fondateur__carte{flex-direction:column;text-align:center;gap:24px;padding:40px 24px}
-  .fondateur__carte img{width:148px;height:148px;border-radius:18px}
+  .fondateur__carte{flex-direction:column;text-align:center;gap:26px;padding:40px 22px}
+  .fondateur__carte img{width:150px;height:150px}
   .fondateur__nom{font-size:1.375rem}
   .fondateur__bio{font-size:1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .fondateur__carte::before,.fondateur__carte::after,.fondateur__carte img{animation:none}
+  .js .fondateur__carte picture,.js .fondateur__carte .fondateur__sur,.js .fondateur__carte .fondateur__nom,.js .fondateur__carte .fondateur__bio{opacity:1;transform:none;transition:none}
 }
 
 .fondateur__carte picture{flex-shrink:0;line-height:0}

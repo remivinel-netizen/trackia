@@ -203,3 +203,35 @@ ${d.get("message")}`;
   // navigateur exotique — rien ne doit rester invisible.
   setTimeout(() => { if (!repond) montrerTout(); }, 1200);
 })();
+
+
+/* ── carte fondateur : lueur qui suit la souris ──────────────
+   Interpolation douce via requestAnimationFrame. Désactivée
+   sans souris ou si le visiteur limite les animations.       */
+(() => {
+  const carte = document.querySelector(".fondateur__carte");
+  if (!carte) return;
+  if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  if (!matchMedia("(hover:hover)").matches) return;
+  const lueur = carte.querySelector(".fondateur__lueur");
+  if (!lueur) return;
+  let cx = 0, cy = 0, x = 0, y = 0, actif = false, anime = false;
+  const boucle = () => {
+    x += (cx - x) * 0.12;
+    y += (cy - y) * 0.12;
+    lueur.style.transform = `translate(${x - 140}px, ${y - 140}px)`;
+    if (actif || Math.abs(cx - x) > 0.5 || Math.abs(cy - y) > 0.5) {
+      requestAnimationFrame(boucle);
+    } else {
+      anime = false;
+    }
+  };
+  carte.addEventListener("pointerenter", () => { actif = true; });
+  carte.addEventListener("pointerleave", () => { actif = false; });
+  carte.addEventListener("pointermove", (e) => {
+    const r = carte.getBoundingClientRect();
+    cx = e.clientX - r.left;
+    cy = e.clientY - r.top;
+    if (!anime) { anime = true; requestAnimationFrame(boucle); }
+  });
+})();
