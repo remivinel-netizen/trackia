@@ -556,3 +556,18 @@ b,strong{font-weight:500}
 .avec-claude img{width:28px;height:28px;flex:none}
 .avec-claude b{color:var(--titre);font-weight:500}
 .marque-note{margin-top:14px;font-size:.75rem;line-height:1.5;color:var(--gris-pale)}
+
+/* ── logos clients (avant le prix) ───────────────────────*/
+.clients{padding-block:clamp(40px,5vw,64px);border-top:1px solid var(--trait)}
+.clients__titre{text-align:center;font-size:.875rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gris-pale)}
+.clients__logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px clamp(40px,7vw,96px);margin-top:28px}
+.clients__logos img{width:auto;filter:grayscale(1) contrast(1.15);opacity:.85;transition:filter .25s ease,opacity .25s ease}
+.clients__logos li:nth-child(1) img{height:64px}
+.clients__logos li:nth-child(2) img{height:44px}
+.clients__logos li:nth-child(3) img{height:100px}
+.clients__logos li:hover img{filter:none;opacity:1}
+@media (max-width:620px){
+  .clients__logos li:nth-child(1) img{height:44px}
+  .clients__logos li:nth-child(2) img{height:30px}
+  .clients__logos li:nth-child(3) img{height:60px}
+}
