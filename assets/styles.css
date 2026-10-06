@@ -665,3 +665,11 @@ b,strong{font-weight:500}
 }
 
 .fondateur__carte picture{flex-shrink:0;line-height:0}
+
+
+/* ── appel au milieu de page (après les modules) ─────────*/
+.appel{padding:0 0 clamp(56px,7vw,80px)}
+.appel__bande{text-align:center;background:linear-gradient(135deg,#f9fbff 0%,#eef5ff 55%,#e8f1ff 100%);border:1px solid rgba(21,101,210,.13);border-radius:20px;padding:44px 28px}
+.appel__titre{font-size:clamp(1.25rem,2.2vw,1.5rem);color:var(--titre);font-weight:500;letter-spacing:-.01em;margin:0 0 22px}
+.appel__note{margin:14px 0 0;font-size:.875rem;color:var(--gris-pale)}
+@media (max-width:640px){.appel__bande{padding:32px 20px}}
