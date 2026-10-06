@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gclid : c'est quoi, où le trouver, pourquoi il disparaît</title>
+<meta name="description" content="Le gclid relie un clic Google Ads à un devis signé. Ce qu'il contient, où le trouver, pourquoi il disparaît et comment l'utiliser pour vos conversions.">
+<link rel="canonical" href="https://trackia.fr/gclid/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/gclid/">
+<meta property="og:title" content="Gclid : c'est quoi, où le trouver, pourquoi il disparaît">
+<meta property="og:description" content="Le gclid relie un clic Google Ads à un devis signé. Ce qu'il contient, où le trouver, pourquoi il disparaît et comment l'utiliser pour vos conversions.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610062240">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/gclid/#article",
+      "headline": "Le gclid : c'est quoi, où le trouver et pourquoi il disparaît",
+      "description": "Le gclid relie un clic Google Ads à un devis signé. Ce qu'il contient, où le trouver, pourquoi il disparaît et comment l'utiliser pour vos conversions.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/gclid/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Formation Google Tag Manager", "item": "https://trackia.fr/formation-google-tag-manager/" },
+        { "@type": "ListItem", "position": 3, "name": "Le gclid", "item": "https://trackia.fr/gclid/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le gclid pose-t-il un problème de RGPD ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Le gclid est lié aux cookies publicitaires de Google. Sa collecte passe donc par le consentement du visiteur : si votre site a un bandeau cookies branché sur le mode consentement de Google, le gclid n'est conservé qu'après un accord. Mentionnez aussi cette collecte dans votre politique de confidentialité. Pour vos obligations exactes, appuyez-vous sur les recommandations de la CNIL." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps Google accepte-t-il une conversion liée à un gclid ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Ads accepte une conversion importée jusqu'à 90 jours après le clic. C'est largement suffisant pour un devis : si vous signez 3 semaines après la demande, la remontée fonctionne. Au-delà de 90 jours, le clic est trop ancien et la conversion est refusée." }
+        },
+        {
+          "@type": "Question",
+          "name": "Et si le client appelle au lieu de remplir le formulaire ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Le gclid vit dans le navigateur du visiteur : un appel téléphonique ne le transporte pas. Pour les appels, Google Ads propose un suivi dédié avec un numéro de transfert. Beaucoup de TPE font les deux : le gclid pour les demandes par formulaire, le suivi des appels pour le téléphone." }
+        },
+        {
+          "@type": "Question",
+          "name": "Je vois gbraid ou wbraid au lieu de gclid. C'est normal ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Sur iPhone et iPad, quand le suivi publicitaire est restreint, Google remplace le gclid par un identifiant voisin nommé gbraid ou wbraid. Un bon suivi conserve les trois de la même façon. Si votre script ne garde que le gclid, une partie de vos clics mobiles n'est pas reliée." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/formation-google-tag-manager/">Formation Google Tag Manager</a><span>›</span>Le gclid
+</nav>
+
+<h1>Le gclid : c'est quoi, où le trouver et pourquoi il disparaît</h1>
+
+<p class="reponse">Le gclid (Google Click Identifier) est le numéro unique que Google Ads ajoute à l'adresse de votre site à chaque clic sur une annonce. Il identifie ce clic précis : l'annonce, le mot-clé, le moment. Bien conservé, il permet de dire à Google, des semaines plus tard, que ce clic a donné un devis signé, et pour quel montant.</p>
+
+<h2>Le gclid en une phrase, avec un exemple</h2>
+
+<p>Quand quelqu'un clique sur votre annonce, il n'arrive pas sur www.votre-site.fr, mais sur une adresse rallongée :</p>
+
+<p class="def">www.votre-site.fr/<b>?gclid=Cj0KCQjw4vKpBhCZARIsAOKHoWQ8xY…</b></p>
+
+<p>Tout ce qui suit « ?gclid= » est le numéro du clic. Il est illisible pour un humain, et c'est voulu : seul Google sait le décoder. Vous n'avez rien à comprendre dedans, seulement à le conserver. Ce numéro n'apparaît que si le « taggage automatique » est activé dans votre compte Google Ads, un réglage coché en une fois dans les paramètres du compte.</p>
+
+<p>Pour le voir de vos propres yeux : ouvrez Google, tapez un mot-clé sur lequel vous diffusez, cliquez sur votre propre annonce, et regardez la barre d'adresse de la page qui s'ouvre. Le « ?gclid=… » est là. Autre méthode, sans dépenser un clic : ajoutez vous-même ?gclid=TEST à la fin de l'adresse de votre site. C'est un faux numéro, mais il permet de tester tout le circuit de conservation sans toucher à vos campagnes.</p>
+
+<p>Le gclid est la pièce centrale du suivi enseigné dans notre <a href="/formation-google-tag-manager/">formation Google Tag Manager</a> : sans lui, impossible de relier un client à l'annonce qui l'a amené.</p>
+
+<h2>À quoi il sert : relier un clic à un devis signé</h2>
+
+<p>Suivez le parcours d'un client de plombier. Le 10 janvier, M. Martin tape « rénovation salle de bain » sur Google, clique sur l'annonce, et arrive sur le site avec un gclid dans l'adresse. Il envoie une demande de devis. Le 2 février, après une visite et une relance, il signe pour 2 400 €.</p>
+
+<p>Sans le gclid, Google Ads sait seulement qu'il y a eu un clic le 10 janvier. Il ne saura jamais que ce clic valait 2 400 €. Avec le gclid conservé et renvoyé, Google apprend exactement cela : tel mot-clé, telle annonce, tel montant signé. Au fil des semaines, l'algorithme repère ce que les clics « signants » ont en commun, et va chercher les mêmes profils. C'est la différence entre optimiser sur des formulaires remplis et optimiser sur du chiffre d'affaires.</p>
+
+<h2>Pourquoi il disparaît</h2>
+
+<p>Le problème, c'est que le gclid est fragile. Il vit dans la barre d'adresse, et beaucoup de choses l'effacent avant que la demande de devis parte.</p>
+
+<table class="tbl">
+  <tr><th>Cause</th><th>Ce qui se passe</th></tr>
+  <tr><td>Le visiteur change de page</td><td>Le gclid était dans l'adresse de la page d'arrivée. Une page plus loin, il n'y est plus.</td></tr>
+  <tr><td>Une redirection du site</td><td>Le passage de http à https ou de site.fr à www.site.fr peut couper les paramètres de l'adresse au vol.</td></tr>
+  <tr><td>Le formulaire ne le transmet pas</td><td>Même si le gclid est encore là, un formulaire classique envoie le nom et l'e-mail, pas le contenu de la barre d'adresse.</td></tr>
+  <tr><td>Les cookies sont refusés</td><td>Si votre dispositif de conservation repose sur un cookie et que le visiteur refuse, rien n'est gardé.</td></tr>
+  <tr><td>Le taggage automatique est désactivé</td><td>Dans ce cas, le gclid n'est jamais ajouté à l'adresse. Il n'y a rien à conserver.</td></tr>
+</table>
+
+<p>Conclusion pratique : par défaut, le gclid se perd presque toujours. Le conserver demande un petit dispositif, posé une fois.</p>
+
+<h2>Le récupérer dans un formulaire</h2>
+
+<p>Le principe tient en trois mouvements, et il est le même sur tous les sites :</p>
+
+<ol class="pas">
+  <li>À l'arrivée du visiteur, un petit script lit le gclid dans l'adresse et le met de côté dans le navigateur, pour une durée définie (90 jours, par exemple).</li>
+  <li>Quand le visiteur ouvre le formulaire, le script glisse le gclid dans un champ caché, invisible pour lui.</li>
+  <li>À l'envoi, la demande part avec le nom, le téléphone, le message, et le gclid. Chaque demande arrive chez vous avec le numéro du clic qui l'a produite.</li>
+</ol>
+
+<p>Ce script se pose dans Google Tag Manager, sans toucher au site. Vous n'avez pas besoin de savoir l'écrire : il peut être fourni, ou rédigé par un assistant IA à partir d'une consigne précise.</p>
+
+<div class="cta-art">
+  <p><b>Le script fourni, l'installation écran par écran, et vos devis signés qui remontent dans Google Ads :</b> c'est exactement ce que couvre la formation. Vous pouvez <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=gclid">apprendre à le mettre en place avec Trackia</a> en 2 heures, sans code.</p>
+</div>
+
+<h2>Faire remonter les devis signés dans Google Ads</h2>
+
+<p>Une fois le gclid conservé dans chaque demande, la dernière étape s'appelle « conversion hors ligne » : une conversion qui se produit hors du site, dans la vraie vie, quand le devis se signe.</p>
+
+<ol class="pas">
+  <li>Vous tenez un tableau de vos demandes (Google Sheets convient très bien) : date, nom, source, et le gclid de chaque demande.</li>
+  <li>Quand un devis se signe, vous écrivez « Signé » et le montant sur la ligne du client.</li>
+  <li>Une feuille d'export met en forme ces lignes au format attendu par Google : le gclid, le nom de la conversion, la date et le montant.</li>
+  <li>Google Ads vient lire cette feuille automatiquement, chaque jour. Un outil comme Make peut aussi automatiser le remplissage du tableau à chaque nouvelle demande.</li>
+</ol>
+
+<p>Au bout de quelques semaines, votre compte Google Ads ne compte plus seulement des demandes : il connaît les montants signés, campagne par campagne. Avant de brancher cette remontée, prenez 2 minutes pour <a href="/suivi-conversions-google-ads/">vérifier votre suivi des conversions</a> : si la base compte mal les demandes, la suite comptera mal les signatures.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Le gclid pose-t-il un problème de RGPD ?</summary>
+    <div class="faq__corps"><p>Le gclid est lié aux cookies publicitaires de Google. Sa collecte passe donc par le consentement du visiteur : si votre site a un bandeau cookies branché sur le mode consentement de Google, le gclid n'est conservé qu'après un accord. Mentionnez aussi cette collecte dans votre politique de confidentialité. Pour vos obligations exactes, appuyez-vous sur les recommandations de la CNIL.</p></div>
+  </details>
+  <details>
+    <summary>Combien de temps Google accepte-t-il une conversion liée à un gclid ?</summary>
+    <div class="faq__corps"><p>Google Ads accepte une conversion importée jusqu'à 90 jours après le clic. C'est largement suffisant pour un devis : si vous signez 3 semaines après la demande, la remontée fonctionne. Au-delà de 90 jours, le clic est trop ancien et la conversion est refusée.</p></div>
+  </details>
+  <details>
+    <summary>Et si le client appelle au lieu de remplir le formulaire ?</summary>
+    <div class="faq__corps"><p>Le gclid vit dans le navigateur du visiteur : un appel téléphonique ne le transporte pas. Pour les appels, Google Ads propose un suivi dédié avec un numéro de transfert. Beaucoup de TPE font les deux : le gclid pour les demandes par formulaire, le suivi des appels pour le téléphone.</p></div>
+  </details>
+  <details>
+    <summary>Je vois gbraid ou wbraid au lieu de gclid. C'est normal ?</summary>
+    <div class="faq__corps"><p>Oui. Sur iPhone et iPad, quand le suivi publicitaire est restreint, Google remplace le gclid par un identifiant voisin nommé gbraid ou wbraid. Un bon suivi conserve les trois de la même façon. Si votre script ne garde que le gclid, une partie de vos clics mobiles n'est pas reliée.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Du premier clic au devis signé qui remonte dans Google Ads :</b> tout est installé en 2 heures, sans code, avec une capture d'écran à chaque étape. <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=gclid">La formation Trackia : 397 €, accès à vie</a>.</p>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610062240" defer></script>
+</body>
+</html>

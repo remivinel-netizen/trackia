@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installer Google Tag Manager sans développeur, pas à pas</title>
+<meta name="description" content="Installez Google Tag Manager sur WordPress, Wix, Shopify ou Webflow sans développeur : création du conteneur, code, vérification avec Tag Assistant.">
+<link rel="canonical" href="https://trackia.fr/installer-google-tag-manager/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/installer-google-tag-manager/">
+<meta property="og:title" content="Installer Google Tag Manager sans développeur, pas à pas">
+<meta property="og:description" content="Installez Google Tag Manager sur WordPress, Wix, Shopify ou Webflow sans développeur : création du conteneur, code, vérification avec Tag Assistant.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610062240">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/installer-google-tag-manager/#article",
+      "headline": "Installer Google Tag Manager sans développeur (WordPress, Wix, Shopify, Webflow)",
+      "description": "Installez Google Tag Manager sur WordPress, Wix, Shopify ou Webflow sans développeur : création du conteneur, code, vérification avec Tag Assistant.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/installer-google-tag-manager/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Formation Google Tag Manager", "item": "https://trackia.fr/formation-google-tag-manager/" },
+        { "@type": "ListItem", "position": 3, "name": "Installer Google Tag Manager", "item": "https://trackia.fr/installer-google-tag-manager/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Google Tag Manager est-il gratuit ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, entièrement. Google Tag Manager, Google Analytics 4 et Tag Assistant sont gratuits, quel que soit votre volume de visites. Vous payez seulement vos campagnes Google Ads, comme avant." }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que GTM ralentit mon site ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "L'effet est négligeable pour un site de TPE. Le code GTM se charge en parallèle du reste de la page. Ce qui peut ralentir un site, c'est d'y entasser des dizaines de balises inutiles. Avec les 3 ou 4 balises d'un suivi Google Ads propre, la différence ne se voit pas." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon agence a déjà posé Google Tag Manager. Je fais quoi ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ne posez surtout pas un deuxième conteneur par-dessus. Demandez à votre agence un accès administrateur à ce conteneur : il vous appartient, car c'est votre site et vos données. Avec cet accès, vous pouvez vérifier ce qui tourne et compléter le suivi vous-même." }
+        },
+        {
+          "@type": "Question",
+          "name": "Il faut aussi installer Google Analytics ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, mais après GTM, et à travers lui. C'est justement l'intérêt : une fois GTM posé, Google Analytics 4 s'ajoute depuis l'interface de GTM en quelques clics, sans retoucher le site. Vous évitez ainsi les doublons, la cause la plus fréquente de chiffres faux." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/formation-google-tag-manager/">Formation Google Tag Manager</a><span>›</span>Installer Google Tag Manager
+</nav>
+
+<h1>Installer Google Tag Manager sans développeur (WordPress, Wix, Shopify, Webflow)</h1>
+
+<p class="reponse">Installer Google Tag Manager se fait en trois étapes : créer un compte gratuit, coller un petit code sur votre site, puis vérifier que tout répond avec l'outil de test de Google. Comptez 20 à 30 minutes, sans développeur, quel que soit votre site. Voici chaque étape, écran par écran.</p>
+
+<h2>Google Tag Manager, c'est quoi, et pourquoi il vous en faut un pour Google Ads</h2>
+
+<p>Google Tag Manager (GTM) est un outil gratuit de Google. En une phrase : c'est une boîte que l'on pose une seule fois sur son site, et qui permet ensuite d'ajouter ou de modifier tous les outils de mesure sans jamais retoucher le site.</p>
+
+<p>Sans GTM, chaque réglage demande d'ouvrir le code du site. Pour un gérant de TPE, cela veut dire appeler un prestataire, attendre, payer. Avec GTM, les réglages se font dans une interface à boutons. Exemple : vous voulez compter les demandes de devis comme conversions Google Ads. Sans GTM, il faut modifier le site. Avec GTM, c'est une balise à créer dans l'interface, et le site n'est jamais touché.</p>
+
+<p>Cette page couvre l'installation seule. Pour la suite (brancher les statistiques, compter les conversions, remonter les devis signés), notre guide complet pour <a href="/formation-google-tag-manager/">apprendre Google Tag Manager pas à pas</a> présente le parcours entier dans l'ordre.</p>
+
+<p>Deux mots à connaître avant de commencer :</p>
+<ul>
+  <li><b>le conteneur</b> : votre espace GTM pour un site donné. Un site = un conteneur ;</li>
+  <li><b>une balise</b> : un petit programme rangé dans le conteneur, qui fait une action (prévenir Google Analytics d'une visite, par exemple).</li>
+</ul>
+
+<h2>Étape 1 : créer le compte et le conteneur</h2>
+
+<ol class="pas">
+  <li>Allez sur tagmanager.google.com et connectez-vous avec votre compte Google (celui de votre Gmail ou de votre compte Google Ads).</li>
+  <li>Cliquez sur « Créer un compte ». Nom du compte : le nom de votre entreprise. Pays : France.</li>
+  <li>Nom du conteneur : l'adresse de votre site, par exemple www.dupont-plomberie.fr.</li>
+  <li>Plate-forme cible : choisissez « Web », puis cliquez sur « Créer » et acceptez les conditions.</li>
+</ol>
+
+<p>GTM affiche alors une fenêtre « Installer Google Tag Manager » avec deux morceaux de code, et votre identifiant en haut à droite. Il ressemble à GTM-ABC1234. Notez-le : vous en aurez besoin à l'étape suivante.</p>
+
+<h2>Étape 2 : installer le code selon votre site</h2>
+
+<p>Suivez uniquement la ligne qui correspond à votre site. Dans tous les cas, l'opération se fait une seule fois.</p>
+
+<table class="tbl">
+  <tr><th>Votre site</th><th>Où poser GTM</th><th>Difficulté</th></tr>
+  <tr><td>WordPress</td><td>Avec l'extension gratuite GTM4WP, sans toucher au code</td><td>Facile</td></tr>
+  <tr><td>Wix</td><td>Intégrations marketing, en collant l'identifiant</td><td>Facile (forfait payant requis)</td></tr>
+  <tr><td>Shopify</td><td>Dans le fichier theme.liquid, en collant les deux codes</td><td>Moyenne</td></tr>
+  <tr><td>Webflow</td><td>Paramètres du site, zone « Custom code »</td><td>Facile</td></tr>
+</table>
+
+<h3>WordPress : avec l'extension GTM4WP</h3>
+
+<ol class="pas">
+  <li>Dans votre administration WordPress : Extensions, puis Ajouter, puis cherchez « GTM4WP ».</li>
+  <li>Cliquez sur Installer, puis Activer.</li>
+  <li>Allez dans Réglages, puis « Google Tag Manager », collez votre identifiant GTM et enregistrez.</li>
+</ol>
+
+<p>C'est tout. L'extension pose les deux morceaux de code au bon endroit, sur toutes les pages.</p>
+
+<h3>Wix, Shopify, Webflow : où coller le code</h3>
+
+<ul>
+  <li><b>Wix</b> : tableau de bord, puis Marketing et SEO, puis « Intégrations marketing », puis Google Tag Manager, et collez l'identifiant. Il faut un forfait payant avec un domaine connecté.</li>
+  <li><b>Shopify</b> : Boutique en ligne, puis Thèmes, puis « Modifier le code », puis le fichier theme.liquid. Collez le premier code juste après la ligne &lt;head&gt;, et le second juste après &lt;body&gt;. Enregistrez.</li>
+  <li><b>Webflow</b> : Paramètres du site, puis « Custom code ». Le premier code dans « Head code », le second dans « Footer code ». Enregistrez, puis publiez le site.</li>
+</ul>
+
+<p>Votre site est fait sur mesure ou par un prestataire ? Envoyez-lui les deux codes affichés par GTM avec ce message : « à poser sur toutes les pages, le premier le plus haut possible dans le head, le second juste après l'ouverture du body ». C'est un travail de 10 minutes.</p>
+
+<div class="cta-art">
+  <p><b>Vous préférez que tout soit guidé, du premier compte jusqu'aux devis signés qui remontent dans Google Ads ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=installer-google-tag-manager">Trackia installe tout ça en 2 h, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Étape 3 : vérifier que ça marche avec l'aperçu (Tag Assistant)</h2>
+
+<p>Ne sautez pas cette étape : un code mal posé ne prévient personne, il ne mesure rien, c'est tout.</p>
+
+<ol class="pas">
+  <li>Dans GTM, cliquez sur « Prévisualiser », en haut à droite.</li>
+  <li>Un onglet Tag Assistant s'ouvre (c'est l'outil de test de Google). Tapez l'adresse de votre site et cliquez sur « Connect ».</li>
+  <li>Votre site s'ouvre dans une nouvelle fenêtre. Revenez sur l'onglet Tag Assistant : il doit afficher « Connecté ! » avec votre identifiant GTM.</li>
+</ol>
+
+<p>Si vous voyez « Connecté ! », l'installation est bonne. Le conteneur est vide pour l'instant, c'est normal : les balises viennent après.</p>
+
+<h2>Les erreurs fréquentes</h2>
+
+<ul>
+  <li><b>Deux GTM sur le même site.</b> Une agence en avait posé un, vous en ajoutez un autre : certaines données partent en double, d'autres se perdent. Avant d'installer, vérifiez sur tagassistant.google.com si un conteneur existe déjà. S'il y en a un, demandez-en l'accès plutôt que d'en créer un deuxième.</li>
+  <li><b>Le code posé, mais jamais publié.</b> Dans GTM, chaque modification reste en brouillon tant que vous n'avez pas cliqué sur « Envoyer » puis « Publier ». C'est l'oubli le plus courant.</li>
+  <li><b>Le cache qui masque le changement.</b> Si votre site a une extension de cache (WP Rocket, LiteSpeed) ou passe par Cloudflare, videz le cache après l'installation, sinon Tag Assistant peut voir l'ancienne version du site.</li>
+  <li><b>Le code posé sur une seule page.</b> GTM doit être sur toutes les pages, pas seulement l'accueil. Les extensions et les zones « code du site » le font automatiquement ; un collage à la main dans une seule page, non.</li>
+</ul>
+
+<h2>Et après ?</h2>
+
+<p>GTM posé et vérifié, votre boîte est en place, mais elle est vide. Elle ne compte encore ni les visites ni les demandes de devis. La suite logique, c'est l'<a href="/suivi-conversions-google-ads/">étape suivante : suivre vos conversions Google Ads</a>, pour que chaque demande de devis soit comptée, et seulement les vraies.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Google Tag Manager est-il gratuit ?</summary>
+    <div class="faq__corps"><p>Oui, entièrement. Google Tag Manager, Google Analytics 4 et Tag Assistant sont gratuits, quel que soit votre volume de visites. Vous payez seulement vos campagnes Google Ads, comme avant.</p></div>
+  </details>
+  <details>
+    <summary>Est-ce que GTM ralentit mon site ?</summary>
+    <div class="faq__corps"><p>L'effet est négligeable pour un site de TPE. Le code GTM se charge en parallèle du reste de la page. Ce qui peut ralentir un site, c'est d'y entasser des dizaines de balises inutiles. Avec les 3 ou 4 balises d'un suivi Google Ads propre, la différence ne se voit pas.</p></div>
+  </details>
+  <details>
+    <summary>Mon agence a déjà posé Google Tag Manager. Je fais quoi ?</summary>
+    <div class="faq__corps"><p>Ne posez surtout pas un deuxième conteneur par-dessus. Demandez à votre agence un accès administrateur à ce conteneur : il vous appartient, car c'est votre site et vos données. Avec cet accès, vous pouvez vérifier ce qui tourne et compléter le suivi vous-même.</p></div>
+  </details>
+  <details>
+    <summary>Il faut aussi installer Google Analytics ?</summary>
+    <div class="faq__corps"><p>Oui, mais après GTM, et à travers lui. C'est justement l'intérêt : une fois GTM posé, Google Analytics 4 s'ajoute depuis l'interface de GTM en quelques clics, sans retoucher le site. Vous évitez ainsi les doublons, la cause la plus fréquente de chiffres faux.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Trackia installe ce suivi en 2 h, sans code.</b> GTM, les statistiques, les conversions et la remontée des devis signés, avec une capture d'écran à chaque étape. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=installer-google-tag-manager">Accéder à la formation Trackia</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610062240" defer></script>
+</body>
+</html>
