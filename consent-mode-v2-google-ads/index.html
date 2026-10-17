@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consent Mode v2 : ce qui change pour Google Ads</title>
+<meta name="description" content="Consent Mode v2, c'est quoi ? Ce qu'il change pour vos conversions Google Ads, la différence entre basic et advanced, et comment vérifier qu'il marche.">
+<link rel="canonical" href="https://trackia.fr/consent-mode-v2-google-ads/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/consent-mode-v2-google-ads/">
+<meta property="og:title" content="Consent Mode v2 : ce qui change pour Google Ads">
+<meta property="og:description" content="Consent Mode v2, c'est quoi ? Ce qu'il change pour vos conversions Google Ads, la différence entre basic et advanced, et comment vérifier qu'il marche.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610070330">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/consent-mode-v2-google-ads/#article",
+      "headline": "Consent Mode v2 et Google Ads : ce qui change vraiment pour vos conversions",
+      "description": "Consent Mode v2, c'est quoi ? Ce qu'il change pour vos conversions Google Ads, la différence entre basic et advanced, et comment vérifier qu'il marche.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/consent-mode-v2-google-ads/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Tracking Google Ads", "item": "https://trackia.fr/tracking-google-ads/" },
+        { "@type": "ListItem", "position": 3, "name": "Consent Mode v2", "item": "https://trackia.fr/consent-mode-v2-google-ads/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le Consent Mode v2 est-il obligatoire ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ce n'est pas une loi, c'est une exigence de Google depuis mars 2024 pour utiliser pleinement les données des visiteurs européens dans Google Ads. La loi, elle, impose de recueillir le consentement avant de déposer des cookies publicitaires ou de statistiques. Le Consent Mode v2 fait le lien entre les deux." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon bandeau cookies suffit-il ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Seulement s'il transmet les signaux à Google. La plupart des bandeaux du marché le font, à condition d'activer l'option Google Consent Mode v2 dans leurs réglages. Le test avec Tag Assistant, décrit plus haut, vous le confirme en quelques minutes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le Consent Mode fait-il baisser mes conversions ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Les conversions observées baissent du nombre de visiteurs qui refusent, ce qui était déjà le cas avec un bandeau. En mode advanced, Google estime une partie des conversions manquantes et les ajoute à vos rapports, ce qui limite la perte." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un bandeau cookies payant ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. Plusieurs bandeaux proposent une offre gratuite compatible avec le Consent Mode v2, suffisante pour un site de TPE. Un bandeau fait sur mesure fonctionne aussi, s'il envoie bien les quatre signaux avant le chargement des balises." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/tracking-google-ads/">Tracking Google Ads</a><span>›</span>Consent Mode v2
+</nav>
+
+<h1>Consent Mode v2 et Google Ads : ce qui change vraiment pour vos conversions</h1>
+
+<p class="reponse">Le Consent Mode v2 est la façon dont votre site transmet à Google le choix de chaque visiteur face au bandeau cookies. Depuis mars 2024, Google l'attend de tous les annonceurs qui touchent des internautes européens. Sans lui, une partie de vos conversions n'est plus mesurée et vos listes de remarketing cessent de grandir. Voici ce qu'il fait, la différence entre les modes basic et advanced, et comment vérifier le vôtre en 5 minutes.</p>
+
+<h2>Le Consent Mode v2, c'est quoi ?</h2>
+
+<p>Votre bandeau cookies recueille un choix : le visiteur accepte, refuse, ou personnalise. Le Consent Mode est le messager qui transmet ce choix aux balises Google de votre site, Google Analytics 4 et Google Ads. Chaque balise adapte alors son comportement : elle dépose ses cookies si le visiteur a accepté, et s'abstient s'il a refusé.</p>
+
+<p>Le choix est transmis sous forme de quatre signaux, chacun valant « accordé » ou « refusé ». La version 2 a ajouté les deux derniers.</p>
+
+<table class="tbl">
+  <tr><th>Signal</th><th>Ce qu'il autorise</th></tr>
+  <tr><td>ad_storage</td><td>Déposer les cookies publicitaires, dont celui qui garde la trace du clic sur votre annonce.</td></tr>
+  <tr><td>analytics_storage</td><td>Déposer les cookies de statistiques de Google Analytics.</td></tr>
+  <tr><td>ad_user_data</td><td>Envoyer à Google des données sur le visiteur à des fins publicitaires, par exemple pour mesurer une conversion.</td></tr>
+  <tr><td>ad_personalization</td><td>Utiliser ces données pour de la publicité personnalisée, comme le remarketing.</td></tr>
+</table>
+
+<p>Un bandeau qui affiche des boutons mais n'envoie aucun de ces signaux ne sert qu'à moitié : il respecte peut-être la loi, mais Google ne sait rien du choix du visiteur.</p>
+
+<h2>Pourquoi Google l'exige depuis mars 2024</h2>
+
+<p>En mars 2024, une réglementation européenne sur les grandes plateformes numériques est entrée en application. Pour s'y conformer, Google a durci ses règles : pour utiliser les données des visiteurs européens dans ses outils publicitaires, il doit recevoir la preuve de leur consentement. Le Consent Mode v2 est le moyen technique de la lui donner.</p>
+
+<p>Concrètement, si votre site n'envoie pas les signaux v2, deux choses se dégradent dans votre compte Google Ads :</p>
+<ul>
+  <li>la mesure des conversions des visiteurs européens, qui devient incomplète ;</li>
+  <li>vos listes de remarketing, qui ne s'alimentent plus avec ces visiteurs.</li>
+</ul>
+<p>Pour un artisan qui ne fait pas de remarketing, c'est surtout le premier point qui compte : vos campagnes apprennent sur moins de conversions qu'il n'en arrive réellement.</p>
+
+<h2>Basic ou advanced : la différence qui compte</h2>
+
+<p>Le Consent Mode existe en deux modes. Le choix se fait dans votre bandeau ou dans votre installation Google Tag Manager.</p>
+
+<table class="tbl">
+  <tr><th></th><th>Mode basic</th><th>Mode advanced</th></tr>
+  <tr><td>Avant le choix du visiteur</td><td>Les balises Google ne se chargent pas.</td><td>Les balises se chargent, avec tout refusé par défaut.</td></tr>
+  <tr><td>Si le visiteur refuse</td><td>Rien n'est envoyé à Google.</td><td>Des signaux sans cookie sont envoyés, sans identifier le visiteur.</td></tr>
+  <tr><td>Conversions estimées</td><td>Estimation générale, peu précise.</td><td>Estimation propre à votre site, plus fiable.</td></tr>
+  <tr><td>Mise en place</td><td>La plus simple.</td><td>Demande un bandeau correctement relié.</td></tr>
+</table>
+
+<p>Quand un visiteur refuse, Google ne voit pas directement sa conversion. En mode advanced, il en estime une partie à partir des signaux sans cookie et des visiteurs qui ont accepté. Ces conversions estimées apparaissent ensuite dans vos rapports. Pour une petite entreprise qui a peu de conversions, chaque conversion estimée compte.</p>
+
+<p>Le mode advanced envoie des signaux même en cas de refus, sans cookie ni identifiant. Mentionnez-le dans votre politique de confidentialité, et pour vos obligations exactes, appuyez-vous sur les recommandations de la CNIL ou sur votre conseil.</p>
+
+<div class="cta-art">
+  <p><b>Votre suivi doit respecter le consentement sans perdre vos conversions ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=consent-mode-v2-google-ads">Trackia vous guide pour brancher votre bandeau et vos balises Google, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Ce que ça change pour vos conversions Google Ads</h2>
+
+<p>Le Consent Mode ne change rien pour les visiteurs qui acceptent : leurs conversions remontent normalement, avec le numéro de clic qui permet ensuite de renvoyer les devis signés à Google. Il change tout pour ceux qui refusent : leur numéro de clic n'est pas conservé, et leurs demandes ne peuvent pas être rattachées à une annonce précise.</p>
+
+<p>Deux conséquences pratiques :</p>
+<ul>
+  <li>le nombre de conversions observées baisse d'autant que vous avez de refus, mais la partie estimée en compense une portion en mode advanced ;</li>
+  <li>les devis signés des visiteurs qui ont refusé ne peuvent pas être renvoyés à Google avec leur numéro de clic.</li>
+</ul>
+
+<p>Pour les visiteurs qui acceptent, Google propose un complément qui retrouve des ventes que le numéro de clic seul aurait manquées : <a href="/suivi-avance-conversions-google-ads/">le suivi avancé des conversions</a>. Il dépend lui aussi du consentement, à travers le signal ad_user_data. Ces réglages s'inscrivent dans une logique d'ensemble, que nous détaillons dans notre guide sur <a href="/tracking-google-ads/">le tracking Google Ads de bout en bout</a>.</p>
+
+<h2>Comment vérifier votre Consent Mode en 5 minutes</h2>
+
+<ol class="pas">
+  <li>Ouvrez votre site dans une fenêtre de navigation privée. Le bandeau doit apparaître, et aucun cookie Google ne doit être déposé avant votre choix. Vous pouvez le vérifier avec la touche F12, onglet Application, rubrique Cookies : aucun cookie commençant par « _ga » ne doit encore exister.</li>
+  <li>Lancez l'outil de test de Google, Tag Assistant, sur votre site. Dans l'onglet consacré au consentement, l'état par défaut doit indiquer les quatre signaux comme refusés.</li>
+  <li>Cliquez sur « Accepter » dans votre bandeau. Tag Assistant doit afficher une mise à jour où les quatre signaux passent à accordé.</li>
+  <li>Recommencez dans une nouvelle fenêtre privée en cliquant sur « Refuser ». Les signaux doivent rester refusés, et aucun cookie « _ga » ne doit apparaître.</li>
+</ol>
+
+<p>Si l'une de ces vérifications échoue, le problème vient presque toujours du bandeau : l'option « Google Consent Mode v2 » n'y est pas activée, ou il se charge après Google Tag Manager.</p>
+
+<h2>Les erreurs les plus fréquentes</h2>
+
+<ul>
+  <li><b>Un bandeau décoratif.</b> Il affiche des boutons, mais n'envoie aucun signal à Google. L'option Consent Mode existe dans la plupart des bandeaux du marché, Complianz, CookieYes, Axeptio ou Didomi, souvent désactivée par défaut.</li>
+  <li><b>Seulement deux signaux sur quatre.</b> Un bandeau ancien envoie ad_storage et analytics_storage, mais pas les deux signaux ajoutés par la version 2. Google considère alors que le consentement manque.</li>
+  <li><b>Google Tag Manager chargé trop tôt.</b> Si le code de GTM s'exécute avant que l'état par défaut soit posé, des cookies peuvent être déposés avant le choix du visiteur. L'état par défaut doit toujours passer en premier.</li>
+  <li><b>Un choix qui n'est pas mémorisé.</b> Le bandeau réapparaît à chaque page, et le visiteur finit par fermer l'onglet. Le choix doit être retenu, en général plusieurs mois.</li>
+</ul>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Le Consent Mode v2 est-il obligatoire ?</summary>
+    <div class="faq__corps"><p>Ce n'est pas une loi, c'est une exigence de Google depuis mars 2024 pour utiliser pleinement les données des visiteurs européens dans Google Ads. La loi, elle, impose de recueillir le consentement avant de déposer des cookies publicitaires ou de statistiques. Le Consent Mode v2 fait le lien entre les deux.</p></div>
+  </details>
+  <details>
+    <summary>Mon bandeau cookies suffit-il ?</summary>
+    <div class="faq__corps"><p>Seulement s'il transmet les signaux à Google. La plupart des bandeaux du marché le font, à condition d'activer l'option Google Consent Mode v2 dans leurs réglages. Le test avec Tag Assistant, décrit plus haut, vous le confirme en quelques minutes.</p></div>
+  </details>
+  <details>
+    <summary>Le Consent Mode fait-il baisser mes conversions ?</summary>
+    <div class="faq__corps"><p>Les conversions observées baissent du nombre de visiteurs qui refusent, ce qui était déjà le cas avec un bandeau. En mode advanced, Google estime une partie des conversions manquantes et les ajoute à vos rapports, ce qui limite la perte.</p></div>
+  </details>
+  <details>
+    <summary>Faut-il un bandeau cookies payant ?</summary>
+    <div class="faq__corps"><p>Non. Plusieurs bandeaux proposent une offre gratuite compatible avec le Consent Mode v2, suffisante pour un site de TPE. Un bandeau fait sur mesure fonctionne aussi, s'il envoie bien les quatre signaux avant le chargement des balises.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Prêt à mesurer vos conversions sans risque pour vos données ?</b> Trackia installe toute la chaîne de suivi en 2 h, sans code, avec un bandeau correctement relié. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=consent-mode-v2-google-ads">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>

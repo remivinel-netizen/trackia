@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Tag Manager, c'est quoi ? Explication simple</title>
+<meta name="description" content="Google Tag Manager, c'est quoi et à quoi ça sert ? L'explication simple pour un artisan ou une TPE : balises, déclencheurs, et pourquoi il évite le code.">
+<link rel="canonical" href="https://trackia.fr/google-tag-manager-c-est-quoi/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/google-tag-manager-c-est-quoi/">
+<meta property="og:title" content="Google Tag Manager, c'est quoi ? Explication simple">
+<meta property="og:description" content="Google Tag Manager, c'est quoi et à quoi ça sert ? L'explication simple pour un artisan ou une TPE : balises, déclencheurs, et pourquoi il évite le code.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610070330">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/google-tag-manager-c-est-quoi/#article",
+      "headline": "Google Tag Manager, c'est quoi ? L'explication simple pour les non-techniciens",
+      "description": "Google Tag Manager, c'est quoi et à quoi ça sert ? L'explication simple pour un artisan ou une TPE : balises, déclencheurs, et pourquoi il évite le code.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/google-tag-manager-c-est-quoi/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Formation Google Tag Manager", "item": "https://trackia.fr/formation-google-tag-manager/" },
+        { "@type": "ListItem", "position": 3, "name": "Google Tag Manager, c'est quoi ?", "item": "https://trackia.fr/google-tag-manager-c-est-quoi/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Google Tag Manager est-il gratuit ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, entièrement, pour tous les sites. Il existe une version payante destinée aux très grandes entreprises, dont une petite entreprise n'a pas besoin." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il savoir coder pour utiliser Google Tag Manager ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non pour l'essentiel. On choisit des balises et des déclencheurs dans des menus. Le seul code à manipuler est celui qu'on colle une fois sur le site lors de l'installation, et la plupart des outils de création de site ont une option ou une extension pour le faire sans toucher au code." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre Google Tag Manager et la balise Google ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La balise Google est le code d'un outil Google, comme Google Analytics ou Google Ads. Google Tag Manager est le gestionnaire qui peut contenir cette balise, et beaucoup d'autres. Avec Google Tag Manager, la balise Google se règle depuis l'interface, sans être collée dans le site." }
+        },
+        {
+          "@type": "Question",
+          "name": "Google Tag Manager est-il compatible avec le RGPD ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Tag Manager lui-même ne dépose pas de cookie. Ce sont les balises qu'il déclenche qui en déposent, et elles doivent respecter le choix du visiteur. Avec un bandeau cookies relié au mode de consentement de Google, les balises attendent l'accord du visiteur." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/formation-google-tag-manager/">Formation Google Tag Manager</a><span>›</span>Google Tag Manager, c'est quoi ?
+</nav>
+
+<h1>Google Tag Manager, c'est quoi ? L'explication simple pour les non-techniciens</h1>
+
+<p class="reponse">Google Tag Manager, souvent abrégé GTM, est un outil gratuit de Google qui sert à ajouter et à gérer les codes de mesure de votre site : statistiques, publicité, conversions. On installe un seul code sur le site, une fois pour toutes. Ensuite, tout se règle depuis l'interface de Google Tag Manager, sans retoucher le site et sans développeur.</p>
+
+<h2>À quoi sert Google Tag Manager ?</h2>
+
+<p>Chaque outil de mesure demande d'ajouter son propre code sur votre site : un pour Google Analytics, un pour Google Ads, un autre pour suivre les demandes de devis. Sans Google Tag Manager, chaque ajout ou modification passe par le site lui-même, donc souvent par un développeur ou par votre agence.</p>
+
+<p>Google Tag Manager fonctionne comme un tableau électrique. On le pose une fois, au bon endroit. Ensuite, on branche, débranche et règle chaque appareil depuis le tableau, sans rouvrir les murs. Vos codes de mesure sont les appareils, et le site n'a plus besoin d'être touché.</p>
+
+<p>Pour un artisan ou une TPE qui fait de la publicité sur Google, cela change trois choses :</p>
+<ul>
+  <li>vous pouvez mesurer vos demandes de devis sans faire appel à un développeur ;</li>
+  <li>vous voyez en un seul endroit tout ce qui mesure votre site ;</li>
+  <li>vous testez chaque réglage avant de le mettre en ligne, sans risque pour le site.</li>
+</ul>
+
+<h2>Les quatre mots à connaître</h2>
+
+<p>L'interface de Google Tag Manager impressionne au premier abord. Pourtant, quatre notions suffisent pour comprendre l'essentiel.</p>
+
+<table class="tbl">
+  <tr><th>Mot</th><th>Ce que c'est</th><th>Exemple</th></tr>
+  <tr><td>Conteneur</td><td>La boîte qui contient tous vos réglages, propre à votre site.</td><td>Le conteneur de votre-site.fr, avec son identifiant GTM-XXXXXXX.</td></tr>
+  <tr><td>Balise</td><td>Une action à réaliser, comme envoyer une information à Google Analytics.</td><td>« GA4 - Demande » : signaler une demande de devis.</td></tr>
+  <tr><td>Déclencheur</td><td>Le moment où la balise doit agir.</td><td>« Formulaire envoyé » : au moment où le visiteur valide le formulaire.</td></tr>
+  <tr><td>Variable</td><td>Une information que les balises peuvent utiliser.</td><td>Le numéro du clic sur l'annonce, ou le nom de la page.</td></tr>
+</table>
+
+<p>Une phrase résume tout : une balise fait quelque chose, au moment fixé par son déclencheur, en utilisant des variables. Tout le reste de l'interface sert à organiser ces trois éléments.</p>
+
+<h2>Google Tag Manager, Google Analytics, Google Ads : qui fait quoi</h2>
+
+<p>La confusion est fréquente, car les trois outils portent le nom de Google et travaillent ensemble.</p>
+
+<table class="tbl">
+  <tr><th>Outil</th><th>Son rôle</th></tr>
+  <tr><td>Google Tag Manager</td><td>Il pose et déclenche les codes de mesure. Il ne mesure rien lui-même.</td></tr>
+  <tr><td>Google Analytics 4</td><td>Il compte et range les visites et les actions : pages vues, demandes envoyées, origine des visiteurs.</td></tr>
+  <tr><td>Google Ads</td><td>Il diffuse vos annonces, et reçoit les conversions pour savoir lesquelles rapportent.</td></tr>
+</table>
+
+<p>Google Tag Manager est donc le chef d'orchestre : c'est lui qui envoie, au bon moment, les bonnes informations à Google Analytics et à Google Ads.</p>
+
+<div class="cta-art">
+  <p><b>Envie de mettre Google Tag Manager en place sans vous perdre dans l'interface ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=google-tag-manager-c-est-quoi">Trackia vous guide en 2 h, sans code, avec une capture d'écran à chaque étape</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Un exemple concret : compter une demande de devis</h2>
+
+<p>Voici ce qui se passe, dans l'ordre, quand un visiteur envoie le formulaire de contact d'un site équipé de Google Tag Manager.</p>
+
+<ol class="pas">
+  <li>Le visiteur clique sur « Envoyer ». Le site signale cet envoi à Google Tag Manager, sous la forme d'un petit message.</li>
+  <li>Google Tag Manager reconnaît ce message grâce à un déclencheur réglé à l'avance, par exemple « Formulaire envoyé ».</li>
+  <li>Ce déclencheur active la balise associée, « GA4 - Demande ». Elle envoie à Google Analytics 4 l'information qu'une demande de devis vient d'arriver.</li>
+  <li>Google Analytics 4 compte la demande, et la transmet à Google Ads comme conversion si les deux comptes sont reliés.</li>
+</ol>
+
+<p>Rien de tout cela n'est écrit dans le code du site. Le jour où vous changez de formulaire, vous ne modifiez que le déclencheur dans Google Tag Manager, et la mesure repart.</p>
+
+<h2>Est-ce que Google Tag Manager ralentit le site ?</h2>
+
+<p>Très peu. Le code de Google Tag Manager se charge sans bloquer l'affichage de vos pages. Ce qui pèse, ce sont les balises qu'on y ajoute : quelques balises Google ne changent presque rien, plusieurs dizaines d'outils différents finissent par se sentir. Pour un site d'artisan ou de TPE, avec Google Analytics et le suivi Google Ads, l'effet est négligeable.</p>
+
+<h2>Faut-il Google Tag Manager pour une petite entreprise ?</h2>
+
+<p>Si vous faites de la publicité sur Google et que vous voulez savoir quelles annonces vous amènent des demandes, oui. C'est le moyen le plus simple de compter vos demandes de devis et de retenir l'origine de chaque visiteur, sans modifier votre site à chaque fois.</p>
+
+<p>Si vous voulez seulement savoir combien de personnes visitent votre site, Google Analytics seul peut suffire. Mais le jour où vous lancez des annonces, vous aurez besoin de Google Tag Manager : autant le poser dès le départ. L'installation prend une vingtaine de minutes, et notre guide montre comment <a href="/installer-google-tag-manager/">l'installer sur votre site</a>, que vous soyez sur WordPress, Wix, Shopify ou Webflow.</p>
+
+<h2>Est-ce compliqué à utiliser ?</h2>
+
+<p>L'interface est dense, car elle sert aussi aux grandes entreprises. Une petite entreprise n'en utilise qu'une petite partie : quelques balises, quelques déclencheurs. Deux fonctions rendent l'outil rassurant pour un débutant :</p>
+<ul>
+  <li><b>le mode Aperçu</b>, qui ouvre votre site dans un mode test et montre quelles balises se déclenchent, sans rien changer pour vos visiteurs ;</li>
+  <li><b>les versions</b> : chaque publication est enregistrée, et vous pouvez revenir à la précédente en un clic si quelque chose ne va pas.</li>
+</ul>
+
+<p>Une erreur revient souvent chez les débutants : modifier ses réglages et oublier de cliquer sur Envoyer, puis Publier. Tant que ce n'est pas fait, rien n'est en ligne. Pour aller plus loin, notre page pour <a href="/formation-google-tag-manager/">apprendre à utiliser Google Tag Manager</a> présente les trois sujets à maîtriser, dans l'ordre.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Google Tag Manager est-il gratuit ?</summary>
+    <div class="faq__corps"><p>Oui, entièrement, pour tous les sites. Il existe une version payante destinée aux très grandes entreprises, dont une petite entreprise n'a pas besoin.</p></div>
+  </details>
+  <details>
+    <summary>Faut-il savoir coder pour utiliser Google Tag Manager ?</summary>
+    <div class="faq__corps"><p>Non pour l'essentiel. On choisit des balises et des déclencheurs dans des menus. Le seul code à manipuler est celui qu'on colle une fois sur le site lors de l'installation, et la plupart des outils de création de site ont une option ou une extension pour le faire sans toucher au code.</p></div>
+  </details>
+  <details>
+    <summary>Quelle différence entre Google Tag Manager et la balise Google ?</summary>
+    <div class="faq__corps"><p>La balise Google est le code d'un outil Google, comme Google Analytics ou Google Ads. Google Tag Manager est le gestionnaire qui peut contenir cette balise, et beaucoup d'autres. Avec Google Tag Manager, la balise Google se règle depuis l'interface, sans être collée dans le site.</p></div>
+  </details>
+  <details>
+    <summary>Google Tag Manager est-il compatible avec le RGPD ?</summary>
+    <div class="faq__corps"><p>Google Tag Manager lui-même ne dépose pas de cookie. Ce sont les balises qu'il déclenche qui en déposent, et elles doivent respecter le choix du visiteur. Avec un bandeau cookies relié au mode de consentement de Google, les balises attendent l'accord du visiteur.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Prêt à faire travailler Google Tag Manager pour vos annonces ?</b> Trackia installe GTM, les statistiques, les conversions et la remontée des devis signés en 2 h, sans code. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=google-tag-manager-c-est-quoi">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>

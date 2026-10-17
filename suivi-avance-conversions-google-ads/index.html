@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivi avancé des conversions Google Ads expliqué</title>
+<meta name="description" content="Le suivi avancé des conversions Google Ads retrouve des ventes que le gclid ne voit pas. Ce qu'il fait, ce qu'il demande côté RGPD, et quand l'activer.">
+<link rel="canonical" href="https://trackia.fr/suivi-avance-conversions-google-ads/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/suivi-avance-conversions-google-ads/">
+<meta property="og:title" content="Suivi avancé des conversions Google Ads expliqué">
+<meta property="og:description" content="Le suivi avancé des conversions Google Ads retrouve des ventes que le gclid ne voit pas. Ce qu'il fait, ce qu'il demande côté RGPD, et quand l'activer.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610070330">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/suivi-avance-conversions-google-ads/#article",
+      "headline": "Suivi avancé des conversions Google Ads : ce qu'il fait, et faut-il l'activer ?",
+      "description": "Le suivi avancé des conversions Google Ads retrouve des ventes que le gclid ne voit pas. Ce qu'il fait, ce qu'il demande côté RGPD, et quand l'activer.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/suivi-avance-conversions-google-ads/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Tracking Google Ads", "item": "https://trackia.fr/tracking-google-ads/" },
+        { "@type": "ListItem", "position": 3, "name": "Suivi avancé des conversions", "item": "https://trackia.fr/suivi-avance-conversions-google-ads/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Est-ce que j'envoie les adresses e-mail de mes clients à Google ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pas en clair. L'adresse est transformée sur votre site en une empreinte illisible avant d'être envoyée, et Google ne s'en sert que pour la comparer à ses propres empreintes. Il faut tout de même le consentement du visiteur et une mention dans votre politique de confidentialité." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le suivi avancé des conversions est-il obligatoire ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. C'est un complément facultatif. Un suivi par gclid bien installé, avec la remontée des devis signés, couvre déjà l'essentiel. Le suivi avancé récupère une partie des ventes que le gclid perd." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ça marche avec un formulaire sans adresse e-mail ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Le numéro de téléphone peut servir, mais les correspondances sont moins nombreuses. Si votre formulaire n'a pas de champ e-mail, ajoutez-le, en le laissant facultatif si vous craignez de perdre des demandes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de conversions en plus puis-je espérer ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cela dépend de votre public : la part de visiteurs sur Safari, sur plusieurs appareils, ou qui refusent les cookies. Méfiez-vous des chiffres annoncés à l'avance. Comparez plutôt vos conversions sur quelques semaines avant et après l'activation." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/tracking-google-ads/">Tracking Google Ads</a><span>›</span>Suivi avancé des conversions
+</nav>
+
+<h1>Suivi avancé des conversions Google Ads : ce qu'il fait, et faut-il l'activer ?</h1>
+
+<p class="reponse">Le suivi avancé des conversions complète le numéro de clic, le gclid. Au moment d'une conversion, l'adresse e-mail saisie dans votre formulaire est transformée en empreinte illisible, puis envoyée à Google, qui la rapproche de ses propres comptes pour retrouver l'annonce d'origine. Il récupère ainsi une partie des ventes que le gclid seul aurait perdues. C'est un réglage facultatif, utile une fois la base de votre suivi en place.</p>
+
+<h2>Pourquoi le gclid ne suffit pas toujours</h2>
+
+<p>Le gclid est le numéro unique que Google colle à chaque clic sur une annonce. Tant que votre site le retient jusqu'au formulaire, la conversion se rattache à la bonne annonce. Mais il se perd plus souvent qu'on ne le croit :</p>
+<ul>
+  <li>certains navigateurs, Safari en tête, limitent la durée de vie des informations conservées sur votre site ;</li>
+  <li>un visiteur qui refuse les cookies ne garde pas trace de son clic ;</li>
+  <li>un client clique sur son téléphone, puis revient le soir sur son ordinateur pour remplir le formulaire.</li>
+</ul>
+<p>Dans ces trois cas, la demande arrive bien, mais Google ne sait pas quelle annonce l'a produite. Le suivi avancé sert à combler une partie de ce trou.</p>
+
+<h2>Comment ça marche, sans jargon</h2>
+
+<p>Quand le visiteur envoie votre formulaire, son adresse e-mail est transformée sur place en une empreinte : une longue suite de caractères, toujours la même pour une même adresse, mais dont on ne peut pas retrouver l'adresse de départ. Cette technique s'appelle le hachage. Seule l'empreinte part chez Google.</p>
+
+<p>Google fait la même opération avec les adresses des personnes connectées à leur compte Google quand elles ont cliqué sur vos annonces. Si les deux empreintes correspondent, Google sait que cette conversion vient de ce clic, même sans gclid. Le téléphone peut servir aussi, mais l'adresse e-mail donne les meilleurs résultats.</p>
+
+<h2>Les deux variantes</h2>
+
+<table class="tbl">
+  <tr><th>Variante</th><th>À quoi elle sert</th><th>Pour qui</th></tr>
+  <tr><td>Suivi avancé pour le web</td><td>Fiabiliser les conversions qui ont lieu sur votre site, comme l'envoi d'un formulaire.</td><td>Tout site qui compte ses demandes en ligne.</td></tr>
+  <tr><td>Suivi avancé pour les prospects</td><td>Rattacher une vente conclue plus tard, hors du site, à partir de l'e-mail du prospect plutôt que du gclid.</td><td>Les entreprises qui vendent sur devis ou en rendez-vous.</td></tr>
+</table>
+
+<p>Pour un artisan ou une TPE qui renvoie déjà ses devis signés à Google, la variante pour les prospects est la plus intéressante : elle couvre une partie des ventes dont le gclid s'est perdu. La méthode de base reste l'import par gclid, expliquée dans notre guide pour <a href="/conversion-hors-ligne-google-ads/">importer vos devis signés</a>.</p>
+
+<div class="cta-art">
+  <p><b>Commencez par une base solide.</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=suivi-avance-conversions-google-ads">Trackia installe le suivi par gclid et la remontée des devis signés en 2 h, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Ce que ça demande côté RGPD</h2>
+
+<p>Le suivi avancé envoie à Google une donnée personnelle, même sous forme d'empreinte. Trois conditions s'appliquent :</p>
+<ul>
+  <li><b>le consentement du visiteur</b> : Google n'utilise ces données que si le signal ad_user_data est accordé, ce qui suppose d'avoir mis en place <a href="/consent-mode-v2-google-ads/">le Consent Mode v2</a> avec votre bandeau cookies ;</li>
+  <li><b>l'acceptation des conditions de Google</b> sur les données client, que Google Ads vous demande au moment de l'activation ;</li>
+  <li><b>une mention dans votre politique de confidentialité</b>, qui explique que l'adresse e-mail est partagée avec Google sous forme chiffrée pour mesurer vos publicités.</li>
+</ul>
+<p>Pour vos obligations exactes, appuyez-vous sur les recommandations de la CNIL ou sur votre conseil.</p>
+
+<h2>Faut-il l'activer ?</h2>
+
+<table class="tbl">
+  <tr><th>Votre situation</th><th>Notre conseil</th></tr>
+  <tr><td>Votre suivi de base n'est pas encore fiable</td><td>Pas tout de suite. Réglez d'abord le gclid et le comptage des demandes.</td></tr>
+  <tr><td>Vos demandes remontent, vos devis signés aussi</td><td>Oui, c'est le bon moment : vous récupérez une partie des ventes perdues.</td></tr>
+  <tr><td>Votre formulaire ne demande pas d'e-mail</td><td>Ajoutez le champ, ou utilisez le téléphone, avec des résultats moindres.</td></tr>
+  <tr><td>Votre bandeau cookies n'envoie aucun signal à Google</td><td>Corrigez-le d'abord : sans consentement, le suivi avancé ne sert à rien.</td></tr>
+</table>
+
+<p>Le suivi avancé est un complément, pas un remplaçant. Il n'apporte rien si les maillons précédents ne fonctionnent pas. Notre guide sur <a href="/tracking-google-ads/">la chaîne complète du tracking Google Ads</a> montre où il se place.</p>
+
+<h2>Ce que le suivi avancé ne fait pas</h2>
+
+<p>Le suivi avancé est souvent présenté comme une solution miracle. Il a pourtant des limites claires, qu'il vaut mieux connaître avant de l'activer.</p>
+<ul>
+  <li><b>Il ne contourne pas un refus de cookies.</b> Si le visiteur refuse, le signal ad_user_data reste refusé, et Google n'utilise pas son adresse e-mail. Le suivi avancé aide surtout pour les visiteurs qui ont accepté mais dont le gclid s'est perdu.</li>
+  <li><b>Il ne répare pas un suivi cassé.</b> Si votre balise de conversion ne se déclenche plus, le suivi avancé ne se déclenche pas non plus : il voyage avec elle.</li>
+  <li><b>Il ne retrouve pas tout le monde.</b> La correspondance ne fonctionne que si le visiteur utilise la même adresse e-mail que celle de son compte Google. Une adresse professionnelle saisie dans le formulaire et un compte Google personnel ne correspondront pas.</li>
+  <li><b>Il ne donne pas de résultats immédiats.</b> Google a besoin de quelques jours pour traiter les données, puis vos rapports s'enrichissent progressivement.</li>
+</ul>
+
+<h2>Comment l'activer</h2>
+
+<ol class="pas">
+  <li>Dans Google Ads, ouvrez les paramètres de vos conversions, puis la section consacrée au suivi avancé des conversions, parfois appelée « conversions avancées ».</li>
+  <li>Choisissez la variante, pour le web ou pour les prospects, puis acceptez les conditions relatives aux données client.</li>
+  <li>Indiquez comment les données seront transmises. Pour un site équipé de Google Tag Manager, c'est en général la balise Google qui lit le champ e-mail du formulaire au moment de l'envoi.</li>
+  <li>Testez avec un vrai envoi de formulaire, puis surveillez le diagnostic de la conversion dans Google Ads pendant quelques jours.</li>
+</ol>
+
+<p>Les écrans changent régulièrement. Si un intitulé ne correspond pas, cherchez « suivi avancé des conversions » dans la barre de recherche de Google Ads.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Est-ce que j'envoie les adresses e-mail de mes clients à Google ?</summary>
+    <div class="faq__corps"><p>Pas en clair. L'adresse est transformée sur votre site en une empreinte illisible avant d'être envoyée, et Google ne s'en sert que pour la comparer à ses propres empreintes. Il faut tout de même le consentement du visiteur et une mention dans votre politique de confidentialité.</p></div>
+  </details>
+  <details>
+    <summary>Le suivi avancé des conversions est-il obligatoire ?</summary>
+    <div class="faq__corps"><p>Non. C'est un complément facultatif. Un suivi par gclid bien installé, avec la remontée des devis signés, couvre déjà l'essentiel. Le suivi avancé récupère une partie des ventes que le gclid perd.</p></div>
+  </details>
+  <details>
+    <summary>Ça marche avec un formulaire sans adresse e-mail ?</summary>
+    <div class="faq__corps"><p>Le numéro de téléphone peut servir, mais les correspondances sont moins nombreuses. Si votre formulaire n'a pas de champ e-mail, ajoutez-le, en le laissant facultatif si vous craignez de perdre des demandes.</p></div>
+  </details>
+  <details>
+    <summary>Combien de conversions en plus puis-je espérer ?</summary>
+    <div class="faq__corps"><p>Cela dépend de votre public : la part de visiteurs sur Safari, sur plusieurs appareils, ou qui refusent les cookies. Méfiez-vous des chiffres annoncés à l'avance. Comparez plutôt vos conversions sur quelques semaines avant et après l'activation.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Une base fiable d'abord, les réglages avancés ensuite.</b> Trackia installe toute la chaîne de suivi en 2 h, sans code, avec le suivi avancé présenté en option. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=suivi-avance-conversions-google-ads">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>

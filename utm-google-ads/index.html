@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UTM Google Ads : faut-il en mettre avec le gclid ?</title>
+<meta name="description" content="UTM et Google Ads : utiles ou inutiles quand le taggage automatique est actif ? Ce que fait chaque paramètre, et la configuration simple à adopter.">
+<link rel="canonical" href="https://trackia.fr/utm-google-ads/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/utm-google-ads/">
+<meta property="og:title" content="UTM Google Ads : faut-il en mettre avec le gclid ?">
+<meta property="og:description" content="UTM et Google Ads : utiles ou inutiles quand le taggage automatique est actif ? Ce que fait chaque paramètre, et la configuration simple à adopter.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610070330">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/utm-google-ads/#article",
+      "headline": "UTM et Google Ads : faut-il en ajouter quand le taggage automatique est actif ?",
+      "description": "UTM et Google Ads : utiles ou inutiles quand le taggage automatique est actif ? Ce que fait chaque paramètre, et la configuration simple à adopter.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/utm-google-ads/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Tracking Google Ads", "item": "https://trackia.fr/tracking-google-ads/" },
+        { "@type": "ListItem", "position": 3, "name": "UTM et Google Ads", "item": "https://trackia.fr/utm-google-ads/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Les UTM faussent-elles les statistiques de Google Ads ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non, Google Ads ne s'en sert pas : il compte vos conversions grâce au gclid. Le risque est dans Google Analytics, si vos UTM sont incohérentes d'une campagne à l'autre. Un suffixe unique au niveau du compte écarte ce risque." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il écrire utm_source=google ou google-ads ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Choisissez une écriture et gardez-la partout. La convention la plus répandue pour les annonces sur le moteur de recherche est utm_source=google et utm_medium=cpc, que Google Analytics classe directement dans la recherche payante." }
+        },
+        {
+          "@type": "Question",
+          "name": "Les UTM marchent-elles avec Performance Max ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. Le suffixe de l'URL finale défini dans les paramètres du compte s'applique à toutes les campagnes, Performance Max comprise." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mes visiteurs voient-ils les UTM ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, elles apparaissent dans la barre d'adresse après le clic sur l'annonce, comme le gclid. C'est sans conséquence pour le visiteur, et rien de confidentiel n'y figure : seulement la source, le support, le numéro de campagne et le mot-clé. Si un visiteur partage l'adresse, ses contacts arriveront avec les mêmes étiquettes, ce qui peut gonfler légèrement une campagne dans vos statistiques." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je désactiver le taggage automatique et garder seulement les UTM ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ce serait une erreur. Sans taggage automatique, pas de gclid, donc pas de conversions fiables dans Google Ads et aucun moyen de renvoyer vos devis signés. Les UTM complètent le gclid, elles ne le remplacent pas." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/tracking-google-ads/">Tracking Google Ads</a><span>›</span>UTM et Google Ads
+</nav>
+
+<h1>UTM et Google Ads : faut-il en ajouter quand le taggage automatique est actif ?</h1>
+
+<p class="reponse">Pour Google Analytics et Google Ads, non : quand le taggage automatique est actif, le gclid leur suffit pour savoir de quelle campagne vient chaque visiteur. Les UTM deviennent utiles dès qu'un autre outil doit lire la source en clair, comme votre tableau de demandes, votre logiciel de gestion client ou vos e-mails d'alerte. Dans ce cas, ajoutez-les une seule fois pour tout le compte, jamais à la main annonce par annonce.</p>
+
+<h2>UTM et gclid : qui fait quoi</h2>
+
+<p>Les deux servent à savoir d'où vient un visiteur, mais ils ne fonctionnent pas du tout de la même façon.</p>
+
+<table class="tbl">
+  <tr><th></th><th>Gclid</th><th>UTM</th></tr>
+  <tr><td>Ce que c'est</td><td>Un numéro unique, ajouté par Google à chaque clic sur une annonce.</td><td>Des étiquettes lisibles, ajoutées à l'adresse de la page : source, support, campagne, mot-clé, contenu.</td></tr>
+  <tr><td>Qui l'ajoute</td><td>Google, automatiquement, si le taggage automatique est coché.</td><td>Vous, à la main ou par un réglage du compte.</td></tr>
+  <tr><td>Qui sait le lire</td><td>Google seulement.</td><td>Tout le monde : vous, votre tableau, votre logiciel.</td></tr>
+  <tr><td>Permet de renvoyer un devis signé à Google</td><td>Oui.</td><td>Non.</td></tr>
+</table>
+
+<p>Exemple d'adresse avec UTM : <code>votre-site.fr/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=renovation</code>. Chaque étiquette dit quelque chose en clair. Le gclid, lui, ressemble à une longue suite de lettres et de chiffres que seul Google sait décoder.</p>
+
+<h2>Faut-il des UTM avec Google Ads ? Trois cas</h2>
+
+<h3>Vous utilisez seulement Google Ads et Google Analytics, reliés entre eux</h3>
+<p>Les UTM sont inutiles. Google Analytics récupère les informations de campagne grâce au gclid et à la liaison avec votre compte Google Ads. Ajouter des UTM n'apporte rien, et peut même créer des incohérences dans vos rapports si elles sont mal écrites.</p>
+
+<h3>Vous voulez voir la campagne en clair, ailleurs que chez Google</h3>
+<p>Les UTM deviennent utiles. Votre tableau de demandes, votre e-mail d'alerte ou votre logiciel de gestion client ne savent pas lire un gclid. Avec des UTM, chaque demande arrive avec la campagne et le mot-clé écrits en toutes lettres. C'est très pratique pour rappeler un prospect en sachant ce qu'il cherchait.</p>
+
+<h3>Vous voulez renvoyer vos devis signés à Google</h3>
+<p>Ici, c'est le gclid qui compte, pas les UTM. Google ne rattache une vente à un clic que grâce à ce numéro. Si vous ne deviez garder qu'une chose, gardez le gclid : <a href="/conversion-hors-ligne-google-ads/">seul le gclid permet d'importer vos devis</a> signés dans Google Ads.</p>
+
+<div class="cta-art">
+  <p><b>Vous voulez voir la campagne de chaque demande directement dans votre tableau ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=utm-google-ads">Trackia retient le gclid et les UTM pendant 90 jours, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Comment ajouter des UTM proprement</h2>
+
+<p>La bonne méthode tient en un seul réglage, valable pour toutes vos campagnes, présentes et futures. Google Ads remplit lui-même certaines valeurs grâce à des paramètres entre accolades.</p>
+
+<ol class="pas">
+  <li>Dans Google Ads, ouvrez les paramètres du compte, puis les options d'URL de suivi.</li>
+  <li>Dans le champ « Suffixe de l'URL finale », collez : <code>utm_source=google&amp;utm_medium=cpc&amp;utm_campaign={campaignid}&amp;utm_term={keyword}</code></li>
+  <li>Enregistrez, puis cliquez sur l'une de vos annonces depuis l'aperçu de Google Ads pour vérifier que l'adresse d'arrivée contient bien les étiquettes.</li>
+</ol>
+
+<p>À chaque clic, Google remplace <code>{campaignid}</code> par le numéro de la campagne et <code>{keyword}</code> par le mot-clé qui a déclenché l'annonce. Le taggage automatique continue de fonctionner à côté : le gclid s'ajoute toujours à l'adresse.</p>
+
+<h2>Ce que vous voyez ensuite dans votre tableau</h2>
+
+<p>Avec ce réglage, et un site qui retient les UTM jusqu'au formulaire, chaque demande arrive avec son origine écrite en clair. Par exemple, pour un menuisier :</p>
+
+<table class="tbl">
+  <tr><th>Date</th><th>Nom</th><th>Source</th><th>Campagne</th><th>Mot-clé</th></tr>
+  <tr><td>14/10</td><td>M. Durand</td><td>google</td><td>21456789012</td><td>fenetre alu sur mesure</td></tr>
+  <tr><td>15/10</td><td>Mme Petit</td><td>google</td><td>21456789034</td><td>porte d'entrée prix</td></tr>
+</table>
+
+<p>Le mot-clé est le plus précieux : avant même de rappeler, vous savez ce que cherchait le prospect. La campagne apparaît sous forme de numéro. Pour faire le lien avec son nom, affichez la colonne « ID de campagne » dans la liste de vos campagnes Google Ads : chaque numéro y correspond à un nom.</p>
+
+<p>Si vous préférez lire le nom de la campagne en clair, Google Ads permet de définir un paramètre personnalisé propre à chaque campagne, puis de l'utiliser dans le suffixe. C'est un réglage de plus à maintenir à chaque nouvelle campagne : pour une petite entreprise, le numéro suffit largement.</p>
+
+<h2>Les erreurs les plus fréquentes</h2>
+
+<ul>
+  <li><b>Des UTM tapées à la main, annonce par annonce.</b> Une faute de frappe, « Google » au lieu de « google », et vos rapports se coupent en deux lignes. Le suffixe au niveau du compte évite ce problème.</li>
+  <li><b>Des UTM sur les liens internes de votre site.</b> Un lien de votre page d'accueil vers votre page contact ne doit jamais porter d'UTM : il écraserait la vraie source du visiteur, qui semblerait venir de votre propre site.</li>
+  <li><b>Une redirection qui efface tout.</b> Si votre site redirige de « site.fr » vers « www.site.fr », ou de http vers https, vérifiez que les paramètres survivent à la redirection. Sinon, vous perdez le gclid en même temps que les UTM.</li>
+  <li><b>Des UTM qui contredisent la réalité.</b> Une annonce Google étiquetée « facebook » par copier-coller fausse toutes vos analyses. Une seule règle d'écriture, appliquée partout.</li>
+</ul>
+
+<h2>Ce que nous recommandons</h2>
+
+<p>Gardez le taggage automatique activé : c'est lui qui rend possibles les conversions et l'import des devis signés. Ajoutez des UTM par le suffixe du compte si vous voulez lire la campagne en clair dans vos propres outils. Et faites en sorte que votre site retienne les deux, gclid et UTM, jusqu'au formulaire. Notre guide sur <a href="/tracking-google-ads/">le tracking Google Ads</a> montre comment cette mémoire s'intègre au reste de la chaîne.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Les UTM faussent-elles les statistiques de Google Ads ?</summary>
+    <div class="faq__corps"><p>Non, Google Ads ne s'en sert pas : il compte vos conversions grâce au gclid. Le risque est dans Google Analytics, si vos UTM sont incohérentes d'une campagne à l'autre. Un suffixe unique au niveau du compte écarte ce risque.</p></div>
+  </details>
+  <details>
+    <summary>Faut-il écrire utm_source=google ou google-ads ?</summary>
+    <div class="faq__corps"><p>Choisissez une écriture et gardez-la partout. La convention la plus répandue pour les annonces sur le moteur de recherche est utm_source=google et utm_medium=cpc, que Google Analytics classe directement dans la recherche payante.</p></div>
+  </details>
+  <details>
+    <summary>Les UTM marchent-elles avec Performance Max ?</summary>
+    <div class="faq__corps"><p>Oui. Le suffixe de l'URL finale défini dans les paramètres du compte s'applique à toutes les campagnes, Performance Max comprise.</p></div>
+  </details>
+  <details>
+    <summary>Mes visiteurs voient-ils les UTM ?</summary>
+    <div class="faq__corps"><p>Oui, elles apparaissent dans la barre d'adresse après le clic sur l'annonce, comme le gclid. C'est sans conséquence pour le visiteur, et rien de confidentiel n'y figure : seulement la source, le support, le numéro de campagne et le mot-clé. Si un visiteur partage l'adresse, ses contacts arriveront avec les mêmes étiquettes, ce qui peut gonfler légèrement une campagne dans vos statistiques.</p></div>
+  </details>
+  <details>
+    <summary>Puis-je désactiver le taggage automatique et garder seulement les UTM ?</summary>
+    <div class="faq__corps"><p>Ce serait une erreur. Sans taggage automatique, pas de gclid, donc pas de conversions fiables dans Google Ads et aucun moyen de renvoyer vos devis signés. Les UTM complètent le gclid, elles ne le remplacent pas.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Le gclid et les UTM, retenus jusqu'au formulaire.</b> Trackia installe un suivi qui garde l'origine de chaque visiteur pendant 90 jours et l'inscrit dans votre tableau, en 2 h, sans code. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=utm-google-ads">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>

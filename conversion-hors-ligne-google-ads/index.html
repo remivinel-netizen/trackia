@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conversion hors ligne Google Ads : importer vos devis</title>
+<meta name="description" content="Importer vos devis signés dans Google Ads comme conversions hors ligne, avec leur montant : le principe, les prérequis et la méthode pas à pas, sans code.">
+<link rel="canonical" href="https://trackia.fr/conversion-hors-ligne-google-ads/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/conversion-hors-ligne-google-ads/">
+<meta property="og:title" content="Conversion hors ligne Google Ads : importer vos devis">
+<meta property="og:description" content="Importer vos devis signés dans Google Ads comme conversions hors ligne, avec leur montant : le principe, les prérequis et la méthode pas à pas, sans code.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610070330">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/conversion-hors-ligne-google-ads/#article",
+      "headline": "Conversion hors ligne Google Ads : renvoyer vos devis signés à Google",
+      "description": "Importer vos devis signés dans Google Ads comme conversions hors ligne, avec leur montant : le principe, les prérequis et la méthode pas à pas, sans code.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/conversion-hors-ligne-google-ads/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Tracking Google Ads", "item": "https://trackia.fr/tracking-google-ads/" },
+        { "@type": "ListItem", "position": 3, "name": "Conversion hors ligne", "item": "https://trackia.fr/conversion-hors-ligne-google-ads/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Faut-il un logiciel de gestion client pour importer des conversions hors ligne ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. Un tableau Google Sheets suffit, à condition qu'il contienne le gclid de chaque demande. L'import programmé depuis Google Sheets est gratuit et se règle une seule fois." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de devis signés faut-il pour que l'import serve à quelque chose ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dès le premier import, vos rapports montrent quelles campagnes ont produit des ventes. Pour que Google enchérisse sur la valeur des ventes, comptez une quinzaine de devis signés avant de changer de stratégie d'enchères." }
+        },
+        {
+          "@type": "Question",
+          "name": "Et si le client signe quatre mois après son clic ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Ads refuse les conversions plus de 90 jours après le clic. Ce devis ne pourra pas être rattaché à l'annonce. C'est une raison de plus pour noter vos signatures au fur et à mesure." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles données de mes clients sont envoyées à Google ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Avec la méthode par gclid, seulement le numéro du clic, la date de signature, le montant et la devise. Ni le nom, ni le téléphone, ni l'adresse du client ne quittent votre tableau." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/tracking-google-ads/">Tracking Google Ads</a><span>›</span>Conversion hors ligne
+</nav>
+
+<h1>Conversion hors ligne Google Ads : renvoyer vos devis signés à Google</h1>
+
+<p class="reponse">Une conversion hors ligne, c'est une vente conclue en dehors de votre site, au téléphone, sur devis ou en rendez-vous, que vous renvoyez ensuite à Google Ads. Pour une entreprise qui vend sur devis, c'est la seule façon de dire à Google quelles annonces amènent des clients qui signent, et pour quel montant. Le principe tient en trois informations par vente : le numéro du clic d'origine, la date de signature et le montant.</p>
+
+<h2>Pourquoi importer vos ventes hors ligne</h2>
+
+<p>Sans import, Google Ads ne connaît que les demandes de devis. Il cherche donc les clics qui produisent le plus de demandes, sans savoir lesquelles deviennent des clients. Prenons deux campagnes d'un même artisan sur un mois :</p>
+
+<table class="tbl">
+  <tr><th>Campagne</th><th>Demandes</th><th>Devis signés</th><th>Chiffre d'affaires</th></tr>
+  <tr><td>A : « dépannage urgent »</td><td>20</td><td>1</td><td>800 €</td></tr>
+  <tr><td>B : « rénovation complète »</td><td>8</td><td>4</td><td>14 000 €</td></tr>
+</table>
+
+<p>Vue depuis Google Ads sans import, la campagne A est la meilleure : elle produit deux fois et demie plus de demandes. Avec l'import des devis signés et de leur montant, Google voit l'inverse, et peut déplacer votre budget vers ce qui rapporte vraiment.</p>
+
+<h2>Ce qu'il faut avant d'importer</h2>
+
+<p>Une conversion hors ligne se rattache à un clic grâce au gclid, le numéro unique que Google ajoute à chaque clic sur une annonce. Tout part de là. Il faut donc, avant la première signature :</p>
+<ul>
+  <li><b>le taggage automatique activé</b> dans votre compte Google Ads, pour que le gclid existe ;</li>
+  <li><b>un site qui retient le gclid</b> jusqu'au formulaire et l'enregistre avec chaque demande, par exemple dans un tableau Google Sheets ;</li>
+  <li><b>une action de conversion de type importation</b> dans Google Ads, nommée par exemple « Devis signé », réglée sur une valeur différente pour chaque conversion et une comptabilisation « Une ».</li>
+</ul>
+
+<figure class="art-img"><picture><source type="image/webp" srcset="/assets/guides/gclid-conserve-navigateur.webp"><img src="/assets/guides/gclid-conserve-navigateur.png" alt="Le gclid de test conservé dans le stockage du navigateur, avec la source et la campagne" width="1200" height="370" loading="lazy" decoding="async"></picture><figcaption>Le prérequis : le site garde le numéro du clic, ici un gclid de test, avec la source et la campagne, même après un changement de page.</figcaption></figure>
+
+<p>Google Ads accepte une conversion jusqu'à 90 jours après le clic. Un chantier signé quatre mois après la première visite ne pourra donc pas être renvoyé : pensez à noter vos signatures au fil de l'eau.</p>
+
+<h2>Les trois façons d'envoyer vos devis signés</h2>
+
+<table class="tbl">
+  <tr><th>Méthode</th><th>Pour qui</th><th>Effort</th></tr>
+  <tr><td>Import manuel d'un fichier</td><td>Quelques signatures par mois</td><td>Un fichier à préparer et à charger à chaque fois</td></tr>
+  <tr><td>Import programmé depuis Google Sheets</td><td>Artisans, TPE, indépendants</td><td>Réglé une fois, puis automatique chaque jour</td></tr>
+  <tr><td>Connexion d'un logiciel de gestion client</td><td>Entreprises équipées d'un CRM compatible</td><td>Dépend du logiciel, souvent un abonnement</td></tr>
+</table>
+
+<p>Pour une petite entreprise, l'import programmé depuis Google Sheets est le meilleur compromis : gratuit, automatique, et votre tableau sert aussi de registre de vos demandes.</p>
+
+<div class="cta-art">
+  <p><b>Vous voulez que vos devis signés remontent tout seuls dans Google Ads ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=conversion-hors-ligne-google-ads">Trackia installe la chaîne complète en 2 h, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>La méthode pas à pas avec Google Sheets</h2>
+
+<ol class="pas">
+  <li>Dans Google Ads, créez l'action de conversion « Devis signé » de type importation, avec des valeurs différentes pour chaque conversion et une comptabilisation « Une ».</li>
+  <li>Dans votre tableau de demandes, ajoutez un onglet d'export avec cinq colonnes : Google Click ID, Conversion Name, Conversion Time, Conversion Value et Conversion Currency. Des formules y recopient automatiquement les lignes dont le statut est « Signé ».</li>
+  <li>Dans Google Ads, programmez un import quotidien de cet onglet depuis Google Sheets.</li>
+  <li>À chaque signature, écrivez « Signé » dans la ligne du client, puis le montant et la date de signature. C'est le seul geste à faire ensuite.</li>
+  <li>Le lendemain du premier import, vérifiez dans Google Ads que la ligne a été acceptée.</li>
+</ol>
+
+<p>Le nom de la conversion dans l'onglet d'export doit être exactement celui de l'action créée dans Google Ads, au caractère près. C'est la première cause de rejet.</p>
+
+<h3>À quoi ressemble une ligne d'import</h3>
+
+<p>Voici une ligne d'export prête à partir, pour un devis de 2 400 € signé le 12 octobre à 14 heures :</p>
+
+<table class="tbl">
+  <tr><th>Google Click ID</th><th>Conversion Name</th><th>Conversion Time</th><th>Conversion Value</th><th>Conversion Currency</th></tr>
+  <tr><td>Cj0KCQjw…</td><td>Devis signé</td><td>2026-10-12 14:00:00</td><td>2400</td><td>EUR</td></tr>
+</table>
+
+<p>Le gclid est recopié tel quel depuis la demande d'origine, sans le modifier. La date suit le format année, mois, jour, puis l'heure. Pour que Google interprète l'heure dans votre fuseau, la première cellule de l'onglet précise le fuseau horaire, par exemple <code>Parameters:TimeZone=Europe/Paris</code>. Le montant s'écrit en chiffres, sans espace ni symbole.</p>
+
+<h2>Les erreurs qui font rejeter un import</h2>
+
+<ul>
+  <li><b>Gclid introuvable.</b> Le numéro vient d'un test, ou d'un clic sur un autre compte Google Ads. Ignorez ces lignes.</li>
+  <li><b>Clic trop ancien.</b> Plus de 90 jours se sont écoulés entre le clic et la signature.</li>
+  <li><b>Nom de conversion différent.</b> Une majuscule ou un espace en trop suffit à faire échouer la ligne.</li>
+  <li><b>Date ou montant mal formatés.</b> La date doit être complète, heure comprise, et le montant écrit en chiffres, sans le symbole €.</li>
+  <li><b>Séparateurs d'un tableau en français.</b> Un Google Sheets réglé en français utilise des points-virgules dans les formules, un tableau réglé en anglais des virgules.</li>
+</ul>
+
+<h2>Quand le gclid manque</h2>
+
+<p>Certaines demandes arrivent sans gclid : le visiteur a refusé les cookies, son navigateur a effacé le numéro, ou il est revenu depuis un autre appareil. Ces ventes ne peuvent pas être importées par cette méthode. Google propose une solution complémentaire qui rapproche la vente du clic à partir de l'adresse e-mail du client : <a href="/suivi-avance-conversions-google-ads/">le suivi avancé, en complément</a> de l'import par gclid.</p>
+
+<p>L'import des devis signés est le maillon le plus rentable de toute la chaîne de mesure. Notre guide sur <a href="/tracking-google-ads/">le tracking Google Ads</a> montre comment il s'articule avec les autres.</p>
+
+<h2>Quand changer vos enchères</h2>
+
+<p>Les premiers devis signés servent d'abord vos rapports : vous voyez enfin quelles campagnes rapportent. Pour que Google enchérisse sur la valeur, il lui faut du volume. Comptez une quinzaine de devis signés avant de passer une campagne en « Maximiser la valeur de conversion », et changez une campagne à la fois, avec deux à trois semaines d'observation.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Faut-il un logiciel de gestion client pour importer des conversions hors ligne ?</summary>
+    <div class="faq__corps"><p>Non. Un tableau Google Sheets suffit, à condition qu'il contienne le gclid de chaque demande. L'import programmé depuis Google Sheets est gratuit et se règle une seule fois.</p></div>
+  </details>
+  <details>
+    <summary>Combien de devis signés faut-il pour que l'import serve à quelque chose ?</summary>
+    <div class="faq__corps"><p>Dès le premier import, vos rapports montrent quelles campagnes ont produit des ventes. Pour que Google enchérisse sur la valeur des ventes, comptez une quinzaine de devis signés avant de changer de stratégie d'enchères.</p></div>
+  </details>
+  <details>
+    <summary>Et si le client signe quatre mois après son clic ?</summary>
+    <div class="faq__corps"><p>Google Ads refuse les conversions plus de 90 jours après le clic. Ce devis ne pourra pas être rattaché à l'annonce. C'est une raison de plus pour noter vos signatures au fur et à mesure.</p></div>
+  </details>
+  <details>
+    <summary>Quelles données de mes clients sont envoyées à Google ?</summary>
+    <div class="faq__corps"><p>Avec la méthode par gclid, seulement le numéro du clic, la date de signature, le montant et la devise. Ni le nom, ni le téléphone, ni l'adresse du client ne quittent votre tableau.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Prêt à dire à Google quelles annonces signent ?</b> Trackia installe la remontée des devis signés en 2 h, sans code, avec le tableau et les formules prêts à l'emploi. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=conversion-hors-ligne-google-ads">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>
