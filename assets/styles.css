@@ -555,6 +555,8 @@ b,strong{font-weight:500}
 .avec-claude{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-size:.9375rem;color:var(--gris)}
 .avec-claude img{width:28px;height:28px;flex:none}
 .avec-claude b{color:var(--titre);font-weight:500}
+.avec-claude{flex-wrap:wrap}
+.avec-claude .gratuit{font-size:.8125rem;font-weight:500;color:#127a4a;background:#e8f6ee;border-radius:999px;padding:3px 11px;white-space:nowrap}
 .marque-note{margin-top:14px;font-size:.75rem;line-height:1.5;color:var(--gris-pale)}
 
 /* ── logos clients (avant le prix) : titre à gauche, grille à droite ─*/
