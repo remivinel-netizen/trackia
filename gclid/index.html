@@ -113,6 +113,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <p>Pour le voir de vos propres yeux : ouvrez Google, tapez un mot-clé sur lequel vous diffusez, cliquez sur votre propre annonce, et regardez la barre d'adresse de la page qui s'ouvre. Le « ?gclid=… » est là. Autre méthode, sans dépenser un clic : ajoutez vous-même ?gclid=TEST à la fin de l'adresse de votre site. C'est un faux numéro, mais il permet de tester tout le circuit de conservation sans toucher à vos campagnes.</p>
 
+<p>Quelques repères pour reconnaître un vrai gclid : il compte en général près d'une centaine de caractères, mélange lettres, chiffres, tirets et soulignés, et commence souvent par « Cj0KCQ » ou « EAIaIQ ». Chaque clic a le sien : si la même personne clique deux fois sur vos annonces, elle arrive avec deux gclid différents.</p>
+
 <p>Le gclid est la pièce centrale du suivi enseigné dans notre <a href="/formation-google-tag-manager/">formation Google Tag Manager</a> : sans lui, impossible de relier un client à l'annonce qui l'a amené.</p>
 
 <h2>À quoi il sert : relier un clic à un devis signé</h2>
@@ -120,6 +122,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Suivez le parcours d'un client de plombier. Le 10 janvier, M. Martin tape « rénovation salle de bain » sur Google, clique sur l'annonce, et arrive sur le site avec un gclid dans l'adresse. Il envoie une demande de devis. Le 2 février, après une visite et une relance, il signe pour 2 400 €.</p>
 
 <p>Sans le gclid, Google Ads sait seulement qu'il y a eu un clic le 10 janvier. Il ne saura jamais que ce clic valait 2 400 €. Avec le gclid conservé et renvoyé, Google apprend exactement cela : tel mot-clé, telle annonce, tel montant signé. Au fil des semaines, l'algorithme repère ce que les clics « signants » ont en commun, et va chercher les mêmes profils. C'est la différence entre optimiser sur des formulaires remplis et optimiser sur du chiffre d'affaires.</p>
+
+<h2>Gclid ou UTM : quelle différence ?</h2>
+
+<p>Les UTM sont l'autre famille de paramètres qu'on croise dans les adresses, comme utm_source=google ou utm_campaign=renovation. Ils servent aussi à savoir d'où vient un visiteur, mais ils ne remplacent pas le gclid.</p>
+
+<table class="tbl">
+  <tr><th></th><th>Gclid</th><th>UTM</th></tr>
+  <tr><td>Qui l'ajoute</td><td>Google, automatiquement, si le taggage automatique est coché</td><td>Vous, à la main ou par un réglage du compte</td></tr>
+  <tr><td>Qui sait le lire</td><td>Google seulement</td><td>Tout le monde : vous, votre tableau, votre logiciel</td></tr>
+  <tr><td>Unique à chaque clic</td><td>Oui</td><td>Non, identique pour tous les clics d'une même campagne</td></tr>
+  <tr><td>Permet de renvoyer un devis signé à Google</td><td>Oui</td><td>Non</td></tr>
+</table>
+
+<p>En pratique, gardez toujours le gclid, et ajoutez des UTM seulement si vous voulez lire la campagne en clair dans votre tableau ou vos e-mails. Les deux cohabitent dans la même adresse sans se gêner.</p>
 
 <h2>Pourquoi il disparaît</h2>
 
@@ -137,6 +153,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Conclusion pratique : par défaut, le gclid se perd presque toujours. Le conserver demande un petit dispositif, posé une fois.</p>
 
 <figure class="art-img"><picture><source type="image/webp" srcset="/assets/guides/taggage-automatique-google-ads.webp"><img src="/assets/guides/taggage-automatique-google-ads.png" alt="L'écran Paramètres du compte de Google Ads, avec la case du taggage automatique cochée" width="1000" height="418" loading="lazy" decoding="async"></picture><figcaption>Le réglage qui crée le gclid : dans Google Ads, Admin puis Paramètres du compte, la case « taggage automatique » doit être cochée.</figcaption></figure>
+
+<h2>Gclid, gbraid et wbraid : les variantes sur iPhone</h2>
+
+<p>Depuis 2021, Apple limite le suivi publicitaire sur iPhone et iPad. Pour certains clics venant de ces appareils, Google n'ajoute donc pas de gclid, mais un identifiant voisin :</p>
+<ul>
+  <li><b>wbraid</b> : pour un clic fait dans une application sur iPhone, comme YouTube ou Gmail, et qui mène vers votre site ;</li>
+  <li><b>gbraid</b> : pour un clic qui mène vers une application mobile.</li>
+</ul>
+<p>Ces identifiants ne désignent pas un clic précis comme le gclid : Google s'en sert pour une mesure regroupée, compatible avec les règles d'Apple. Pour un site d'artisan, c'est surtout le wbraid qui compte. Un bon dispositif de conservation retient les trois de la même façon. Si le vôtre ne garde que le gclid, une partie de vos visiteurs sur iPhone arrive sans aucune trace de l'annonce.</p>
 
 <h2>Le récupérer dans un formulaire</h2>
 
