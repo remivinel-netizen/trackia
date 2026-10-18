@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Tag Manager sur WordPress : installation pas à pas</title>
+<meta name="description" content="Installer Google Tag Manager sur WordPress sans développeur : avec GTM4WP ou WPCode, les réglages de cache à vérifier et le test avec Tag Assistant.">
+<link rel="canonical" href="https://trackia.fr/google-tag-manager-wordpress/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/google-tag-manager-wordpress/">
+<meta property="og:title" content="Google Tag Manager sur WordPress : installation pas à pas">
+<meta property="og:description" content="Installer Google Tag Manager sur WordPress sans développeur : avec GTM4WP ou WPCode, les réglages de cache à vérifier et le test avec Tag Assistant.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610171830">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/google-tag-manager-wordpress/#article",
+      "headline": "Installer Google Tag Manager sur WordPress : 3 méthodes, sans développeur",
+      "description": "Installer Google Tag Manager sur WordPress sans développeur : avec GTM4WP ou WPCode, les réglages de cache à vérifier et le test avec Tag Assistant.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/google-tag-manager-wordpress/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Formation Google Tag Manager", "item": "https://trackia.fr/formation-google-tag-manager/" },
+        { "@type": "ListItem", "position": 3, "name": "Installer Google Tag Manager", "item": "https://trackia.fr/installer-google-tag-manager/" },
+        { "@type": "ListItem", "position": 4, "name": "Google Tag Manager sur WordPress", "item": "https://trackia.fr/google-tag-manager-wordpress/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GTM4WP est-elle gratuite ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui. L'extension est gratuite et suffit entièrement pour installer Google Tag Manager sur un site WordPress. Elle ne demande aucun compte supplémentaire." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il aussi installer Site Kit de Google ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ce n'est pas nécessaire. Site Kit sert surtout à afficher des statistiques dans votre administration WordPress. Si vous l'utilisez, veillez à ne pas placer la balise de Google Analytics à la fois par Site Kit et par Google Tag Manager, sinon vos visites seront comptées deux fois." }
+        },
+        {
+          "@type": "Question",
+          "name": "Google Tag Manager va-t-il ralentir mon site WordPress ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Très peu. Son code se charge sans bloquer l'affichage des pages. Ce sont les balises qu'on y ajoute qui pèsent, et quelques balises Google ont un effet négligeable sur un site d'artisan ou de TPE." }
+        },
+        {
+          "@type": "Question",
+          "name": "Mon site est sur WordPress.com, est-ce possible ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, à condition d'avoir une offre payante qui autorise les extensions. Avec une offre qui ne les autorise pas, vous ne pourrez pas installer GTM4WP ni coller le code de Google Tag Manager." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/formation-google-tag-manager/">Formation Google Tag Manager</a><span>›</span><a href="/installer-google-tag-manager/">Installer Google Tag Manager</a><span>›</span>Google Tag Manager sur WordPress
+</nav>
+
+<h1>Installer Google Tag Manager sur WordPress : 3 méthodes, sans développeur</h1>
+
+<p class="reponse">Sur WordPress, le plus simple est l'extension gratuite GTM4WP : vous l'installez, vous collez votre identifiant GTM, et elle pose le code sur toutes les pages. Comptez 5 minutes. Deux autres méthodes existent, par une extension d'insertion de code ou par votre thème. Dans tous les cas, deux vérifications font la différence : vos extensions de cache ne doivent pas bloquer Google Tag Manager, et il ne doit être installé qu'une seule fois.</p>
+
+<h2>Avant de commencer</h2>
+
+<p>Il vous faut deux choses : un accès administrateur à votre site WordPress, et un compte Google Tag Manager avec son conteneur. Si vous n'avez pas encore de conteneur, créez-le d'abord : notre guide pour <a href="/installer-google-tag-manager/">installer Google Tag Manager sur un autre type de site</a> explique cette étape, valable pour tous les sites.</p>
+
+<p>À la création du conteneur, Google Tag Manager affiche deux morceaux de code et un identifiant de la forme <code>GTM-XXXXXXX</code>, en haut à droite de l'écran. Selon la méthode choisie, vous aurez besoin soit de l'identifiant seul, soit des deux morceaux de code. Gardez cet onglet ouvert.</p>
+
+<p>Un point à vérifier avant tout : si votre site est hébergé sur WordPress.com, et non sur un hébergement classique, l'installation d'extensions n'est possible qu'avec une offre payante qui les autorise. Sur un site WordPress installé chez un hébergeur, comme la plupart des sites d'artisans, aucune restriction.</p>
+
+<h2>Méthode 1 : l'extension GTM4WP, la plus simple</h2>
+
+<p>GTM4WP est une extension gratuite, très répandue, dédiée à Google Tag Manager. Elle ne demande que l'identifiant, et place elle-même les deux morceaux de code au bon endroit, sur toutes les pages.</p>
+
+<ol class="pas">
+  <li>Dans votre administration WordPress, ouvrez Extensions, puis Ajouter. Cherchez « GTM4WP ».</li>
+  <li>Cliquez sur Installer maintenant, puis sur Activer.</li>
+  <li>Ouvrez Réglages, puis Google Tag Manager. Collez votre identifiant <code>GTM-XXXXXXX</code> dans le champ prévu.</li>
+  <li>Laissez les autres options par défaut, puis enregistrez.</li>
+</ol>
+
+<p>C'est la méthode que nous recommandons : elle survit aux changements de thème, et l'identifiant se modifie en un clic si besoin. L'extension propose aussi, dans ses onglets d'intégration, des options pour signaler certains événements, comme l'envoi de formulaires Contact Form 7. Vous n'en avez pas besoin pour l'installation.</p>
+
+<h2>Méthode 2 : une extension d'insertion de code</h2>
+
+<p>Si vous utilisez déjà une extension qui ajoute du code dans l'en-tête de vos pages, comme WPCode, vous pouvez vous en servir plutôt que d'en installer une nouvelle.</p>
+
+<ol class="pas">
+  <li>Ouvrez la page de l'extension consacrée à l'en-tête et au pied de page. Dans WPCode, elle s'appelle « Header &amp; Footer ».</li>
+  <li>Collez le premier morceau de code de Google Tag Manager dans la zone de l'en-tête, appelée Header.</li>
+  <li>Collez le second morceau, celui qui commence par <code>&lt;noscript&gt;</code>, dans la zone du début de page, appelée Body.</li>
+  <li>Enregistrez.</li>
+</ol>
+
+<p>Attention à bien placer chaque morceau dans sa zone : le premier doit être le plus haut possible dans l'en-tête. Inverser les deux est une erreur fréquente.</p>
+
+<div class="cta-art">
+  <p><b>Vous voulez aller plus loin que l'installation ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=google-tag-manager-wordpress">Trackia vous guide de GTM jusqu'aux devis signés qui remontent dans Google Ads, en 2 h, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Méthode 3 : votre thème ou votre constructeur de pages</h2>
+
+<p>Certains thèmes et constructeurs de pages ont un champ prévu pour les codes de suivi. Divi le propose dans les options du thème, onglet Intégration. Elementor le propose avec sa version payante, dans la rubrique Code personnalisé. D'autres thèmes ont une option similaire.</p>
+
+<p>Cette méthode fonctionne, mais elle a deux limites :</p>
+<ul>
+  <li>le code disparaît si vous changez de thème, et personne ne s'en rend compte avant de voir les conversions s'arrêter ;</li>
+  <li>si vous modifiez directement les fichiers du thème, sans thème enfant, une simple mise à jour du thème efface votre code.</li>
+</ul>
+<p>Si vous avez le choix, préférez la méthode 1.</p>
+
+<h2>Les réglages de cache et d'optimisation à vérifier</h2>
+
+<p>C'est le piège propre à WordPress. Les extensions qui accélèrent votre site, comme WP Rocket, LiteSpeed Cache, Autoptimize ou Perfmatters, peuvent retarder ou modifier le chargement des scripts. Certaines options vont jusqu'à attendre que le visiteur bouge la souris ou fasse défiler la page avant de lancer les scripts.</p>
+
+<p>Pour Google Tag Manager, les conséquences sont réelles : des visites non comptées, et surtout un numéro de clic sur l'annonce qui peut être perdu avant d'être mis de côté. Après l'installation, vérifiez trois choses dans votre extension de cache :</p>
+<ul>
+  <li>si une option retarde l'exécution du JavaScript, excluez-en Google Tag Manager, en ajoutant <code>googletagmanager.com</code> à la liste des exclusions ;</li>
+  <li>si une option combine ou réduit les fichiers JavaScript et que Google Tag Manager se comporte mal, excluez-le aussi ;</li>
+  <li>videz le cache de l'extension, puis celui de votre hébergeur s'il en a un, pour que tous les visiteurs reçoivent la nouvelle version des pages.</li>
+</ul>
+
+<h2>Vérifier l'installation avec Tag Assistant</h2>
+
+<ol class="pas">
+  <li>Dans Google Tag Manager, cliquez sur Prévisualiser, en haut à droite.</li>
+  <li>Tag Assistant s'ouvre dans un nouvel onglet : tapez l'adresse de votre site et cliquez sur Connect.</li>
+  <li>Votre site s'ouvre dans une fenêtre. Revenez sur l'onglet Tag Assistant : il doit afficher « Connecté ! » avec votre identifiant GTM.</li>
+</ol>
+
+<figure class="art-img"><picture><source type="image/webp" srcset="/assets/guides/tag-assistant-connecte.webp"><img src="/assets/guides/tag-assistant-connecte.png" alt="Tag Assistant confirme la connexion à un site équipé de Google Tag Manager" width="1200" height="590" loading="lazy" decoding="async"></picture><figcaption>Le signe que l'installation fonctionne : Tag Assistant affiche « Connecté ! » avec votre identifiant GTM.</figcaption></figure>
+
+<p>Si Tag Assistant ne se connecte pas, ouvrez une page de votre site dans une fenêtre de navigation privée, faites un clic droit, choisissez Afficher le code source, et cherchez « GTM- ». Si l'identifiant n'apparaît pas, le code n'est pas posé, ou une ancienne version de la page est encore en cache.</p>
+
+<h2>Les erreurs fréquentes sur WordPress</h2>
+
+<ul>
+  <li><b>Google Tag Manager installé deux fois.</b> Par exemple avec GTM4WP et dans les options du thème. Chaque visite est alors comptée en double. Gardez une seule méthode.</li>
+  <li><b>Site Kit de Google qui fait doublon.</b> L'extension officielle de Google peut placer elle-même la balise de Google Analytics. Si vous configurez aussi Google Analytics dans Google Tag Manager, vos statistiques sont doublées. Décidez d'un seul endroit.</li>
+  <li><b>Un code collé dans un article ou une page.</b> Le code doit être sur toutes les pages, pas dans le contenu d'une seule.</li>
+  <li><b>Une installation faite sur le site de test.</b> Si votre hébergeur propose une copie de préproduction, vérifiez que le code est bien sur le site en ligne.</li>
+</ul>
+
+<h2>Et ensuite : compter les demandes de vos formulaires</h2>
+
+<p>Google Tag Manager installé, il ne mesure encore rien de précis. L'étape suivante consiste à compter chaque envoi de votre formulaire de contact, qu'il soit fait avec Contact Form 7, WPForms, Gravity Forms ou Elementor, comme une vraie demande de devis, puis à le transmettre à Google Analytics et à Google Ads. C'est là que le suivi commence à vous dire quelles annonces rapportent.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>GTM4WP est-elle gratuite ?</summary>
+    <div class="faq__corps"><p>Oui. L'extension est gratuite et suffit entièrement pour installer Google Tag Manager sur un site WordPress. Elle ne demande aucun compte supplémentaire.</p></div>
+  </details>
+  <details>
+    <summary>Faut-il aussi installer Site Kit de Google ?</summary>
+    <div class="faq__corps"><p>Ce n'est pas nécessaire. Site Kit sert surtout à afficher des statistiques dans votre administration WordPress. Si vous l'utilisez, veillez à ne pas placer la balise de Google Analytics à la fois par Site Kit et par Google Tag Manager, sinon vos visites seront comptées deux fois.</p></div>
+  </details>
+  <details>
+    <summary>Google Tag Manager va-t-il ralentir mon site WordPress ?</summary>
+    <div class="faq__corps"><p>Très peu. Son code se charge sans bloquer l'affichage des pages. Ce sont les balises qu'on y ajoute qui pèsent, et quelques balises Google ont un effet négligeable sur un site d'artisan ou de TPE.</p></div>
+  </details>
+  <details>
+    <summary>Mon site est sur WordPress.com, est-ce possible ?</summary>
+    <div class="faq__corps"><p>Oui, à condition d'avoir une offre payante qui autorise les extensions. Avec une offre qui ne les autorise pas, vous ne pourrez pas installer GTM4WP ni coller le code de Google Tag Manager.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Google Tag Manager installé, et maintenant ?</b> Trackia vous guide pour compter vos demandes de devis, retenir le numéro de chaque clic et renvoyer vos devis signés à Google Ads, en 2 h, sans code. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=google-tag-manager-wordpress">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>
