@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivi des conversions Google Ads avec GTM : le guide</title>
+<meta name="description" content="Configurer le suivi des conversions Google Ads avec Google Tag Manager : balise de conversion ou import GA4, déclencheur, linker et test, pas à pas.">
+<link rel="canonical" href="https://trackia.fr/suivi-conversions-google-ads-gtm/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/suivi-conversions-google-ads-gtm/">
+<meta property="og:title" content="Suivi des conversions Google Ads avec GTM : le guide">
+<meta property="og:description" content="Configurer le suivi des conversions Google Ads avec Google Tag Manager : balise de conversion ou import GA4, déclencheur, linker et test, pas à pas.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610171830">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/suivi-conversions-google-ads-gtm/#article",
+      "headline": "Suivi des conversions Google Ads avec Google Tag Manager : le pas à pas complet",
+      "description": "Configurer le suivi des conversions Google Ads avec Google Tag Manager : balise de conversion ou import GA4, déclencheur, linker et test, pas à pas.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/suivi-conversions-google-ads-gtm/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Formation Google Tag Manager", "item": "https://trackia.fr/formation-google-tag-manager/" },
+        { "@type": "ListItem", "position": 3, "name": "Suivi des conversions Google Ads", "item": "https://trackia.fr/suivi-conversions-google-ads/" },
+        { "@type": "ListItem", "position": 4, "name": "Suivi des conversions avec GTM", "item": "https://trackia.fr/suivi-conversions-google-ads-gtm/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Faut-il le linker de conversion avec l'import depuis Google Analytics 4 ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. Le linker de conversion sert à la balise de conversion Google Ads. Avec l'import depuis Google Analytics 4, la balise Google de votre Analytics joue déjà ce rôle." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il donner une valeur à une demande de devis ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ce n'est pas obligatoire. Une valeur moyenne aide Google Ads à comparer vos campagnes, par exemple votre panier moyen multiplié par votre taux de signature. La vraie valeur arrive ensuite avec l'import de vos devis signés." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps avant de voir les conversions dans Google Ads ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Quelques heures avec la balise de conversion Google Ads, et jusqu'au lendemain avec l'import depuis Google Analytics 4. L'état de l'action se met à jour après la première vraie conversion." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je garder ma balise Google Ads et passer à l'import GA4 ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, à condition qu'une seule des deux actions soit en conversion principale. Laissez l'autre en secondaire pendant quelques semaines pour comparer les chiffres, puis gardez celle qui vous paraît la plus fidèle à vos vraies demandes." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/formation-google-tag-manager/">Formation Google Tag Manager</a><span>›</span><a href="/suivi-conversions-google-ads/">Suivi des conversions Google Ads</a><span>›</span>Suivi des conversions avec GTM
+</nav>
+
+<h1>Suivi des conversions Google Ads avec Google Tag Manager : le pas à pas complet</h1>
+
+<p class="reponse">Avec Google Tag Manager, il existe deux façons de compter vos demandes de devis dans Google Ads : une balise de conversion Google Ads, ou un événement Google Analytics 4 importé dans Google Ads. Les deux fonctionnent. L'important est d'en choisir une seule comme conversion principale, et de la déclencher au bon moment : après l'envoi réussi du formulaire, jamais à la simple visite de la page contact.</p>
+
+<h2>Les deux façons de faire</h2>
+
+<table class="tbl">
+  <tr><th></th><th>Balise de conversion Google Ads</th><th>Import depuis Google Analytics 4</th></tr>
+  <tr><td>Principe</td><td>Google Tag Manager prévient directement Google Ads à chaque demande.</td><td>Google Tag Manager prévient Google Analytics 4, qui transmet ensuite la demande à Google Ads.</td></tr>
+  <tr><td>Délai d'apparition</td><td>Quelques heures.</td><td>Un peu plus long, jusqu'au lendemain.</td></tr>
+  <tr><td>Nombre de conversions</td><td>Toutes celles venant de vos annonces.</td><td>Souvent un peu moins, car Google Analytics répartit le mérite entre tous vos canaux.</td></tr>
+  <tr><td>Point fort</td><td>La mesure la plus directe pour Google Ads.</td><td>Une seule configuration sert aux statistiques et à la publicité.</td></tr>
+</table>
+
+<p>Pour une petite entreprise, les deux sont valables. La balise directe est la plus précise pour piloter vos annonces. L'import depuis Google Analytics 4 est plus simple à maintenir si vous suivez déjà vos demandes dans Analytics : c'est la méthode retenue dans la formation Trackia. Choisissez l'une ou l'autre, mais pas les deux en conversion principale, comme on le verra plus bas.</p>
+
+<p>Avant de commencer, Google Tag Manager doit être installé sur votre site, et votre formulaire doit fonctionner. Si vous doutez de votre suivi actuel, commencez par <a href="/suivi-conversions-google-ads/">vérifier votre suivi des conversions en 2 minutes</a>.</p>
+
+<h2>Méthode 1 : la balise de conversion Google Ads</h2>
+
+<h3>Récupérer l'identifiant et le libellé</h3>
+
+<ol class="pas">
+  <li>Dans Google Ads, ouvrez Objectifs, puis Conversions, puis Récapitulatif. Créez une action de conversion de type site web, ou ouvrez celle qui existe, par exemple « Demande de devis ».</li>
+  <li>Dans la configuration de la balise, choisissez l'installation avec Google Tag Manager.</li>
+  <li>Google Ads affiche deux valeurs : l'ID de conversion, une suite de chiffres, et le libellé de conversion, une suite de lettres et de chiffres. Notez-les.</li>
+</ol>
+
+<h3>Créer la balise dans Google Tag Manager</h3>
+
+<ol class="pas">
+  <li>Dans Google Tag Manager, ouvrez Balises, puis Nouvelle. Choisissez le type « Suivi des conversions Google Ads ».</li>
+  <li>Collez l'ID de conversion et le libellé de conversion dans les champs prévus. Si vous donnez une valeur moyenne à une demande, indiquez-la aussi, avec la devise EUR.</li>
+  <li>Dans la partie Déclenchement, choisissez le déclencheur de votre demande envoyée, décrit plus bas.</li>
+  <li>Nommez la balise, par exemple « Google Ads - Demande de devis », puis enregistrez.</li>
+</ol>
+
+<h3>Ajouter le linker de conversion</h3>
+
+<p>Le linker de conversion est une petite balise qui aide Google Ads à relier le clic sur l'annonce à la conversion, même quand la demande arrive quelques pages plus loin. Sans lui, une partie de vos conversions se perd.</p>
+
+<ol class="pas">
+  <li>Créez une nouvelle balise de type « Linker de conversion ».</li>
+  <li>Déclenchez-la sur toutes les pages, puis enregistrez.</li>
+</ol>
+
+<p>Si Google Tag Manager vous propose d'ajouter une balise Google pour votre compte Google Ads, acceptez : elle complète la mesure et c'est le réglage recommandé par Google.</p>
+
+<h2>Méthode 2 : l'import depuis Google Analytics 4</h2>
+
+<ol class="pas">
+  <li>Dans Google Tag Manager, créez une balise d'événement Google Analytics 4 qui envoie l'événement <code>generate_lead</code>, avec le même déclencheur de demande envoyée.</li>
+  <li>Dans Google Analytics 4, ouvrez Administration, puis Événements clés, et marquez <code>generate_lead</code> comme événement clé.</li>
+  <li>Toujours dans Administration, ouvrez Associations de produits, puis Associations à Google Ads, et reliez votre compte Google Ads si ce n'est pas déjà fait.</li>
+  <li>Dans Google Ads, ouvrez Objectifs, puis Conversions, créez une action de conversion, choisissez Importer, puis Propriétés Google Analytics 4, et sélectionnez <code>generate_lead</code>.</li>
+</ol>
+
+<p>Vous n'avez pas besoin du linker de conversion avec cette méthode : la balise Google de votre Google Analytics 4 joue déjà ce rôle.</p>
+
+<div class="cta-art">
+  <p><b>Vous préférez être guidé écran par écran ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=suivi-conversions-google-ads-gtm">Trackia vous accompagne de l'installation de GTM jusqu'aux devis signés, en 2 h, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Le déclencheur : le réglage qui fait tout</h2>
+
+<p>Quelle que soit la méthode, c'est le déclencheur qui décide si vos chiffres disent la vérité. Il doit s'activer une fois par demande réellement envoyée, et seulement dans ce cas.</p>
+
+<table class="tbl">
+  <tr><th>Déclencheur</th><th>Fiabilité</th><th>Commentaire</th></tr>
+  <tr><td>Visite de la page contact</td><td>À proscrire</td><td>Compte chaque curieux comme une demande. C'est l'erreur la plus répandue.</td></tr>
+  <tr><td>Clic sur le bouton Envoyer</td><td>Faible</td><td>Compte aussi les envois refusés pour un champ mal rempli.</td></tr>
+  <tr><td>Déclencheur « Envoi de formulaire » de GTM</td><td>Variable</td><td>Ne fonctionne pas avec beaucoup de formulaires modernes, qui s'envoient sans recharger la page.</td></tr>
+  <tr><td>Page de remerciement</td><td>Très bonne</td><td>Un déclencheur « Vue de page » sur l'adresse de la page Merci, que le visiteur ne voit qu'après un envoi réussi.</td></tr>
+  <tr><td>Événement envoyé par le formulaire</td><td>Très bonne</td><td>Le formulaire, ou un script, signale à GTM l'envoi réussi par un événement dédié, capté par un déclencheur « Événement personnalisé ».</td></tr>
+</table>
+
+<p>Si votre formulaire redirige vers une page de remerciement, c'est la solution la plus simple. Sinon, l'événement envoyé par le formulaire est la plus fiable.</p>
+
+<h2>Tester avant de laisser tourner</h2>
+
+<ol class="pas">
+  <li>Dans Google Tag Manager, cliquez sur Prévisualiser, et connectez Tag Assistant à votre site.</li>
+  <li>Envoyez votre formulaire avec des coordonnées de test. Votre balise de conversion doit apparaître parmi les balises déclenchées, au moment de l'envoi et pas avant.</li>
+  <li>Si tout est correct, cliquez sur Envoyer, puis Publier, dans Google Tag Manager. Sans publication, rien n'est en ligne.</li>
+  <li>Dans Google Ads, revenez le lendemain sur la page de vos conversions : l'état de l'action doit indiquer que des conversions sont enregistrées, après votre première vraie demande.</li>
+</ol>
+
+<h2>L'erreur la plus coûteuse : compter deux fois</h2>
+
+<p>Beaucoup de comptes ont, sans le savoir, les deux méthodes actives en même temps : une balise de conversion Google Ads et un import depuis Google Analytics 4, toutes deux en conversion principale. Chaque demande est alors comptée deux fois. Google Ads croit que vos campagnes rapportent deux fois plus qu'en réalité, et ses enchères automatiques s'emballent.</p>
+
+<p>Pour le vérifier, ouvrez la liste de vos conversions dans Google Ads, et regardez lesquelles sont principales. Si deux actions comptent la même demande, gardez-en une seule en principale et passez l'autre en secondaire : elle restera visible dans vos rapports, sans fausser les enchères.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Faut-il le linker de conversion avec l'import depuis Google Analytics 4 ?</summary>
+    <div class="faq__corps"><p>Non. Le linker de conversion sert à la balise de conversion Google Ads. Avec l'import depuis Google Analytics 4, la balise Google de votre Analytics joue déjà ce rôle.</p></div>
+  </details>
+  <details>
+    <summary>Faut-il donner une valeur à une demande de devis ?</summary>
+    <div class="faq__corps"><p>Ce n'est pas obligatoire. Une valeur moyenne aide Google Ads à comparer vos campagnes, par exemple votre panier moyen multiplié par votre taux de signature. La vraie valeur arrive ensuite avec l'import de vos devis signés.</p></div>
+  </details>
+  <details>
+    <summary>Combien de temps avant de voir les conversions dans Google Ads ?</summary>
+    <div class="faq__corps"><p>Quelques heures avec la balise de conversion Google Ads, et jusqu'au lendemain avec l'import depuis Google Analytics 4. L'état de l'action se met à jour après la première vraie conversion.</p></div>
+  </details>
+  <details>
+    <summary>Puis-je garder ma balise Google Ads et passer à l'import GA4 ?</summary>
+    <div class="faq__corps"><p>Oui, à condition qu'une seule des deux actions soit en conversion principale. Laissez l'autre en secondaire pendant quelques semaines pour comparer les chiffres, puis gardez celle qui vous paraît la plus fidèle à vos vraies demandes.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Et après les demandes, les devis signés.</b> Trackia installe le suivi des demandes, puis la remontée de vos devis signés avec leur montant, en 2 h, sans code. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=suivi-conversions-google-ads-gtm">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>
