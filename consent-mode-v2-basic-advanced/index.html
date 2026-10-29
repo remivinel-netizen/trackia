@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consent Mode v2 basic ou advanced : choisir et tester</title>
+<meta name="description" content="Consent Mode v2 basic ou advanced : ce qui change vraiment pour une TPE, lequel choisir, comment le régler et le tester pas à pas en 10 minutes.">
+<link rel="canonical" href="https://trackia.fr/consent-mode-v2-basic-advanced/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Trackia">
+<meta property="og:url" content="https://trackia.fr/consent-mode-v2-basic-advanced/">
+<meta property="og:title" content="Consent Mode v2 basic ou advanced : choisir et tester">
+<meta property="og:description" content="Consent Mode v2 basic ou advanced : ce qui change vraiment pour une TPE, lequel choisir, comment le régler et le tester pas à pas en 10 minutes.">
+<meta property="og:image" content="https://trackia.fr/assets/og-397.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/onest-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css?v=202610171830">
+<script src="/assets/consentement.js?v=202610031419"></script>
+<!-- Google Tag Manager (après consentement.js : tout est refusé par défaut) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MRJGHCXK');</script>
+<!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://trackia.fr/consent-mode-v2-basic-advanced/#article",
+      "headline": "Consent Mode v2 : basic ou advanced, lequel choisir et comment le tester",
+      "description": "Consent Mode v2 basic ou advanced : ce qui change vraiment pour une TPE, lequel choisir, comment le régler et le tester pas à pas en 10 minutes.",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://trackia.fr/consent-mode-v2-basic-advanced/",
+      "author": { "@type": "Organization", "name": "Trackia", "url": "https://trackia.fr/" },
+      "publisher": { "@type": "Organization", "name": "Trackia", "logo": { "@type": "ImageObject", "url": "https://trackia.fr/assets/brand/trackia-logo-1200.png" } }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://trackia.fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Tracking Google Ads", "item": "https://trackia.fr/tracking-google-ads/" },
+        { "@type": "ListItem", "position": 3, "name": "Consent Mode v2", "item": "https://trackia.fr/consent-mode-v2-google-ads/" },
+        { "@type": "ListItem", "position": 4, "name": "Basic ou advanced", "item": "https://trackia.fr/consent-mode-v2-basic-advanced/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le mode advanced est-il obligatoire pour Google Ads ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. Google exige le Consent Mode v2 pour les visiteurs européens, quel que soit le mode. Le mode basic répond à cette exigence. Le mode advanced améliore l'estimation des conversions des visiteurs qui refusent, si votre volume de clics le permet." }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment savoir si mon site est en basic ou en advanced ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ouvrez votre site en navigation privée, appuyez sur F12, onglet Réseau, filtrez sur « collect », puis refusez les cookies et rechargez la page. Aucune requête : vous êtes en basic. Des requêtes avec gcs=G100 : vous êtes en advanced." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le mode advanced dépose-t-il des cookies sans consentement ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Non. Tant que le visiteur n'a pas accepté, aucun cookie Google n'est déposé. Seuls des signaux sans cookie ni identifiant partent chez Google, ce qui doit être mentionné dans votre politique de confidentialité." }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je passer du mode basic au mode advanced plus tard ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, en changeant le réglage de votre bandeau ou de Google Tag Manager. Vos conversions passées ne changent pas, et l'estimation propre à votre site se met en place après quelques semaines de données, si votre volume de clics le permet." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRJGHCXK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete" id="entete"><div class="zone entete__in">
+  <a class="logo" href="/" aria-label="Trackia, accueil">
+    <img src="/assets/brand/trackia-logo.svg" alt="Trackia" width="115" height="30">
+  </a>
+  <a class="bouton bouton--petit" href="/#prix" style="margin-left:auto">Voir la formation</a>
+</div></header>
+
+<main class="doc" id="contenu"><div class="zone zone--etroite">
+
+<nav class="ariane" aria-label="Fil d'Ariane">
+  <a href="/">Accueil</a><span>›</span><a href="/tracking-google-ads/">Tracking Google Ads</a><span>›</span><a href="/consent-mode-v2-google-ads/">Consent Mode v2</a><span>›</span>Basic ou advanced
+</nav>
+
+<h1>Consent Mode v2 : basic ou advanced, lequel choisir et comment le tester</h1>
+
+<p class="reponse">Le Consent Mode v2 existe en deux modes. En mode basic, les balises Google attendent l'accord du visiteur : s'il refuse, rien ne part chez Google. En mode advanced, elles se chargent tout de suite avec tout refusé par défaut, et envoient des signaux sans cookie même en cas de refus, ce qui permet à Google d'estimer plus finement les conversions manquantes. Pour une petite entreprise, le choix dépend surtout de votre volume de clics et de votre prudence juridique. Et un test de 10 minutes suffit à savoir lequel tourne vraiment sur votre site.</p>
+
+<h2>Ce qui se passe vraiment dans chaque mode</h2>
+
+<p>Suivons un visiteur qui arrive sur votre site après un clic sur votre annonce. Votre bandeau cookies s'affiche. Selon le mode, vos balises Google ne se comportent pas du tout de la même façon.</p>
+
+<table class="tbl">
+  <tr><th>Moment</th><th>Mode basic</th><th>Mode advanced</th></tr>
+  <tr><td>Le bandeau s'affiche</td><td>Aucune balise Google ne se charge.</td><td>Les balises se chargent, avec tout refusé par défaut. Aucun cookie n'est déposé.</td></tr>
+  <tr><td>Le visiteur accepte</td><td>Les balises se chargent et mesurent normalement.</td><td>Les balises passent en mesure normale et déposent leurs cookies.</td></tr>
+  <tr><td>Le visiteur refuse</td><td>Rien n'est envoyé à Google pendant toute la visite.</td><td>Des signaux sans cookie partent à chaque page vue et à chaque conversion, sans identifier le visiteur.</td></tr>
+  <tr><td>Le visiteur ignore le bandeau</td><td>Comme un refus : rien n'est envoyé.</td><td>Comme un refus : uniquement des signaux sans cookie.</td></tr>
+</table>
+
+<p>Un point rassure souvent : un visiteur qui accepte est mesuré exactement de la même façon dans les deux modes. Toute la différence porte sur ceux qui refusent ou qui ignorent le bandeau, une part qui varie beaucoup d'un site à l'autre selon la présentation du bandeau.</p>
+
+<p>Ne confondez pas non plus le mode advanced avec le suivi avancé des conversions : malgré la ressemblance des noms, ce sont deux réglages différents. Le premier concerne les visiteurs qui refusent, le second retrouve des ventes chez ceux qui acceptent.</p>
+
+<h2>Les conversions estimées : ce que vous gagnez vraiment</h2>
+
+<p>Quand un visiteur refuse, Google ne peut pas relier sa demande de devis au clic sur votre annonce. Pour ne pas sous-estimer vos campagnes, il estime une partie de ces conversions manquantes et les ajoute à vos rapports. C'est ce qu'on appelle la modélisation.</p>
+
+<ul>
+  <li><b>En mode basic</b>, Google applique une estimation générale, construite à partir de tendances observées sur de nombreux sites. Elle est peu précise pour votre activité.</li>
+  <li><b>En mode advanced</b>, les signaux sans cookie lui permettent de bâtir une estimation propre à votre site, plus fidèle à votre réalité.</li>
+</ul>
+
+<p>Il y a pourtant une condition que l'on oublie souvent de préciser. Google ne modélise pas à partir de rien : l'estimation propre à votre site demande un volume minimum de clics sur vos annonces, de l'ordre de plusieurs centaines par semaine pour un même pays. En dessous, le gain du mode advanced reste modeste. Du côté de Google Analytics 4, l'estimation du comportement des visiteurs qui refusent exige aussi un trafic quotidien important, rarement atteint par un site d'artisan.</p>
+
+<p>Le mode advanced garde un intérêt pour la suite : si votre budget publicitaire grandit, l'estimation se met en route d'elle-même, sans rien changer à votre installation.</p>
+
+<h2>Le point juridique, sans jargon</h2>
+
+<p>La règle de base est la même dans les deux modes : aucun cookie de publicité ou de statistiques ne doit être déposé sans l'accord du visiteur. Basic et advanced la respectent tous les deux, à condition d'être bien réglés.</p>
+
+<p>La différence est ailleurs. En mode advanced, des informations partent chez Google même quand le visiteur a refusé : pas de cookie ni d'identifiant, mais des données techniques comme le moment de la visite, le navigateur utilisé ou la page d'origine. Certains professionnels du droit estiment que cet envoi devrait lui aussi attendre le consentement, d'autres le jugent acceptable. Le mode basic évite la question, puisque rien ne part sans accord.</p>
+
+<p>Si vous choisissez le mode advanced, mentionnez-le dans votre politique de confidentialité. Pour vos obligations exactes, appuyez-vous sur les recommandations de la CNIL ou sur votre conseil.</p>
+
+<h2>Lequel choisir pour une petite entreprise</h2>
+
+<table class="tbl">
+  <tr><th>Votre situation</th><th>Mode conseillé</th></tr>
+  <tr><td>Vous voulez la solution la plus prudente juridiquement.</td><td>Basic.</td></tr>
+  <tr><td>Vous recevez quelques dizaines de clics par semaine.</td><td>Les deux se valent : l'estimation propre à votre site demande plus de volume. Prenez le plus simple à régler dans votre bandeau.</td></tr>
+  <tr><td>Vous recevez plusieurs centaines de clics par semaine.</td><td>Advanced : l'estimation propre à votre site devient possible, et vos campagnes apprennent sur des chiffres plus complets.</td></tr>
+  <tr><td>Vous comptez augmenter fortement votre budget.</td><td>Advanced, mentionné dans votre politique de confidentialité, pour que l'estimation démarre dès que le volume suffit.</td></tr>
+</table>
+
+<p>Dans tous les cas, le mode compte moins que la qualité du réglage. Un mode basic propre vaut mieux qu'un mode advanced mal branché, qui enverrait des données avant que le bandeau ait posé l'état par défaut.</p>
+
+<div class="cta-art">
+  <p><b>Vous préférez un suivi installé et vérifié pas à pas ?</b> <a href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=consent-mode-v2-basic-advanced">Trackia vous guide de Google Tag Manager jusqu'aux devis signés, en 2 h, sans code</a>. 397 €, accès à vie.</p>
+</div>
+
+<h2>Comment régler chaque mode</h2>
+
+<h3>Avec un bandeau du marché</h3>
+
+<p>Les bandeaux les plus courants, comme Complianz, CookieYes, Axeptio ou Didomi, proposent une option « Google Consent Mode v2 », souvent désactivée par défaut. Activez-la d'abord : sans elle, aucun des deux modes ne fonctionne.</p>
+
+<p>Le choix entre basic et advanced dépend ensuite de ce que fait le bandeau avec vos balises Google. S'il les bloque jusqu'à l'accord du visiteur, vous êtes en basic. S'il les laisse se charger avec tout refusé par défaut, vous êtes en advanced. Selon les bandeaux, ce réglage s'appelle mode avancé, ou passe par une option de blocage automatique des scripts. En cas de doute, le test décrit plus bas tranche en quelques minutes.</p>
+
+<h3>Avec Google Tag Manager</h3>
+
+<ol class="pas">
+  <li><b>Pour le mode advanced</b>, l'état par défaut doit être posé avant toute autre balise. La plupart des bandeaux fournissent un modèle pour Google Tag Manager : ajoutez-le, réglez les quatre signaux sur refusé par défaut, et déclenchez-le sur « Initialisation du consentement - Toutes les pages ». Les balises Google, comme Google Analytics 4 et Google Ads, s'adaptent ensuite toutes seules au choix du visiteur.</li>
+  <li><b>Pour le mode basic</b>, vos balises Google doivent attendre l'accord. Soit le bandeau les bloque lui-même, soit vous les déclenchez sur l'événement que le bandeau envoie quand le visiteur accepte.</li>
+  <li><b>Dans les deux modes</b>, les balises qui ne viennent pas de Google, comme le pixel Meta ou un script maison, ne lisent pas le Consent Mode. Elles doivent attendre l'accord du visiteur par leurs propres moyens.</li>
+</ol>
+
+<h3>Deux réglages facultatifs du mode advanced</h3>
+
+<p>Le mode advanced propose deux options, à régler dans le modèle de votre bandeau ou dans votre balise Google. La première masque les identifiants de clic publicitaire dans les signaux envoyés quand le visiteur a refusé : elle va dans le sens de la discrétion, et vous pouvez l'activer sans crainte. La seconde fait au contraire circuler le numéro de clic dans l'adresse des pages visitées, même après un refus, pour mieux rattacher les conversions. Elle est plus discutable au regard du consentement : ne l'activez qu'après avis.</p>
+
+<h2>Tester votre Consent Mode pas à pas</h2>
+
+<p>Le test rapide de notre <a href="/consent-mode-v2-google-ads/">guide du Consent Mode v2</a> vérifie que les signaux partent bien. Celui-ci va plus loin : il vous dit quel mode tourne vraiment sur votre site, et si chaque balise le respecte. Faites chaque test dans une fenêtre de navigation privée, qui repart de zéro.</p>
+
+<h3>Test 1 : les cookies, avant et après le choix</h3>
+
+<ol class="pas">
+  <li>Ouvrez votre site, appuyez sur F12, puis ouvrez l'onglet Application, rubrique Cookies. Avant tout choix, aucun cookie commençant par « _ga » ou « _gcl » ne doit exister.</li>
+  <li>Cliquez sur « Refuser » : toujours aucun de ces cookies.</li>
+  <li>Dans une nouvelle fenêtre privée, cliquez sur « Accepter » : les cookies « _ga » et « _gcl_au » apparaissent, et « _gcl_aw » si vous êtes arrivé par une annonce.</li>
+</ol>
+
+<p>Ce premier test est le même dans les deux modes : il vérifie le respect de la loi, pas le mode utilisé.</p>
+
+<h3>Test 2 : les requêtes envoyées à Google</h3>
+
+<p>C'est le test qui distingue les deux modes. Dans une fenêtre privée, ouvrez votre site, appuyez sur F12 et choisissez l'onglet Réseau. Tapez « collect » dans le champ de filtre, cliquez sur « Refuser » dans le bandeau, puis rechargez la page.</p>
+
+<ul>
+  <li><b>Aucune ligne n'apparaît</b> : rien ne part chez Google, vous êtes en mode basic.</li>
+  <li><b>Des lignes apparaissent</b> : cliquez sur l'une d'elles et cherchez le paramètre « gcs ». S'il vaut G100, vous êtes en mode advanced et le refus est bien transmis.</li>
+</ul>
+
+<table class="tbl">
+  <tr><th>Valeur de gcs</th><th>Ce qu'elle signifie</th></tr>
+  <tr><td>G100</td><td>Publicité et statistiques refusées.</td></tr>
+  <tr><td>G111</td><td>Publicité et statistiques accordées.</td></tr>
+  <tr><td>G101</td><td>Statistiques accordées, publicité refusée.</td></tr>
+  <tr><td>G110</td><td>Publicité accordée, statistiques refusées.</td></tr>
+</table>
+
+<p>Le paramètre gcs ne couvre que les deux premiers signaux. Les deux signaux ajoutés par la version 2 voyagent dans un autre paramètre, « gcd », moins lisible : pour eux, le test suivant est plus simple.</p>
+
+<h3>Test 3 : Tag Assistant, événement par événement</h3>
+
+<ol class="pas">
+  <li>Dans Google Tag Manager, cliquez sur Prévisualiser et connectez Tag Assistant à votre site.</li>
+  <li>Dans la liste des événements, à gauche, sélectionnez le tout premier, puis ouvrez l'onglet consacré au consentement. Les quatre signaux doivent apparaître refusés par défaut, avant toute autre balise.</li>
+  <li>Cliquez sur « Accepter » dans le bandeau. Un nouvel événement doit montrer une mise à jour où les quatre signaux passent à accordé.</li>
+  <li>Changez de page. Sur la nouvelle page, la mise à jour doit se répéter : votre choix est bien mémorisé.</li>
+</ol>
+
+<p>En mode advanced, vos balises Google figurent parmi les balises déclenchées dès le premier événement, même avant votre choix. En mode basic, elles n'apparaissent qu'après l'acceptation.</p>
+
+<h3>Test 4 : la vue d'ensemble dans Google Tag Manager</h3>
+
+<p>Dans les paramètres du conteneur, activez la vue d'ensemble du consentement. Un bouclier apparaît alors dans la liste des balises : il indique pour chacune comment elle gère le consentement. Les balises Google ont une vérification intégrée. Pour les autres, vérifiez qu'elles attendent bien l'accord du visiteur.</p>
+
+<h2>Les erreurs propres à chaque mode</h2>
+
+<ul>
+  <li><b>Le mélange involontaire.</b> Le Consent Mode advanced est activé, mais le bandeau bloque aussi les balises Google jusqu'à l'accord. Vous croyez profiter de l'estimation propre à votre site, alors que vous êtes en basic. Le test 2 le révèle aussitôt.</li>
+  <li><b>L'état par défaut posé trop tard.</b> En mode advanced, si une balise se déclenche avant que l'état par défaut soit posé, elle part sans consigne de consentement. Tag Assistant le signale. Déclenchez toujours l'état par défaut sur l'initialisation du consentement.</li>
+  <li><b>Un bandeau qui charge trop lentement.</b> Si le bandeau met du temps à lire le choix d'un visiteur qui revient, les balises partent avec l'état refusé. La plupart des modèles proposent un délai d'attente de la mise à jour : 500 millisecondes suffisent en général.</li>
+  <li><b>Le choix oublié d'une page à l'autre.</b> Un visiteur qui a accepté doit être compté comme tel sur toutes les pages. Si la mise à jour ne se répète pas, chaque nouvelle page le traite comme un refus, et ses conversions se perdent.</li>
+</ul>
+
+<h2>Questions fréquentes</h2>
+
+<div class="faq">
+  <details>
+    <summary>Le mode advanced est-il obligatoire pour Google Ads ?</summary>
+    <div class="faq__corps"><p>Non. Google exige le Consent Mode v2 pour les visiteurs européens, quel que soit le mode. Le mode basic répond à cette exigence. Le mode advanced améliore l'estimation des conversions des visiteurs qui refusent, si votre volume de clics le permet.</p></div>
+  </details>
+  <details>
+    <summary>Comment savoir si mon site est en basic ou en advanced ?</summary>
+    <div class="faq__corps"><p>Ouvrez votre site en navigation privée, appuyez sur F12, onglet Réseau, filtrez sur « collect », puis refusez les cookies et rechargez la page. Aucune requête : vous êtes en basic. Des requêtes avec gcs=G100 : vous êtes en advanced.</p></div>
+  </details>
+  <details>
+    <summary>Le mode advanced dépose-t-il des cookies sans consentement ?</summary>
+    <div class="faq__corps"><p>Non. Tant que le visiteur n'a pas accepté, aucun cookie Google n'est déposé. Seuls des signaux sans cookie ni identifiant partent chez Google, ce qui doit être mentionné dans votre politique de confidentialité.</p></div>
+  </details>
+  <details>
+    <summary>Puis-je passer du mode basic au mode advanced plus tard ?</summary>
+    <div class="faq__corps"><p>Oui, en changeant le réglage de votre bandeau ou de Google Tag Manager. Vos conversions passées ne changent pas, et l'estimation propre à votre site se met en place après quelques semaines de données, si votre volume de clics le permet.</p></div>
+  </details>
+</div>
+
+<div class="cta-art">
+  <p><b>Un consentement respecté, des conversions qui remontent.</b> Trackia installe toute la chaîne de suivi, du bandeau relié à Google jusqu'à la remontée de vos devis signés, en 2 h, sans code. 397 €, accès à vie.</p>
+  <a class="bouton" href="/?utm_source=blog&amp;utm_medium=cocon&amp;utm_content=consent-mode-v2-basic-advanced">Voir la formation : 397 €, accès à vie</a>
+</div>
+
+</div></main>
+
+<footer class="pied">
+  <div class="zone pied__in">
+    <div class="pied__marque">
+      <img src="/assets/brand/trackia-logo-white.svg" alt="Trackia" width="153" height="40" loading="lazy" decoding="async">
+      <p>Le tracking d'élite sans code, pour les artisans, entreprises de services, TPE et indépendants.</p>
+    </div>
+    <nav class="pied__liens" aria-label="Pied de page">
+      <a href="mailto:contact@trackia.fr">contact@trackia.fr</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/cgv.html">CGV</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="#" data-cookies>Gérer les cookies</a>
+    </nav>
+  </div>
+  <div class="zone pied__bas"><p>© 2026 Trackia</p></div>
+</footer>
+
+<script src="/assets/main.js?v=202610070200" defer></script>
+</body>
+</html>
